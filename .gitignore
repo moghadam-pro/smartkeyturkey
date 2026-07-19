@@ -1,0 +1,33 @@
+# WordPress runtime and user content
+wp-admin/
+wp-includes/
+wp-content/uploads/
+wp-content/cache/
+wp-content/upgrade/
+wp-content/backups*/
+
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+wp-config.php
+auth.json
+*.key
+*.pem
+*.p12
+*.sql
+*.sql.gz
+
+# Dependencies and generated files
+node_modules/
+vendor/
+dist/
+build/
+coverage/
+*.log
+
+# IDE and operating-system files
+.DS_Store
+.idea/
+.vscode/
+
