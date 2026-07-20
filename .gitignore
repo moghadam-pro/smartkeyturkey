@@ -26,8 +26,10 @@ build/
 coverage/
 *.log
 
+# Large source renders; optimized web derivatives are versioned
+assets/blog/*.png
+
 # IDE and operating-system files
 .DS_Store
 .idea/
 .vscode/
-
