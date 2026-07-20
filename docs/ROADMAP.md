@@ -13,7 +13,7 @@ Dates are calendar days starting on 2026-07-19. Each day ends with a meaningful 
 | 7 | 2026-07-25 | Positioning | Value propositions, CTA hierarchy, claims policy and KPIs |
 | 8 | 2026-07-26 | Information architecture | Sitemap, navigation, URL patterns and cross-linking |
 | 9 | 2026-07-27 | Data model | CPTs, taxonomies, fields, relationships and CSV templates |
-| 10 | 2026-07-28 | Multilingual SEO | Translation workflow, RTL, slugs, hreflang, canonical and review states |
+| 10 | 2026-07-28 | English SEO foundation | Slugs, canonical rules, metadata, schema and future-localization constraints |
 | 11 | 2026-07-29 | Design foundations | Light/dark tokens, type, spacing, grid, motion and breakpoints |
 | 12 | 2026-07-30 | Components | Navigation, cards, filters, forms, states and accessibility behavior |
 | 13 | 2026-07-31 | Acquisition wireframes | Home, properties, property detail, city and contact flows |
@@ -26,7 +26,7 @@ Dates are calendar days starting on 2026-07-19. Each day ends with a meaningful 
 | 20 | 2026-08-07 | Property experience | Archive, filters, detail, city relationship and inquiry flow |
 | 21 | 2026-08-08 | Petrochemical experience | Catalog, filtering, product detail and qualified RFQ flow |
 | 22 | 2026-08-09 | Editorial experience | City, attractions, news/laws/events, sources and freshness metadata |
-| 23 | 2026-08-10 | WPML implementation | Four-language staging configuration and translation QA |
+| 23 | 2026-08-10 | Localization-ready audit | Verify that English templates and data can support a future multilingual phase |
 | 24 | 2026-08-11 | AI content system | Source policy, templates, prompts, checks and English pilot records |
 | 25 | 2026-08-12 | Data import | Reversible property/product import and pending-review translations |
 | 26 | 2026-08-13 | SEO implementation | Metadata, schema, sitemaps, hreflang, redirects and internal links |
@@ -60,3 +60,7 @@ Before WPML is installed on staging, verify:
 ## Production-only operating decision
 
 The owner decided not to use the newly created staging site and to continue on production. The staging hostname and database must not receive production data. Work on production follows `docs/PRODUCTION-CHANGE-PROTOCOL.md` until this decision changes.
+
+## English-only phase decision
+
+Effective 2026-07-20, phase one is English-only. WPML and String Translation are outside the active scope. Data models, design tokens and templates should remain localization-ready, but translation, RTL, language switchers and localized URLs are deferred to a later owner-approved phase.

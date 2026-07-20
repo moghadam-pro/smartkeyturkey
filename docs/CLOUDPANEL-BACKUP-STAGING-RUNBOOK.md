@@ -94,7 +94,7 @@ define( 'WP_ENVIRONMENT_TYPE', 'staging' );
 
 ## WPML String Translation
 
-The add-on was not present in the Installed Plugins list at the last audit.
+> Status: deferred. The owner changed phase one to English-only on 2026-07-20. WPML and String Translation were absent from the Installed Plugins list when the decision was recorded.
 
 Under the production-only decision:
 
