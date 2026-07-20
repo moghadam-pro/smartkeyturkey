@@ -38,9 +38,8 @@ The site manager reviews and approves work progressively. Legal, financial, prop
 - Verify backup and rollback before production changes.
 - Perform implementation and content migration on staging first.
 
-## Current blockers
+## Current dependencies
 
-- WordPress Admin and hosting/staging access are not yet available.
-- Brand Guideline and logo files have not yet been received in the workspace.
-- The GitHub repository cannot be created from this environment until GitHub CLI is installed/authenticated, or the empty private repository is created manually.
-
+- The owner-provided list of approximately 100 petrochemical products and available grade/document data is still required for catalog import.
+- The RFQ recipient mailbox must be confirmed before end-to-end delivery testing.
+- Contact details, social links and additional brand imagery will be supplied progressively by the owner.
