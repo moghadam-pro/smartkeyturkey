@@ -64,3 +64,7 @@ The owner decided not to use the newly created staging site and to continue on p
 ## English-only phase decision
 
 Effective 2026-07-20, phase one is English-only. WPML and String Translation are outside the active scope. Data models, design tokens and templates should remain localization-ready, but translation, RTL, language switchers and localized URLs are deferred to a later owner-approved phase.
+
+## Launch indexing gate
+
+Search-engine indexing was temporarily discouraged on 2026-07-20 while the production site is incomplete. Re-enabling indexing and verifying robots/meta directives are mandatory launch tasks.
