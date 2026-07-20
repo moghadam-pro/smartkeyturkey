@@ -51,9 +51,12 @@ Before WPML is installed on staging, verify:
 
 ## Release gates
 
-1. No production mutation before verified backup, staging and rollback.
+1. Production-only work is permitted by owner decision from 2026-07-20. Every mutation must be small, recorded, immediately smoke-tested and covered by the active Hetzner seven-day backup rotation.
 2. No bulk content generation before English pilot records pass factual and structural review.
 3. No development of priority templates before mobile-first wireframe approval.
 4. No launch with critical defects or unverified lead delivery.
 5. AI-translated legal, financial and regulatory content remains visibly pending review until approved.
 
+## Production-only operating decision
+
+The owner decided not to use the newly created staging site and to continue on production. The staging hostname and database must not receive production data. Work on production follows `docs/PRODUCTION-CHANGE-PROTOCOL.md` until this decision changes.

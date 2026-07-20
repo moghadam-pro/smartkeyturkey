@@ -7,8 +7,9 @@ Target infrastructure: Hetzner VPS in Helsinki, managed with CloudPanel.
 - Do not update or delete any WordPress plugin.
 - Keep the current third-party premium packages until official licenses are obtained.
 - Keep Rank Math PRO inactive.
-- Do not install or activate WPML String Translation on production before backup and staging exist.
-- No development or bulk import on production.
+- Production-only work was approved by the owner on 2026-07-20.
+- Do not put production data into the abandoned staging environment.
+- Any production change must follow the production change protocol and an immediate smoke test.
 
 ## Backup strategy
 
@@ -33,6 +34,8 @@ Do not treat a backup stored only on the same VPS as sufficient.
 - Test restoration into staging before calling the backup verified.
 
 ## Staging architecture
+
+> Status: abandoned by owner decision on 2026-07-20. Retained here only as a future recovery/reference design.
 
 CloudPanel does not document a one-click WordPress staging clone. Create an isolated site manually:
 
@@ -63,7 +66,7 @@ CloudPanel does not document a one-click WordPress staging clone. Create an isol
 
 ## WordPress memory
 
-CloudPanel already exposes a PHP memory limit of 512 MB. The WordPress-specific limit is still 40 MB.
+CloudPanel exposes a PHP memory limit of 512 MB. WordPress memory was raised on 2026-07-20 to 256 MB, with a 512 MB administrative maximum.
 
 Open the production site's File Manager and edit:
 
@@ -81,6 +84,7 @@ Rules:
 - Do not create duplicate definitions.
 - Do not paste the database password or authentication salts into tickets, GitHub or Slack.
 - Recheck Tools → Site Health → Info → WordPress Constants after saving.
+- Preserve ownership as `smartamin:smartamin` and a readable mode such as `0640`; an ownership change during editing caused and then resolved a production HTTP 500 incident on 2026-07-20.
 
 For staging, also add:
 
@@ -90,18 +94,18 @@ define( 'WP_ENVIRONMENT_TYPE', 'staging' );
 
 ## WPML String Translation
 
-The add-on is not currently present in the Installed Plugins list.
+The add-on was not present in the Installed Plugins list at the last audit.
 
-After staging is verified:
+Under the production-only decision:
 
 1. Obtain the `wpml-string-translation.zip` package that matches the installed WPML family.
-2. In staging, open Plugins → Add Plugin → Upload Plugin.
+2. Confirm a current Hetzner backup is available, then open Plugins → Add Plugin → Upload Plugin on production.
 3. Upload the ZIP and select Install Now.
 4. Activate WPML String Translation.
 5. Verify it appears as active in Installed Plugins.
 6. Test Elementor template strings, Rank Math settings, forms and custom fields.
 
-Do not activate it on production until the staging compatibility test passes.
+Activate only as a single isolated change, then immediately smoke-test the homepage, admin, Elementor editor, WPML language switcher and PHP-FPM log. Do not update or remove any other plugin.
 
 ## Required access
 
@@ -109,4 +113,3 @@ Do not activate it on production until the staging compatibility test passes.
 - Signed-in Hetzner Cloud Console session for the server snapshot
 - An off-site backup destination and its securely entered credentials
 - DNS access for the staging subdomain
-
