@@ -25,7 +25,7 @@ Dates are calendar days starting on 2026-07-19. Each day ends with a meaningful 
 | 19 | 2026-08-06 | Elementor foundation | Globals, Theme Builder templates, sections, forms and WPML registration |
 | 20 | 2026-08-07 | Property experience | Archive, filters, detail, city relationship and inquiry flow |
 | 21 | 2026-08-08 | Petrochemical experience | Catalog, filtering, product detail and qualified RFQ flow |
-| 22 | 2026-08-09 | Editorial experience | City, attractions, news/laws/events, sources and freshness metadata |
+| 22 | 2026-08-09 | Editorial experience | City, attractions, news/laws/events, sources and freshness metadata — attraction foundation completed early on 2026-07-21 |
 | 23 | 2026-08-10 | Localization-ready audit | Verify that English templates and data can support a future multilingual phase |
 | 24 | 2026-08-11 | AI content system | Source policy, templates, prompts, checks and English pilot records |
 | 25 | 2026-08-12 | Data import | Reversible property/product import and pending-review translations |

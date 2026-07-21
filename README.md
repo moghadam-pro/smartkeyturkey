@@ -28,7 +28,7 @@ Updated: 21 July 2026
 - [x] WordPress baseline audit and brand-asset inventory
 - [x] English-only phase-one information architecture
 - [x] Petrochemical data model and controlled source-import workflow
-- [x] Custom `SmartKey Core` plugin v1.1.0
+- [x] Custom `SmartKey Core` plugin v1.2.1
 - [x] Structured petrochemical product type, taxonomy and metadata
 - [x] WordPress dashboard overview, content-view tracking, per-product RFQ counters and internal notes
 - [x] 99-product catalog imported and published with authorized source images
@@ -54,6 +54,8 @@ Updated: 21 July 2026
 - [x] About Us, contact-rich footer and custom responsive 404 experience
 - [x] Sticky product-family sidebar, refined inquiry forms and expanded brand palette
 - [x] Dashboard note completion checkboxes with strikethrough state
+- [x] Turkey attractions content model, archive, city filters and four sourced pilot guides
+- [x] First-party GA4-ready property and petrochemical lead events
 - [ ] Analytics conversion-event QA
 - [ ] Accessibility, performance, security and launch QA
 - [ ] WPML implementation after phase-one English approval

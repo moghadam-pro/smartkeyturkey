@@ -34,6 +34,7 @@
 .skt-site-header{background:color-mix(in srgb,var(--skt-surface) 94%,transparent)}
 .skt-brand .skt-wordmark{filter:brightness(0) invert(1)}
 }
+@media(max-width:1050px) and (min-width:781px){.skt-site-header .skt-chrome-shell{gap:20px}.skt-brand .skt-wordmark{width:155px}.skt-primary-nav{gap:16px}.skt-primary-nav a{font-size:.82rem}.skt-header-cta{padding:0 15px;font-size:.82rem}}
 @media(max-width:780px){.skt-site-header .skt-chrome-shell{min-height:70px;gap:14px}
 .skt-primary-nav{display:none}
 .skt-header-cta{padding:0 15px;font-size:.82rem}

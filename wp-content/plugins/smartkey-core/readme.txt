@@ -2,7 +2,7 @@
 Contributors: smartkeyturkey
 Requires at least: 6.5
 Requires PHP: 8.1
-Stable tag: 1.1.0
+Stable tag: 1.2.1
 License: Proprietary
 
 Site-owned WordPress functionality for SmartKeyTurkey.
@@ -30,6 +30,8 @@ Site-owned WordPress functionality for SmartKeyTurkey.
 * About Us page, contact-rich footer and responsive 404 experience.
 * Sticky product-family sidebar and refined request forms.
 * Expanded brand palette and system-aware header/footer logo treatments.
+* Structured Turkey attractions, city taxonomy, sourced pilot guides and responsive templates.
+* First-party dataLayer conversion events for property inquiries and petrochemical RFQs.
 
 == Privacy ==
 
@@ -38,6 +40,17 @@ View tracking stores aggregate counters and a first-party 24-hour de-duplication
 Property and petrochemical requests are stored privately in WordPress for administrators. SmartKey-managed request forms do not send email. Uploaded files are not copied into the request record.
 
 == Changelog ==
+
+= 1.2.1 =
+
+* Made conversion-event de-duplication independent of browser storage availability.
+
+= 1.2.0 =
+
+* Added the Turkey Attractions content type, city taxonomy, visitor/source fields and responsive archive/single templates.
+* Published four official-source-based pilot guides for Istanbul, Ankara, Izmir and Antalya.
+* Added Attractions to public navigation and the SmartKey administration hub.
+* Added GA4-ready first-party dataLayer events for successful property and petrochemical request flows.
 
 = 1.1.0 =
 

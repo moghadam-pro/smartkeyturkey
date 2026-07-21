@@ -1,5 +1,15 @@
 # WordPress production change log
 
+## 2026-07-21 — Attractions and conversion instrumentation (SmartKey Core 1.2.0)
+
+- Added a structured Turkey Attractions content type with city taxonomy, visitor facts, coordinates, official-source URL and freshness metadata.
+- Added responsive attraction archive, city filtering and single-guide templates with automatic system-aware light/dark presentation.
+- Added four English pilot guides based on official GoTürkiye destination sources: Hagia Sophia, Anıtkabir, Ephesus Ancient City and Kaleiçi Old Town.
+- Added Attractions to the public header/footer navigation and to the SmartKey administration menu.
+- Added first-party dataLayer events `skt_property_inquiry` and `skt_petrochemical_rfq` for successful lead flows; Site Kit Analytics remains connected. SmartKey Core `1.2.1` removes reliance on browser storage for event de-duplication.
+- Avoided hard-coded opening hours and ticket prices; guides direct visitors to current official information.
+- Enabled and rebuilt the attraction XML sitemap; it returns HTTP 200 and contains all four published guides.
+
 ## 2026-07-21 — Request center, company pages and UI refinement (SmartKey Core 1.1.0)
 
 - Updated only the site-owned SmartKey Core plugin from `1.0.3` to `1.1.0`; no third-party plugin was updated, removed, activated or deactivated.
