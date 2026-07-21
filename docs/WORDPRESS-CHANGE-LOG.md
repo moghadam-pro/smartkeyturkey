@@ -1,5 +1,16 @@
 # WordPress production change log
 
+## 2026-07-21 — Brand normalization, wordmark and Site Kit audit
+
+- Updated only the site-owned SmartKey Core plugin from version `0.5.0` to `0.6.0`; no third-party plugin was updated or removed.
+- Standardized the public brand name as `SmartKeyTurkey` without a space across repository content, WordPress posts, metadata, managed options, SEO copy and the site title.
+- Replaced the header's text label with the approved SVG typography beside the existing logo.
+- Added a restrained monochrome treatment of the logo and approved typography in the footer.
+- Verified the archive title, body copy and copyright output contain `SmartKeyTurkey` and no legacy spaced name.
+- Verified the SVG wordmark loads at its native dimensions and renders once in both the header and footer.
+- Audited Google Site Kit: Search Console is connected to the correct HTTPS property; Analytics code insertion, Enhanced Measurement and plugin conversion tracking are enabled; logged-in users are excluded; PageSpeed Insights is connected.
+- Verified exactly one Google Analytics loader is present on the public archive. Optional AdSense and email-report subscription were intentionally left unchanged because they are not launch prerequisites.
+
 ## 2026-07-21 — Property content model foundation
 
 - Updated only the site-owned SmartKey Core plugin from version `0.4.0` to `0.5.0`; no third-party plugin was changed.
@@ -17,7 +28,7 @@
 - Replaced the minimal Hello Elementor site header and footer presentation with branded, responsive SmartKey components while retaining the theme's page lifecycle.
 - Added primary navigation for Home, Petrochemicals and Insights plus a prominent RFQ call to action.
 - Added the approved Instagram and LinkedIn profile links with safe external-link attributes.
-- Added `© 2012–2026 SmartKey Turkey. All rights reserved.` and linked `Designed and developed by Moghadam.pro` credit.
+- Added `© 2012–2026 SmartKeyTurkey. All rights reserved.` and linked `Designed and developed by Moghadam.pro` credit.
 - Added a concise footer disclosure identifying SmartKey as an intermediary and authorized sales representative rather than a property owner or product manufacturer.
 - Verified the new header and footer render once on the product archive, the prior Hello header is visually suppressed, all requested URLs are exact and the archive retains one H1.
 
@@ -46,7 +57,7 @@
 ## 2026-07-21 — Controlled petrochemical catalog import
 
 - Recorded the owner's authorization to republish ChemPortal product information and images.
-- Recorded SmartKey Turkey's role as an authorized sales representative and sourcing coordinator, not the manufacturer.
+- Recorded SmartKeyTurkey's role as an authorized sales representative and sourcing coordinator, not the manufacturer.
 - Installed and activated the custom `SmartKey Core` plugin version `0.1.1`; no existing plugin was updated or removed.
 - Registered the `skt_product` post type, product-family taxonomy, structured product metadata and a controlled draft importer.
 - Validated a source-reviewed dataset containing 99 products.
@@ -67,7 +78,7 @@
 
 ## 2026-07-21 — Rank Math product SEO foundation
 
-- Changed the WordPress site title from `SmartKeyTurkey` to `SmartKey Turkey`.
+- Set and verified the WordPress site title as `SmartKeyTurkey`.
 - Added the site tagline `Property and Petrochemical Solutions in Turkey`.
 - Configured dedicated single-product and product-archive title patterns and meta descriptions in Rank Math.
 - Set Product Families as the primary taxonomy for product breadcrumbs and primary-term selection.

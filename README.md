@@ -1,8 +1,8 @@
-# SmartKey Turkey
+# SmartKeyTurkey
 
-Public build log and source repository for the SmartKey Turkey corporate website at [smartkeyturkey.com](https://smartkeyturkey.com/).
+Public build log and source repository for the SmartKeyTurkey corporate website at [smartkeyturkey.com](https://smartkeyturkey.com/).
 
-SmartKey Turkey combines two commercial journeys:
+SmartKeyTurkey combines two commercial journeys:
 
 - B2C property discovery in Turkey, initially focused on Istanbul, Ankara, Izmir and Antalya.
 - B2B petrochemical product discovery and qualified RFQ workflows.
@@ -28,7 +28,7 @@ Updated: 21 July 2026
 - [x] WordPress baseline audit and brand-asset inventory
 - [x] English-only phase-one information architecture
 - [x] Petrochemical data model and controlled source-import workflow
-- [x] Custom `SmartKey Core` plugin v0.5.0
+- [x] Custom `SmartKey Core` plugin v0.6.0
 - [x] Structured petrochemical product type, taxonomy and metadata
 - [x] WordPress dashboard overview, content-view tracking, per-product RFQ counters and internal notes
 - [x] 99-product catalog imported and published with authorized source images
@@ -40,6 +40,8 @@ Updated: 21 July 2026
 - [x] Property content model and phase-one city taxonomy
 - [ ] Property archive, city and single-property templates
 - [x] Global responsive header and footer foundation
+- [x] Compact `SmartKeyTurkey` naming and approved SVG wordmark rollout
+- [x] Google Site Kit connection and measurement configuration audit
 - [ ] RFQ integration, email delivery and conversion tracking QA
 - [ ] Accessibility, performance, security and launch QA
 - [ ] WPML implementation after phase-one English approval

@@ -11,7 +11,7 @@
 - Official sources: TURKSTAT June 2026 and December 2025 releases
 - Featured/inline image: `assets/blog/turkiye-property-market-june-2026.jpg`
 - Image dimensions: 1600 × 900
-- Image source: AI-generated exclusively for SmartKey Turkey using OpenAI
+- Image source: AI-generated exclusively for SmartKeyTurkey using OpenAI
 - Image restrictions: no stock image, logo, watermark or reproduced third-party photograph
 - Public verification: title, source links, visible image and alt text passed
 
@@ -24,7 +24,7 @@
 - Official sources: Investment Office of the Presidency of Türkiye and TKGM
 - Featured/inline image: `assets/blog/turkiye-property-due-diligence.jpg`
 - Image dimensions: 1600 × 900
-- Image source: AI-generated exclusively for SmartKey Turkey using OpenAI
+- Image source: AI-generated exclusively for SmartKeyTurkey using OpenAI
 - Image restrictions: generic abstract documents; no seals, personal information, logos, watermark or fake official document
 - Public verification: title, source links, visible image and alt text passed
 

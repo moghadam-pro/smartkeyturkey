@@ -24,7 +24,7 @@ const categories = [...new Set(products.map((p) => p.product_family))].sort();
 const totalProperties = products.reduce((sum, p) => sum + (p.properties?.length || 0), 0);
 
 overview.getRange("A1:H2").merge();
-overview.getRange("A1").values = [["SmartKey Turkey — Petrochemical Product Catalog"]];
+overview.getRange("A1").values = [["SmartKeyTurkey — Petrochemical Product Catalog"]];
 overview.getRange("A1:H2").format = {
   fill: dark,
   font: { bold: true, color: "#FFFFFF", size: 20 },
@@ -83,7 +83,7 @@ const catalogRows = products.map((p) => [
   "Confirm by RFQ",
   "Yes",
   new Date("2026-07-21T00:00:00Z"),
-  "SmartKey Turkey acts as an authorized sales representative and sourcing coordinator; it is not the manufacturer. Current specifications, availability, pricing and final commercial terms are confirmed for each inquiry.",
+  "SmartKeyTurkey acts as an authorized sales representative and sourcing coordinator; it is not the manufacturer. Current specifications, availability, pricing and final commercial terms are confirmed for each inquiry.",
 ]);
 catalog.getRange(`A1:O${catalogRows.length + 1}`).values = [catalogHeaders, ...catalogRows];
 catalog.getRange("A1:O1").format = { fill: dark, font: { bold: true, color: "#FFFFFF" }, wrapText: true };

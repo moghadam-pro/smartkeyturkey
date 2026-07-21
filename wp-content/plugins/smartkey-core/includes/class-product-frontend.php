@@ -63,7 +63,7 @@ final class Product_Frontend {
 		$title     = $is_family ? single_term_title( '', false ) . ' Petrochemical Products' : 'Petrochemical Products & Polymer Grades';
 		$intro     = $is_family
 			? sprintf( 'Explore %s grades, applications and source-captured technical properties. Current specifications, availability and commercial terms are confirmed per inquiry.', single_term_title( '', false ) )
-			: 'Explore petrochemical products, polymers and industrial grades available through SmartKey Turkey. Compare source-captured specifications and request current commercial terms.';
+			: 'Explore petrochemical products, polymers and industrial grades available through SmartKeyTurkey. Compare source-captured specifications and request current commercial terms.';
 		$families  = get_terms( array( 'taxonomy' => 'skt_product_family', 'hide_empty' => true ) );
 
 		ob_start();
@@ -130,7 +130,7 @@ final class Product_Frontend {
 		$grade        = (string) get_post_meta( $post_id, 'skt_grade', true );
 		$availability = (string) get_post_meta( $post_id, 'skt_availability_status', true );
 		$disclosure   = (string) get_post_meta( $post_id, 'skt_representative_disclosure', true );
-		$disclosure   = $disclosure ?: 'SmartKey Turkey acts as an authorized sales representative and sourcing coordinator; it is not the manufacturer. Current specifications, availability, pricing and final commercial terms are confirmed for each inquiry.';
+		$disclosure   = $disclosure ?: 'SmartKeyTurkey acts as an authorized sales representative and sourcing coordinator; it is not the manufacturer. Current specifications, availability, pricing and final commercial terms are confirmed for each inquiry.';
 		$reviewed     = (string) get_post_meta( $post_id, 'skt_last_reviewed_date', true );
 
 		ob_start();

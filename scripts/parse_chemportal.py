@@ -14,7 +14,7 @@ from lxml import html
 
 
 INTERMEDIARY_DISCLOSURE = (
-    "SmartKey Turkey acts as an authorized sales representative and sourcing coordinator; "
+    "SmartKeyTurkey acts as an authorized sales representative and sourcing coordinator; "
     "it is not the manufacturer. Current specifications, availability, pricing and final "
     "commercial terms are confirmed for each inquiry."
 )

@@ -2,10 +2,10 @@
 Contributors: smartkeyturkey
 Requires at least: 6.5
 Requires PHP: 8.1
-Stable tag: 0.5.0
+Stable tag: 0.6.0
 License: Proprietary
 
-Site-owned WordPress functionality for SmartKey Turkey.
+Site-owned WordPress functionality for SmartKeyTurkey.
 
 == Features ==
 
@@ -27,6 +27,13 @@ View tracking stores aggregate counters and a first-party 24-hour de-duplication
 RFQ tracking stores aggregate counters only. It does not copy contact details, uploaded files or submission contents into SmartKey Core.
 
 == Changelog ==
+
+= 0.6.0 =
+
+* Standardized the brand name as SmartKeyTurkey across managed content and settings.
+* Added the approved SVG wordmark beside the logo in the global header.
+* Added a neutral monochrome logo and wordmark treatment in the footer.
+* Added a safe one-time brand-name migration for WordPress content and settings.
 
 = 0.5.0 =
 

@@ -2,7 +2,7 @@
 
 Last updated: 2026-07-21
 
-This document is the minimum SEO acceptance standard for every SmartKey Turkey implementation stage.
+This document is the minimum SEO acceptance standard for every SmartKeyTurkey implementation stage.
 
 ## Current launch state
 
@@ -13,7 +13,7 @@ This document is the minimum SEO acceptance standard for every SmartKey Turkey i
 
 ## Site identity
 
-- Site title: `SmartKey Turkey`
+- Site title: `SmartKeyTurkey`
 - Tagline: `Property and Petrochemical Solutions in Turkey`
 - Primary domain: `https://smartkeyturkey.com/`
 - Primary brand color: `#84c341`
@@ -24,9 +24,9 @@ This document is the minimum SEO acceptance standard for every SmartKey Turkey i
 ### Titles and descriptions
 
 - Single title pattern: `%title% %sep% Petrochemical Products %sep% %sitename%`
-- Single description pattern: `Explore %title% specifications, applications and sourcing details. Request current availability and commercial terms from SmartKey Turkey.`
+- Single description pattern: `Explore %title% specifications, applications and sourcing details. Request current availability and commercial terms from SmartKeyTurkey.`
 - Archive title pattern: `Petrochemical Products & Polymer Grades %page% %sep% %sitename%`
-- Archive description: `Explore petrochemical products, polymers and industrial grades available through SmartKey Turkey. Compare specifications and request current commercial terms.`
+- Archive description: `Explore petrochemical products, polymers and industrial grades available through SmartKeyTurkey. Compare specifications and request current commercial terms.`
 - Primary taxonomy: Product Families
 - Rank Math content-analysis fields: `skt_grade`, `skt_applications`, `skt_availability_status`, `skt_verification_status`
 

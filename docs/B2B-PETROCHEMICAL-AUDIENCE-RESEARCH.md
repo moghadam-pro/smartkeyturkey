@@ -4,7 +4,7 @@ Date: 2026-07-20
 
 ## Objective
 
-Create a credible English-language product discovery and quotation journey for approximately 100 petrochemical products. SmartKey Turkey is presented as a sourcing and coordination intermediary, not as the manufacturer, stock owner, laboratory, carrier or regulatory authority.
+Create a credible English-language product discovery and quotation journey for approximately 100 petrochemical products. SmartKeyTurkey is presented as a sourcing and coordination intermediary, not as the manufacturer, stock owner, laboratory, carrier or regulatory authority.
 
 ## Priority audiences
 
@@ -93,7 +93,7 @@ The initial categories are a flexible starting point, not a claim that SmartKey 
 - Treat technical values as grade-specific; always identify the source document and revision date.
 - Do not infer regulatory compliance from a generic product name.
 - Label supplier/manufacturer, document source, verification status and last reviewed date.
-- Display: "SmartKey Turkey facilitates sourcing and coordination. Product specifications, availability, pricing, regulatory suitability and final terms are confirmed by the relevant supplier and must be independently reviewed by the buyer."
+- Display: "SmartKeyTurkey facilitates sourcing and coordination. Product specifications, availability, pricing, regulatory suitability and final terms are confirmed by the relevant supplier and must be independently reviewed by the buyer."
 
 ## Evidence informing the model
 
