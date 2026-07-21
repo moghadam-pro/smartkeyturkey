@@ -72,14 +72,14 @@ final class Site_Chrome {
 	}
 
 	public static function migrate_brand_name(): void {
-		if ( '1' === get_option( 'skt_brand_name_compact_migration' ) ) {
+		if ( '2' === get_option( 'skt_brand_name_compact_migration' ) ) {
 			return;
 		}
 
 		global $wpdb;
 		$replace = static function ( $value ) use ( &$replace ) {
 			if ( is_string( $value ) ) {
-				return str_replace( 'SmartKeyTurkey', 'SmartKeyTurkey', $value );
+				return str_replace( 'SmartKey Turkey', 'SmartKeyTurkey', $value );
 			}
 			if ( is_array( $value ) ) {
 				foreach ( $value as $key => $item ) {
@@ -89,21 +89,21 @@ final class Site_Chrome {
 			return $value;
 		};
 
-		$posts = $wpdb->get_results( "SELECT ID, post_title, post_content, post_excerpt FROM {$wpdb->posts} WHERE post_title LIKE '%SmartKeyTurkey%' OR post_content LIKE '%SmartKeyTurkey%' OR post_excerpt LIKE '%SmartKeyTurkey%'" ); // phpcs:ignore WordPress.DB.PreparedSQL.InterpolatedNotPrepared
+		$posts = $wpdb->get_results( "SELECT ID, post_title, post_content, post_excerpt FROM {$wpdb->posts} WHERE post_title LIKE '%SmartKey Turkey%' OR post_content LIKE '%SmartKey Turkey%' OR post_excerpt LIKE '%SmartKey Turkey%'" ); // phpcs:ignore WordPress.DB.PreparedSQL.InterpolatedNotPrepared
 		foreach ( $posts as $post ) {
 			wp_update_post( array( 'ID' => (int) $post->ID, 'post_title' => $replace( $post->post_title ), 'post_content' => $replace( $post->post_content ), 'post_excerpt' => $replace( $post->post_excerpt ) ) );
 		}
 
-		$meta_rows = $wpdb->get_results( "SELECT meta_id, meta_value FROM {$wpdb->postmeta} WHERE meta_value LIKE '%SmartKeyTurkey%'" ); // phpcs:ignore WordPress.DB.PreparedSQL.InterpolatedNotPrepared
+		$meta_rows = $wpdb->get_results( "SELECT meta_id, meta_value FROM {$wpdb->postmeta} WHERE meta_value LIKE '%SmartKey Turkey%'" ); // phpcs:ignore WordPress.DB.PreparedSQL.InterpolatedNotPrepared
 		foreach ( $meta_rows as $row ) {
 			update_metadata_by_mid( 'post', (int) $row->meta_id, $replace( maybe_unserialize( $row->meta_value ) ) );
 		}
 
-		$option_names = $wpdb->get_col( "SELECT option_name FROM {$wpdb->options} WHERE option_value LIKE '%SmartKeyTurkey%'" ); // phpcs:ignore WordPress.DB.PreparedSQL.InterpolatedNotPrepared
+		$option_names = $wpdb->get_col( "SELECT option_name FROM {$wpdb->options} WHERE option_value LIKE '%SmartKey Turkey%'" ); // phpcs:ignore WordPress.DB.PreparedSQL.InterpolatedNotPrepared
 		foreach ( $option_names as $option_name ) {
 			update_option( $option_name, $replace( get_option( $option_name ) ) );
 		}
 		update_option( 'blogname', 'SmartKeyTurkey' );
-		update_option( 'skt_brand_name_compact_migration', '1', false );
+		update_option( 'skt_brand_name_compact_migration', '2', false );
 	}
 }

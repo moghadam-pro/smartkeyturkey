@@ -28,7 +28,7 @@ Key questions:
 
 Trust requirements:
 
-- explicit disclosure that SmartKey is not the property owner;
+- explicit disclosure of SmartKeyTurkey's direct-control role and the documents available for review;
 - verified listing status and last-checked date;
 - map, neighborhood context and realistic travel times;
 - independent legal/technical due-diligence recommendation;
@@ -103,7 +103,7 @@ Every city page needs dated sources, neighborhood-level nuance and a “who this
 
 1. Discover through a city, guide, article or listing.
 2. Understand SmartKeyTurkey's direct-control model and document-verification policy.
-3. Filter by city, purpose, property type, price and readiness/status.
+3. Filter by city, purpose, property type and readiness/status.
 4. Compare standardized facts and risks.
 5. Request details, remote viewing or consultation.
 6. Qualify intent, timing, budget, nationality-related constraints and preferred contact channel.
@@ -114,7 +114,7 @@ Every city page needs dated sources, neighborhood-level nuance and a “who this
 
 - listing reference and last verified date;
 - city, district and approximate/precise map policy;
-- price, currency, status and fee disclosure;
+- transaction type, listing status and request-only commercial-terms disclosure;
 - property type, gross/net area labels, rooms, completion/readiness and title status where verified;
 - media source and date;
 - amenities separated from nearby services;

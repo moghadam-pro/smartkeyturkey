@@ -6,10 +6,19 @@ This document is the minimum SEO acceptance standard for every SmartKeyTurkey im
 
 ## Current launch state
 
-- WordPress search-engine visibility remains disabled during development and QA.
-- Public pages therefore intentionally output `noindex, nofollow` until launch approval.
-- The Rank Math sitemap is configured and tested before indexing is enabled.
-- Removing the global no-index setting is a launch action, not a routine development task.
+- WordPress search-engine visibility was enabled on 21 July 2026 after the homepage completion gate passed.
+- Public pages now output `follow, index` through Rank Math.
+- The Rank Math sitemap index and `robots.txt` declaration are active and return HTTP 200.
+- Remaining launch QA continues while indexable content is monitored for accuracy and quality.
+
+## Homepage
+
+- SEO title: `Property & Petrochemical Solutions in Turkey | SmartKeyTurkey`
+- Meta description: `Explore directly managed properties in Istanbul, Ankara, Izmir and Antalya, or source petrochemical products through SmartKeyTurkey.`
+- Canonical URL: `https://smartkeyturkey.com/`
+- Robots: `follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large`
+- Semantic QA: one H1 and eight section H2 headings
+- Responsive QA: zero horizontal overflow at desktop and 390 px mobile viewport
 
 ## Site identity
 
@@ -63,9 +72,9 @@ Default Rank Math schema remains `None` for `skt_product` during the current pha
 - Empty city terms remain outside the taxonomy sitemap until approved listings give each landing page substantive inventory.
 - Default schema remains unset until listing identity, pricing, availability and offer semantics can be validated per property.
 
-## Launch gate
+## Remaining launch QA
 
-Before enabling indexing:
+After enabling indexing, complete the remaining release checks:
 
 - finish the header, footer, archive and single templates;
 - approve product claims and representative disclosures;
@@ -74,5 +83,4 @@ Before enabling indexing:
 - validate canonical URLs and structured data;
 - run broken-link, accessibility and performance checks;
 - confirm the sitemap inventory;
-- remove WordPress global no-index only after owner approval;
 - submit the final sitemap to the connected search-engine properties.

@@ -1,5 +1,17 @@
 # WordPress production change log
 
+## 2026-07-21 — Conversion-focused homepage
+
+- Updated only the site-owned SmartKey Core plugin from version `0.9.0` to `1.0.0`; no third-party plugin was changed.
+- Replaced the temporary coming-soon homepage with a complete English acquisition page built as an Elementor shortcode section.
+- Added separate property and petrochemical journeys, proof points, featured properties, product-family links, a three-step trust process, recent insights and final conversion actions.
+- Connected homepage content to published properties, product families and posts so new records appear without manual layout duplication.
+- Added responsive layouts, semantic heading structure, reduced-motion support and automatic light/dark styling through the central design tokens.
+- Preserved the previous homepage content and Elementor data in a reversible WordPress option before migration.
+- Completed desktop and 390 px mobile QA with one H1, zero horizontal overflow and valid dynamic sections.
+- Configured the homepage SEO title, description, focus phrase and canonical URL.
+- Removed the temporary site-wide `noindex, nofollow` after the homepage completion gate passed; verified the homepage now outputs `follow, index` and the sitemap index returns HTTP 200.
+
 ## 2026-07-21 — Property controls, publication and unified theming
 
 - Updated only the site-owned SmartKey Core plugin from version `0.8.1` to `0.9.0`; no third-party plugin was updated, removed, activated or deactivated.

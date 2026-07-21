@@ -26,6 +26,7 @@ Site-owned WordPress functionality for SmartKeyTurkey.
 * Sale/rent workflows with available, sold and rented presentation states.
 * Direct-control property disclosure, map coordinates and request-only commercial terms.
 * Centralized light/dark design tokens shared by all managed frontend templates.
+* Responsive Elementor homepage with dynamic properties, product families and insights.
 
 == Privacy ==
 
@@ -34,6 +35,13 @@ View tracking stores aggregate counters and a first-party 24-hour de-duplication
 RFQ tracking stores aggregate counters only. It does not copy contact details, uploaded files or submission contents into SmartKey Core.
 
 == Changelog ==
+
+= 1.0.0 =
+
+* Added the complete English homepage and two-path B2C/B2B acquisition journey.
+* Added dynamic featured properties, product families and latest insights.
+* Added responsive, accessible and system-aware light/dark homepage styling.
+* Added a reversible Elementor homepage migration with a backup of the previous content.
 
 = 0.9.0 =
 

@@ -1,5 +1,12 @@
 # Publication log
 
+## 2026-07-21 — Homepage and indexing
+
+- Published the complete English SmartKeyTurkey homepage with distinct property and petrochemical acquisition paths.
+- Added dynamic featured properties, product families and latest insights.
+- Published homepage SEO metadata and canonical URL.
+- Removed the temporary site-wide search-engine discouragement setting after responsive and structural QA passed.
+
 ## 2026-07-20 — Property editorial pilot
 
 ### Türkiye Property Market Update: What June 2026 Data Means for International Buyers
