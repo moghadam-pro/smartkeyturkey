@@ -2,7 +2,7 @@
 Contributors: smartkeyturkey
 Requires at least: 6.5
 Requires PHP: 8.1
-Stable tag: 1.2.1
+Stable tag: 1.3.0
 License: Proprietary
 
 Site-owned WordPress functionality for SmartKeyTurkey.
@@ -32,6 +32,7 @@ Site-owned WordPress functionality for SmartKeyTurkey.
 * Expanded brand palette and system-aware header/footer logo treatments.
 * Structured Turkey attractions, city taxonomy, sourced pilot guides and responsive templates.
 * First-party dataLayer conversion events for property inquiries and petrochemical RFQs.
+* Sourced news, laws and events workflow with responsive archive and article templates.
 
 == Privacy ==
 
@@ -40,6 +41,14 @@ View tracking stores aggregate counters and a first-party 24-hour de-duplication
 Property and petrochemical requests are stored privately in WordPress for administrators. SmartKey-managed request forms do not send email. Uploaded files are not copied into the request record.
 
 == Changelog ==
+
+= 1.3.0 =
+
+* Added Market News, Laws & Guidance and Events editorial categories.
+* Added official-source, freshness and human-review metadata to WordPress posts.
+* Added responsive blog/category and single-article templates.
+* Published sourced June 2026 property-market and October 2026 composites-event updates.
+* Added editorial management links beneath the SmartKey administration menu.
 
 = 1.2.1 =
 

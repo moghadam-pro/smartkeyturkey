@@ -1,5 +1,16 @@
 # WordPress production change log
 
+## 2026-07-21 — News, laws and events experience (SmartKey Core 1.3.0)
+
+- Added Market News, Laws & Guidance and Events categories plus SmartKey administration links.
+- Added official-source URL/name, last-reviewed date and human-review status fields to posts.
+- Added responsive, system-aware blog/category and single-article templates with visible source and general-information disclosures.
+- Published an English June 2026 housing-market update using the latest TURKSTAT release.
+- Published an English International Composite Exhibition 2026 planning note using the official Invest in Türkiye event listing.
+- Existing property guidance articles are associated with Laws & Guidance without removing their prior categories.
+- AI-assisted content is explicitly marked pending human editorial review.
+- Detected one duplicate market-update record created during concurrent migration requests, moved the duplicate to WordPress Trash for recoverability and added a migration lock plus slug-level idempotency guard.
+
 ## 2026-07-21 — Attractions and conversion instrumentation (SmartKey Core 1.2.0)
 
 - Added a structured Turkey Attractions content type with city taxonomy, visitor facts, coordinates, official-source URL and freshness metadata.

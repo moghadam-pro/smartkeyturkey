@@ -21,6 +21,8 @@ final class Admin_Menu {
 		add_submenu_page( 'smartkey', 'Property Types', 'Property Types', 'manage_categories', 'edit-tags.php?taxonomy=skt_property_type&post_type=skt_property' );
 		add_submenu_page( 'smartkey', 'Attractions', 'Attractions', 'edit_posts', 'edit.php?post_type=skt_attraction' );
 		add_submenu_page( 'smartkey', 'Attraction Cities', 'Attraction Cities', 'manage_categories', 'edit-tags.php?taxonomy=skt_attraction_city&post_type=skt_attraction' );
+		add_submenu_page( 'smartkey', 'Editorial Posts', 'News & Insights', 'edit_posts', 'edit.php' );
+		add_submenu_page( 'smartkey', 'Editorial Categories', 'Editorial Categories', 'manage_categories', 'edit-tags.php?taxonomy=category' );
 	}
 
 	public static function render_dashboard(): void {
