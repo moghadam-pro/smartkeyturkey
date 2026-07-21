@@ -54,6 +54,15 @@ Default Rank Math schema remains `None` for `skt_product` during the current pha
 9. Test canonical, robots, Open Graph and sitemap output after template or routing changes.
 10. Record the SEO impact and verification evidence in the WordPress change log and README milestone list.
 
+## Properties
+
+- Single title pattern: `%title% %sep% Properties in Turkey %sep% %sitename%`
+- Archive title: `Properties in Turkey %page% %sep% %sitename%`
+- Primary taxonomy: Property Cities
+- Property post type is included in XML and HTML sitemaps.
+- Empty city terms remain outside the taxonomy sitemap until approved listings give each landing page substantive inventory.
+- Default schema remains unset until listing identity, pricing, availability and offer semantics can be validated per property.
+
 ## Launch gate
 
 Before enabling indexing:

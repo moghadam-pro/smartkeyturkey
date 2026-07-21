@@ -1,6 +1,6 @@
 # SmartKey property data model
 
-Status: implemented foundation; listing content and templates pending review
+Status: content model and templates implemented; pilot listings pending review
 
 ## Content structure
 
@@ -33,4 +33,4 @@ Status: implemented foundation; listing content and templates pending review
 
 ## Next implementation step
 
-Build the responsive property archive, city landing and single-property templates, followed by a qualified property inquiry form and a controlled pilot listing.
+Prepare a controlled pilot listing with reviewed source evidence, then test the complete inquiry email journey and conversion event without publishing unverified commercial or legal claims.

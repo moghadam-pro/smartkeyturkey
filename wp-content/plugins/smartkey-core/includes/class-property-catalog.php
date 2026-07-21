@@ -58,6 +58,8 @@ final class Property_Catalog {
 				)
 			);
 		}
+
+		register_post_meta( 'skt_property', 'skt_property_inquiry_count', array( 'type' => 'integer', 'single' => true, 'default' => 0, 'show_in_rest' => false, 'sanitize_callback' => 'absint', 'auth_callback' => static fn(): bool => current_user_can( 'edit_posts' ) ) );
 	}
 
 	private static function register_taxonomy( string $key, string $plural, string $singular, string $slug ): void {

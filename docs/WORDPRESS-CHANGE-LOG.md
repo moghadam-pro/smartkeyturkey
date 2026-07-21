@@ -1,5 +1,19 @@
 # WordPress production change log
 
+## 2026-07-21 — Property experience and consultation flow
+
+- Updated only the site-owned SmartKey Core plugin from version `0.6.0` to `0.7.0`; no third-party plugin was updated or removed.
+- Created and published managed Elementor Theme Builder records `SmartKey — Property Archive` and `SmartKey — Single Property` backed by version-controlled shortcodes.
+- Added the responsive `/properties/` archive, four city cards, empty-state messaging, future listing cards and pagination.
+- Added city landing routes for Istanbul, Ankara, Izmir and Antalya with unique, conservative positioning copy.
+- Added the single-property hero, structured facts, source content and visible intermediary/due-diligence disclosure.
+- Added a first-party consultation form with nonce validation, required consent, honeypot spam protection, sanitization and no database storage of personal inquiry data.
+- Inquiry email uses the configured WordPress administration address; a live delivery test remains pending owner-approved mailbox QA.
+- Configured Rank Math property title and description patterns, Property Cities as the primary taxonomy and property fields for content analysis.
+- Verified the property post type is included in XML and HTML sitemaps. Empty Property City terms remain excluded from their own sitemap until approved listings are associated with them.
+- Verified the archive and Istanbul route each render exactly one H1, the archive exposes four city cards and the consultation form contains a nonce and required consent.
+- Preserved the site-wide `noindex, nofollow` development state until launch approval.
+
 ## 2026-07-21 — Brand normalization, wordmark and Site Kit audit
 
 - Updated only the site-owned SmartKey Core plugin from version `0.5.0` to `0.6.0`; no third-party plugin was updated or removed.

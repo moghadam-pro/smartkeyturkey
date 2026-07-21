@@ -2,7 +2,7 @@
 Contributors: smartkeyturkey
 Requires at least: 6.5
 Requires PHP: 8.1
-Stable tag: 0.6.0
+Stable tag: 0.7.0
 License: Proprietary
 
 Site-owned WordPress functionality for SmartKeyTurkey.
@@ -19,6 +19,8 @@ Site-owned WordPress functionality for SmartKeyTurkey.
 * Context-aware RFQ form with automatic product/grade prefill.
 * Branded responsive site header and footer with approved social links.
 * Structured property post type, city/type taxonomies and review fields.
+* Responsive property archive, city and single-property Elementor templates.
+* Non-persistent property consultation form with validation and spam safeguards.
 
 == Privacy ==
 
@@ -27,6 +29,14 @@ View tracking stores aggregate counters and a first-party 24-hour de-duplication
 RFQ tracking stores aggregate counters only. It does not copy contact details, uploaded files or submission contents into SmartKey Core.
 
 == Changelog ==
+
+= 0.7.0 =
+
+* Added responsive property archive and city landing experiences.
+* Added the single-property presentation and structured fact panel.
+* Added managed Elementor Theme Builder records for property templates.
+* Added a nonce-protected property consultation form with honeypot validation.
+* Added transparent intermediary, due-diligence and eligibility disclosures.
 
 = 0.6.0 =
 
