@@ -211,3 +211,12 @@
 - Verified a public product test view increments the overview, product table and most-viewed-content widget.
 - Verified an internal note can be added and persists across the plugin update.
 - The RFQ hook was structurally verified against the active form; a live email submission was intentionally not sent during this test.
+## 2026-07-21 — Responsive navigation, contact correction and editorial batch 1.4.0
+
+- Updated only the site-owned SmartKey Core plugin from version `1.3.0` to `1.4.0`; no third-party plugin was updated, removed, activated or deactivated.
+- Added an accessible mobile hamburger menu with accurate expanded state, Escape handling and automatic close after navigation.
+- Corrected the company address in the footer and About Us page to the owner-provided Beykent / B. Cekmece office address.
+- Removed the rejected footer map pattern and eliminated an About-page CSS override that caused inconsistent responsive footer columns.
+- Applied the orange hover token after theme styles, without editing Hello Elementor files, so theme updates cannot remove the correction.
+- Normalized the petrochemical RFQ into a compact two-column desktop layout with uniform spacing, 8 px controls and a one-column mobile fallback.
+- Added and published two AI-assisted, pending-human-review articles grounded in official Ministry of Trade and Invest in Türkiye sources.

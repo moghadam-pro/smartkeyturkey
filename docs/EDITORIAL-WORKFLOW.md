@@ -24,3 +24,5 @@ Every managed article should include a primary source URL, source name, last-rev
 
 - June 2026 house-sales update — [TURKSTAT release](https://veriportali.tuik.gov.tr/tr/press/58344)
 - International Composite Exhibition 2026 planning note — [Invest in Türkiye events listing](https://www.invest.gov.tr/en/Pages/home-page.aspx?lng=en)
+- Türkiye–Algeria Ceyhan polypropylene project update — [Republic of Türkiye Ministry of Trade](https://ticaret.gov.tr/haberler/turkiye-cezayir-is-forumu-ankarada-gerceklestirildi)
+- COP31 Türkiye 2026 business-planning note — [Invest in Türkiye events listing](https://www.invest.gov.tr/en/Pages/home-page.aspx?lng=en)

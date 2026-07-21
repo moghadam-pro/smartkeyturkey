@@ -2,7 +2,7 @@
 Contributors: smartkeyturkey
 Requires at least: 6.5
 Requires PHP: 8.1
-Stable tag: 1.3.0
+Stable tag: 1.4.0
 License: Proprietary
 
 Site-owned WordPress functionality for SmartKeyTurkey.
@@ -41,6 +41,15 @@ View tracking stores aggregate counters and a first-party 24-hour de-duplication
 Property and petrochemical requests are stored privately in WordPress for administrators. SmartKey-managed request forms do not send email. Uploaded files are not copied into the request record.
 
 == Changelog ==
+
+= 1.4.0 =
+
+* Added an accessible responsive hamburger menu with keyboard-close behavior.
+* Corrected the company address across managed frontend surfaces.
+* Removed the footer map pattern and normalized About-page footer breakpoints.
+* Replaced theme-derived textual hover colors through late-loaded design-token styles.
+* Refined the petrochemical request form into a compact, consistently spaced two-column layout.
+* Published official-source-based Ceyhan polypropylene and COP31 Türkiye planning articles.
 
 = 1.3.0 =
 

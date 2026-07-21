@@ -13,7 +13,7 @@ final class Site_Chrome {
 
 	public static function init(): void {
 		add_action( 'init', array( self::class, 'migrate_brand_name' ), 40 );
-		add_action( 'wp_enqueue_scripts', array( self::class, 'enqueue_assets' ), 5 );
+		add_action( 'wp_enqueue_scripts', array( self::class, 'enqueue_assets' ), 100 );
 		add_action( 'wp_body_open', array( self::class, 'render_header' ), 5 );
 		add_action( 'wp_footer', array( self::class, 'render_footer' ), 5 );
 		add_filter( 'body_class', array( self::class, 'body_class' ) );
@@ -25,6 +25,7 @@ final class Site_Chrome {
 		wp_enqueue_style( 'smartkey-fonts', 'https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Roboto:wght@400;500;700&display=swap', array(), null );
 		wp_enqueue_style( 'smartkey-design-tokens', plugins_url( 'assets/css/design-tokens.css', SKT_CORE_FILE ), array( 'smartkey-fonts' ), SKT_CORE_VERSION );
 		wp_enqueue_style( 'smartkey-site-chrome', plugins_url( 'assets/css/site-chrome.css', SKT_CORE_FILE ), array( 'smartkey-design-tokens' ), SKT_CORE_VERSION );
+		wp_enqueue_script( 'smartkey-site-chrome', plugins_url( 'assets/js/site-chrome.js', SKT_CORE_FILE ), array(), SKT_CORE_VERSION, true );
 	}
 
 	public static function resource_hints( array $urls, string $relation_type ): array {
@@ -50,7 +51,8 @@ final class Site_Chrome {
 					<img src="<?php echo esc_url( $icon ); ?>" width="48" height="38" alt="">
 					<img class="skt-wordmark" src="<?php echo esc_url( $wordmark ); ?>" width="210" height="22" alt="SmartKeyTurkey">
 				</a>
-				<nav class="skt-primary-nav" aria-label="<?php esc_attr_e( 'Primary navigation', 'smartkey-core' ); ?>">
+				<button class="skt-menu-toggle" type="button" aria-expanded="false" aria-controls="skt-primary-nav"><span class="skt-menu-toggle-label"><?php esc_html_e( 'Menu', 'smartkey-core' ); ?></span><span class="skt-menu-toggle-icon" aria-hidden="true"><i></i><i></i><i></i></span></button>
+				<nav class="skt-primary-nav" id="skt-primary-nav" aria-label="<?php esc_attr_e( 'Primary navigation', 'smartkey-core' ); ?>">
 					<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( 'Home', 'smartkey-core' ); ?></a>
 					<a href="<?php echo esc_url( get_post_type_archive_link( 'skt_property' ) ); ?>"><?php esc_html_e( 'Properties', 'smartkey-core' ); ?></a>
 					<a href="<?php echo esc_url( get_post_type_archive_link( 'skt_product' ) ); ?>"><?php esc_html_e( 'Petrochemicals', 'smartkey-core' ); ?></a>
@@ -76,7 +78,7 @@ final class Site_Chrome {
 					<p class="skt-footer-disclosure"><?php esc_html_e( 'SmartKeyTurkey works directly with properties and projects under its control. For petrochemicals, it acts as an authorized sales representative and is not the manufacturer.', 'smartkey-core' ); ?></p>
 				</div>
 				<div><h2><?php esc_html_e( 'Explore', 'smartkey-core' ); ?></h2><ul><li><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( 'Home', 'smartkey-core' ); ?></a></li><li><a href="<?php echo esc_url( get_post_type_archive_link( 'skt_property' ) ); ?>"><?php esc_html_e( 'Properties', 'smartkey-core' ); ?></a></li><li><a href="<?php echo esc_url( get_post_type_archive_link( 'skt_product' ) ); ?>"><?php esc_html_e( 'Petrochemical Products', 'smartkey-core' ); ?></a></li><li><a href="<?php echo esc_url( get_post_type_archive_link( 'skt_attraction' ) ); ?>"><?php esc_html_e( 'Turkey Attractions', 'smartkey-core' ); ?></a></li><li><a href="<?php echo esc_url( home_url( '/blog/' ) ); ?>"><?php esc_html_e( 'News & Insights', 'smartkey-core' ); ?></a></li><li><a href="<?php echo esc_url( home_url( '/about-us/' ) ); ?>"><?php esc_html_e( 'About Us', 'smartkey-core' ); ?></a></li></ul></div>
-				<div class="skt-footer-contact"><h2><?php esc_html_e( 'Contact', 'smartkey-core' ); ?></h2><address>Cumhuriyet, 34520<br>Beylikdüzü / Istanbul, Türkiye</address><p><a href="tel:<?php echo esc_attr( self::PHONE ); ?>">+90 505 088 71 88</a></p><a class="skt-footer-map-link" href="<?php echo esc_url( self::MAPS ); ?>" target="_blank" rel="noopener noreferrer"><?php esc_html_e( 'Open in Google Maps', 'smartkey-core' ); ?> ↗</a></div>
+				<div class="skt-footer-contact"><h2><?php esc_html_e( 'Contact', 'smartkey-core' ); ?></h2><address>Cumhuriyet Mah. Gurpinar Yolu Street - Beykent - B. Cekmece<br>ERESIN YASAM MERKEZi No:10 A Block, 6th floor, office 112</address><p><a href="tel:<?php echo esc_attr( self::PHONE ); ?>">+90 505 088 71 88</a></p><a class="skt-footer-map-link" href="<?php echo esc_url( self::MAPS ); ?>" target="_blank" rel="noopener noreferrer"><?php esc_html_e( 'Open in Google Maps', 'smartkey-core' ); ?> ↗</a></div>
 				<div><h2><?php esc_html_e( 'Follow SmartKey', 'smartkey-core' ); ?></h2><ul><li><a href="<?php echo esc_url( self::INSTAGRAM ); ?>" target="_blank" rel="noopener noreferrer">Instagram <span aria-hidden="true">↗</span></a></li><li><a href="<?php echo esc_url( self::LINKEDIN ); ?>" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a></li></ul></div>
 			</div>
 			<div class="skt-chrome-shell skt-footer-bottom">
