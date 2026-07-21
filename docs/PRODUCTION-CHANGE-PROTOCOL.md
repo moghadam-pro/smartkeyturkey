@@ -32,8 +32,4 @@ Do not run bulk imports, search/replace, mass translation or schema migrations u
 
 ## Abandoned staging resources
 
-The following resources were created but must remain empty of production data unless the owner reverses the decision:
-
-- `staging.smartkeyturkey.com`
-- Site user `smartkeystg`
-- Database `smartkeyturkey-staging`
+A temporary staging site, site account and database were created but must remain empty of production data unless the owner reverses the decision. Their exact identifiers are excluded from this public repository.
