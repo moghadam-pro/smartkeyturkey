@@ -2,7 +2,7 @@
 /**
  * Plugin Name: SmartKey Core
  * Description: Structured product catalog and controlled product importer for SmartKey Turkey.
- * Version: 0.2.1
+ * Version: 0.3.1
  * Author: SmartKey Turkey
  * Requires at least: 6.5
  * Requires PHP: 8.1
@@ -11,17 +11,19 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'SKT_CORE_VERSION', '0.2.1' );
+define( 'SKT_CORE_VERSION', '0.3.1' );
 define( 'SKT_CORE_FILE', __FILE__ );
 define( 'SKT_CORE_DIR', plugin_dir_path( __FILE__ ) );
 
 require_once SKT_CORE_DIR . 'includes/class-product-catalog.php';
 require_once SKT_CORE_DIR . 'includes/class-product-importer.php';
 require_once SKT_CORE_DIR . 'includes/class-dashboard.php';
+require_once SKT_CORE_DIR . 'includes/class-product-frontend.php';
 
 SmartKeyTurkey\Core\Product_Catalog::init();
 SmartKeyTurkey\Core\Product_Importer::init();
 SmartKeyTurkey\Core\Dashboard::init();
+SmartKeyTurkey\Core\Product_Frontend::init();
 
 register_activation_hook(
 	__FILE__,

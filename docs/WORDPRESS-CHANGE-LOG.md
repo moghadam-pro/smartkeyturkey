@@ -1,5 +1,17 @@
 # WordPress production change log
 
+## 2026-07-21 — Elementor product experience and SmartKey Core 0.3.1
+
+- Updated only the site-owned SmartKey Core plugin from version `0.3.0` to `0.3.1`; no third-party plugin was updated, removed, activated or deactivated.
+- Implemented the production petrochemical archive and single-product experience through Elementor Theme Builder templates `337` and `339` with version-controlled SmartKey Core shortcodes.
+- Added family navigation, a responsive paginated product grid, featured imagery, technical-property tables, commercial inquiry guidance and a visible representative disclosure.
+- Embedded the existing `Petrochemical RFQ` form on product pages and reliably populated its product/grade field from the current product using Contact Form 7's shortcode-default mechanism.
+- Preserved the prior Elementor data in WordPress options before seeding the managed template content, providing a rollback reference.
+- Verified the archive renders one H1, 10 product cards per page and the expected Rank Math metadata.
+- Verified a representative single product renders one H1, the correct SEO title, a visible disclosure and an RFQ field prefilled with `Ultra Snow White petroleum jelly`.
+- Verified the archive at a 390 × 844 mobile viewport without horizontal document overflow.
+- Preserved the site-wide `noindex, nofollow` development state until launch QA and owner approval.
+
 ## 2026-07-20 — Petrochemical RFQ pilot
 
 - Created Contact Form 7 form `Petrochemical RFQ` (WordPress post ID `36`).

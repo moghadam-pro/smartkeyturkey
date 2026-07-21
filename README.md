@@ -28,14 +28,15 @@ Updated: 21 July 2026
 - [x] WordPress baseline audit and brand-asset inventory
 - [x] English-only phase-one information architecture
 - [x] Petrochemical data model and controlled source-import workflow
-- [x] Custom `SmartKey Core` plugin v0.2.1
+- [x] Custom `SmartKey Core` plugin v0.3.1
 - [x] Structured petrochemical product type, taxonomy and metadata
 - [x] WordPress dashboard overview, content-view tracking, per-product RFQ counters and internal notes
 - [x] 99-product catalog imported and published with authorized source images
 - [x] Petrochemical RFQ form pilot
 - [x] Initial English property-market editorial content
 - [x] Rank Math product titles, descriptions, taxonomy and XML sitemap foundation
-- [ ] Elementor product archive and single-product templates — drafts and implementation specification created
+- [x] Responsive Elementor product archive and single-product templates
+- [x] Context-aware petrochemical RFQ with automatic product/grade prefill
 - [ ] Property content model and city/property templates
 - [ ] Header, footer and global responsive design system
 - [ ] RFQ integration, email delivery and conversion tracking QA
@@ -75,7 +76,7 @@ Petrochemical product information and images are used with authorization from th
 
 ## SmartKey Core dashboard
 
-Version `0.2.1` adds four site-administration widgets:
+Version `0.3.1` includes four site-administration widgets plus the public petrochemical archive and single-product experience:
 
 - Core overview: latest product update, published products, product families, recorded content views and RFQ totals
 - Product views and requests: per-product engagement with unassigned RFQ visibility
@@ -83,6 +84,8 @@ Version `0.2.1` adds four site-administration widgets:
 - Dashboard notes: short internal notes stored only for dashboard display
 
 View counts exclude logged-in editors, previews and common crawler user agents, and use a 24-hour browser/content de-duplication cookie. RFQ analytics store counters only; SmartKey Core does not copy submitted contact details or attachments.
+
+The product templates use native Elementor Theme Builder records backed by version-controlled SmartKey Core shortcodes. They provide semantic headings, family navigation, responsive product cards, technical data, representative disclosure and an embedded RFQ whose product field is filled from the current product.
 
 ## License
 

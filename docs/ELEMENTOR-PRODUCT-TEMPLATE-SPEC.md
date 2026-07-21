@@ -1,6 +1,6 @@
 # Elementor petrochemical template specification
 
-Status: implementation ready  
+Status: implemented and production-verified
 Last updated: 2026-07-21
 
 ## Design goals
@@ -13,7 +13,7 @@ Last updated: 2026-07-21
 
 ## Archive template
 
-Elementor Theme Builder draft: `SmartKey — Petrochemical Product Archive` (`337`)
+Elementor Theme Builder template: `SmartKey — Petrochemical Product Archive` (`337`)
 
 1. Breadcrumbs
 2. Intro section
@@ -44,7 +44,7 @@ SEO requirements:
 
 ## Single-product template
 
-Elementor Theme Builder draft: `SmartKey — Petrochemical Single Product` (`339`)
+Elementor Theme Builder template: `SmartKey — Petrochemical Single Product` (`339`)
 
 1. Breadcrumbs using Product Family as the primary taxonomy
 2. Product hero
@@ -93,3 +93,11 @@ Use CSS `prefers-color-scheme` as the initial automatic theme signal. A future m
 - Technical tables receive a horizontally scrollable wrapper on small screens.
 - Images have explicit dimensions or aspect ratios to minimize layout shift.
 - CTA text describes the action and avoids generic labels such as `Click here`.
+
+## Production verification
+
+- Archive: one H1, 10 cards per page, crawlable family links and pagination.
+- Single product: one H1, featured image, structured technical table and visible representative disclosure.
+- RFQ product/grade field is automatically populated from the current product through Contact Form 7's shortcode-default mechanism.
+- Mobile check at 390 × 844 showed no horizontal document overflow.
+- Rank Math titles and descriptions remain active; the global development `noindex, nofollow` state remains unchanged until launch approval.
