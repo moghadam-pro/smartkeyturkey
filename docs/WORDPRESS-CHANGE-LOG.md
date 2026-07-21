@@ -1,5 +1,17 @@
 # WordPress production change log
 
+## 2026-07-21 — SmartKey administration hub and property samples
+
+- Updated only the site-owned SmartKey Core plugin from version `0.7.0` to `0.8.1`; no third-party plugin was updated or removed.
+- Added a branded `SmartKey` top-level WordPress administration menu in the fourth visible position using the configured SmartKey site icon.
+- Grouped Petrochemical Products, Add Product, Product Families, Properties, Add Property, Property Cities and Property Types beneath the SmartKey menu.
+- Added an overview screen showing published/draft property totals, product totals, city totals and direct management links.
+- Created four complete sample property records for Istanbul, Ankara, Izmir and Antalya as drafts.
+- Populated every sample with a reference, district, type, price-status copy, rooms, bathrooms, gross/net area, completion status, title status, availability, citizenship review, source, review date and intermediary disclosure.
+- Labeled every title, excerpt, content body and verification field as sample/demo data and explicitly prohibited publication as a real listing.
+- Verified WordPress reports four property drafts and zero published properties; the public archive therefore continues to show the honest curated-listing empty state.
+- Kept global `noindex, nofollow` unchanged. Per owner instruction it will only be removed after the homepage and its content are complete and launch QA passes.
+
 ## 2026-07-21 — Property experience and consultation flow
 
 - Updated only the site-owned SmartKey Core plugin from version `0.6.0` to `0.7.0`; no third-party plugin was updated or removed.

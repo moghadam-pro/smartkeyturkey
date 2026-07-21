@@ -28,7 +28,7 @@ Updated: 21 July 2026
 - [x] WordPress baseline audit and brand-asset inventory
 - [x] English-only phase-one information architecture
 - [x] Petrochemical data model and controlled source-import workflow
-- [x] Custom `SmartKey Core` plugin v0.7.0
+- [x] Custom `SmartKey Core` plugin v0.8.1
 - [x] Structured petrochemical product type, taxonomy and metadata
 - [x] WordPress dashboard overview, content-view tracking, per-product RFQ counters and internal notes
 - [x] 99-product catalog imported and published with authorized source images
@@ -40,6 +40,7 @@ Updated: 21 July 2026
 - [x] Property content model and phase-one city taxonomy
 - [x] Property archive, city and single-property templates
 - [x] Secure property consultation form foundation
+- [x] SmartKey administration hub and four complete draft sample properties
 - [x] Global responsive header and footer foundation
 - [x] Compact `SmartKeyTurkey` naming and approved SVG wordmark rollout
 - [x] Google Site Kit connection and measurement configuration audit

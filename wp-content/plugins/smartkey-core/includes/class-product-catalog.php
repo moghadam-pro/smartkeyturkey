@@ -22,6 +22,7 @@ final class Product_Catalog {
 					'edit_item'     => __( 'Edit Petrochemical Product', 'smartkey-core' ),
 				),
 				'public'             => true,
+				'show_in_menu'       => 'smartkey',
 				'show_in_rest'       => true,
 				'menu_icon'          => 'dashicons-products',
 				'has_archive'        => 'petrochemical-products',

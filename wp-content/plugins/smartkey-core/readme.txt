@@ -2,7 +2,7 @@
 Contributors: smartkeyturkey
 Requires at least: 6.5
 Requires PHP: 8.1
-Stable tag: 0.7.0
+Stable tag: 0.8.1
 License: Proprietary
 
 Site-owned WordPress functionality for SmartKeyTurkey.
@@ -21,6 +21,8 @@ Site-owned WordPress functionality for SmartKeyTurkey.
 * Structured property post type, city/type taxonomies and review fields.
 * Responsive property archive, city and single-property Elementor templates.
 * Non-persistent property consultation form with validation and spam safeguards.
+* Branded SmartKey administration hub with property and product submenus.
+* Four clearly labeled draft sample properties for editorial review.
 
 == Privacy ==
 
@@ -29,6 +31,17 @@ View tracking stores aggregate counters and a first-party 24-hour de-duplication
 RFQ tracking stores aggregate counters only. It does not copy contact details, uploaded files or submission contents into SmartKey Core.
 
 == Changelog ==
+
+= 0.8.1 =
+
+* Added all product and property management links beneath the SmartKey administration menu.
+
+= 0.8.0 =
+
+* Added the branded SmartKey administration hub in the fourth menu position.
+* Grouped petrochemical products and properties beneath the SmartKey menu.
+* Added four complete sample property records as drafts for review.
+* Added explicit sample, ownership, verification and publication safeguards.
 
 = 0.7.0 =
 
