@@ -1,5 +1,16 @@
 # WordPress production change log
 
+## 2026-07-21 — Property content model foundation
+
+- Updated only the site-owned SmartKey Core plugin from version `0.4.0` to `0.5.0`; no third-party plugin was changed.
+- Registered the public, REST-ready `skt_property` content type with archive URL `/properties/`.
+- Added hierarchical Property City and Property Type taxonomies.
+- Seeded the approved phase-one cities: Istanbul, Ankara, Izmir and Antalya.
+- Registered structured fields for reference, district, price/currency, rooms, bathrooms, gross/net area, completion, title status, availability, citizenship review, verification, source, review date and representative disclosure.
+- Added City, Reference and Verification columns to the WordPress property administration list.
+- Added Properties links to the global header and footer.
+- Verified all four city terms exist, the Properties administration section is available and `/properties/` resolves with one H1.
+
 ## 2026-07-21 — Global header, footer and social links
 
 - Updated only the site-owned SmartKey Core plugin from version `0.3.1` to `0.4.0`; no third-party plugin was updated, removed, activated or deactivated.

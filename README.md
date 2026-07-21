@@ -28,7 +28,7 @@ Updated: 21 July 2026
 - [x] WordPress baseline audit and brand-asset inventory
 - [x] English-only phase-one information architecture
 - [x] Petrochemical data model and controlled source-import workflow
-- [x] Custom `SmartKey Core` plugin v0.4.0
+- [x] Custom `SmartKey Core` plugin v0.5.0
 - [x] Structured petrochemical product type, taxonomy and metadata
 - [x] WordPress dashboard overview, content-view tracking, per-product RFQ counters and internal notes
 - [x] 99-product catalog imported and published with authorized source images
@@ -37,7 +37,8 @@ Updated: 21 July 2026
 - [x] Rank Math product titles, descriptions, taxonomy and XML sitemap foundation
 - [x] Responsive Elementor product archive and single-product templates
 - [x] Context-aware petrochemical RFQ with automatic product/grade prefill
-- [ ] Property content model and city/property templates
+- [x] Property content model and phase-one city taxonomy
+- [ ] Property archive, city and single-property templates
 - [x] Global responsive header and footer foundation
 - [ ] RFQ integration, email delivery and conversion tracking QA
 - [ ] Accessibility, performance, security and launch QA

@@ -2,7 +2,7 @@
 Contributors: smartkeyturkey
 Requires at least: 6.5
 Requires PHP: 8.1
-Stable tag: 0.4.0
+Stable tag: 0.5.0
 License: Proprietary
 
 Site-owned WordPress functionality for SmartKey Turkey.
@@ -18,6 +18,7 @@ Site-owned WordPress functionality for SmartKey Turkey.
 * Responsive petrochemical archive and single-product Elementor templates.
 * Context-aware RFQ form with automatic product/grade prefill.
 * Branded responsive site header and footer with approved social links.
+* Structured property post type, city/type taxonomies and review fields.
 
 == Privacy ==
 
@@ -26,6 +27,13 @@ View tracking stores aggregate counters and a first-party 24-hour de-duplication
 RFQ tracking stores aggregate counters only. It does not copy contact details, uploaded files or submission contents into SmartKey Core.
 
 == Changelog ==
+
+= 0.5.0 =
+
+* Added the structured property content model and REST-ready metadata.
+* Added Property City and Property Type taxonomies.
+* Seeded Istanbul, Ankara, Izmir and Antalya as phase-one cities.
+* Added Properties navigation to the global header and footer.
 
 = 0.4.0 =
 
