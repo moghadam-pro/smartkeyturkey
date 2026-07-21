@@ -84,7 +84,7 @@ Rules:
 - Do not create duplicate definitions.
 - Do not paste the database password or authentication salts into tickets, GitHub or Slack.
 - Recheck Tools → Site Health → Info → WordPress Constants after saving.
-- Preserve ownership as `smartamin:smartamin` and a readable mode such as `0640`; an ownership change during editing caused and then resolved a production HTTP 500 incident on 2026-07-20.
+- Preserve the correct site-user ownership and restrictive readable permissions; an ownership change during editing caused and then resolved a production HTTP 500 incident on 2026-07-20. Exact production account identifiers are intentionally excluded from this public repository.
 
 For staging, also add:
 
