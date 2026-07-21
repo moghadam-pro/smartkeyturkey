@@ -19,8 +19,6 @@ Effective 2026-07-20 by owner decision. SmartKeyTurkey is being developed direct
 
 ## File ownership guardrail
 
-Production site user: `smartamin`.
-
 After editing a production file through a privileged account, confirm its owner and permissions. In particular, `wp-config.php` must remain readable by the PHP-FPM site user. On 2026-07-20, an ownership change caused HTTP 500 and was resolved by restoring the correct site-user ownership and restrictive file permissions. Production account names and exact access configuration are intentionally excluded from this public repository.
 
 ## Bulk operations
