@@ -73,6 +73,33 @@ final class Product_Catalog {
 				)
 			);
 		}
+
+		foreach ( array( 'skt_view_count', 'skt_rfq_count' ) as $counter_key ) {
+			register_post_meta(
+				'skt_product',
+				$counter_key,
+				array(
+					'type'              => 'integer',
+					'single'            => true,
+					'default'           => 0,
+					'show_in_rest'      => false,
+					'sanitize_callback' => 'absint',
+					'auth_callback'     => static fn(): bool => current_user_can( 'edit_posts' ),
+				)
+			);
+		}
+
+		register_post_meta(
+			'skt_product',
+			'skt_last_rfq_date',
+			array(
+				'type'              => 'string',
+				'single'            => true,
+				'show_in_rest'      => false,
+				'sanitize_callback' => 'sanitize_text_field',
+				'auth_callback'     => static fn(): bool => current_user_can( 'edit_posts' ),
+			)
+		);
 	}
 
 	public static function add_admin_columns( array $columns ): array {

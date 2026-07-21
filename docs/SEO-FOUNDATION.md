@@ -17,7 +17,7 @@ This document is the minimum SEO acceptance standard for every SmartKey Turkey i
 - Tagline: `Property and Petrochemical Solutions in Turkey`
 - Primary domain: `https://smartkeyturkey.com/`
 - Primary brand color: `#84c341`
-- A 512 × 512 site icon must be configured when the approved favicon asset is available again.
+- The approved 512 × 512 SmartKey favicon is configured as the WordPress Site Icon.
 
 ## Petrochemical products
 
@@ -61,7 +61,7 @@ Before enabling indexing:
 - finish the header, footer, archive and single templates;
 - approve product claims and representative disclosures;
 - add unique content to indexable taxonomy and city pages;
-- configure the approved site icon and social-sharing image;
+- confirm the approved site icon and add a dedicated social-sharing image;
 - validate canonical URLs and structured data;
 - run broken-link, accessibility and performance checks;
 - confirm the sitemap inventory;

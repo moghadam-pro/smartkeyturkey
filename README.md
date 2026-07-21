@@ -28,8 +28,9 @@ Updated: 21 July 2026
 - [x] WordPress baseline audit and brand-asset inventory
 - [x] English-only phase-one information architecture
 - [x] Petrochemical data model and controlled source-import workflow
-- [x] Custom `SmartKey Core` plugin v0.1.1
+- [x] Custom `SmartKey Core` plugin v0.2.1
 - [x] Structured petrochemical product type, taxonomy and metadata
+- [x] WordPress dashboard overview, content-view tracking, per-product RFQ counters and internal notes
 - [x] 99-product catalog imported and published with authorized source images
 - [x] Petrochemical RFQ form pilot
 - [x] Initial English property-market editorial content
@@ -71,6 +72,17 @@ See [Project Charter](docs/PROJECT-CHARTER.md), [Roadmap](docs/ROADMAP.md), [SEO
 ## Content provenance
 
 Petrochemical product information and images are used with authorization from the source owner. Product availability, current specifications, pricing, compliance and final commercial terms must be confirmed for each inquiry.
+
+## SmartKey Core dashboard
+
+Version `0.2.1` adds four site-administration widgets:
+
+- Core overview: latest product update, published products, product families, recorded content views and RFQ totals
+- Product views and requests: per-product engagement with unassigned RFQ visibility
+- Most viewed content: public pages, posts and petrochemical products
+- Dashboard notes: short internal notes stored only for dashboard display
+
+View counts exclude logged-in editors, previews and common crawler user agents, and use a 24-hour browser/content de-duplication cookie. RFQ analytics store counters only; SmartKey Core does not copy submitted contact details or attachments.
 
 ## License
 

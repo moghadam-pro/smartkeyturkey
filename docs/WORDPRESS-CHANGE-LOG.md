@@ -47,7 +47,22 @@
 - Verified the archive title and meta description render correctly.
 - Verified a single product outputs one H1 and the configured product title pattern.
 - Kept the site-wide `noindex, nofollow` development state in place until launch QA and owner approval.
-- Site Icon remains pending because the previously supplied local favicon file is no longer available to the current workspace session.
+- Configured the approved 512 × 512 `favicon.png` as the WordPress Site Icon.
 - Renamed Elementor template `337` to `SmartKey — Petrochemical Product Archive`.
 - Renamed Elementor template `339` to `SmartKey — Petrochemical Single Product`.
 - Added the responsive, accessibility, conversion and SEO acceptance specification for both templates.
+
+## 2026-07-21 — SmartKey Core dashboard 0.2.1
+
+- Updated the site-owned SmartKey Core plugin from version `0.1.1` to `0.2.1`; no third-party plugin was updated or removed.
+- Added the `SmartKey Core Overview` dashboard widget with latest product update, published-product count, product-family count, recorded content views and product-request totals.
+- Added the `Product Views & Requests` widget with per-product counts and an unassigned-RFQ total.
+- Added the `Most Viewed Site Content` widget for public pages, posts and petrochemical products.
+- Added the `SmartKey Dashboard Notes` widget with nonce-protected, capability-checked internal notes displayed only in WordPress administration.
+- Added first-party content-view counting that excludes logged-in editors, previews and common crawler user agents and de-duplicates each browser/content pair for 24 hours.
+- Added Contact Form 7 integration for the `Petrochemical RFQ` form and its `product-grade` field.
+- RFQ analytics store aggregate counters only; no names, email addresses, phone numbers, uploaded files or message contents are copied into SmartKey Core.
+- Verified the dashboard reports 99 published products and 13 product families.
+- Verified a public product test view increments the overview, product table and most-viewed-content widget.
+- Verified an internal note can be added and persists across the plugin update.
+- The RFQ hook was structurally verified against the active form; a live email submission was intentionally not sent during this test.
