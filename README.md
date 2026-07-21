@@ -33,7 +33,8 @@ Updated: 21 July 2026
 - [x] 99-product catalog imported and published with authorized source images
 - [x] Petrochemical RFQ form pilot
 - [x] Initial English property-market editorial content
-- [ ] Elementor product archive and single-product templates
+- [x] Rank Math product titles, descriptions, taxonomy and XML sitemap foundation
+- [ ] Elementor product archive and single-product templates — drafts and implementation specification created
 - [ ] Property content model and city/property templates
 - [ ] Header, footer and global responsive design system
 - [ ] RFQ integration, email delivery and conversion tracking QA
@@ -65,7 +66,7 @@ This public repository contains only custom source code, documentation, configur
 - Database dumps, private uploads or personal data
 - Server access details or backup credentials
 
-See [Project Charter](docs/PROJECT-CHARTER.md), [Roadmap](docs/ROADMAP.md), [Production Change Protocol](docs/PRODUCTION-CHANGE-PROTOCOL.md) and [WordPress Change Log](docs/WORDPRESS-CHANGE-LOG.md).
+See [Project Charter](docs/PROJECT-CHARTER.md), [Roadmap](docs/ROADMAP.md), [SEO Foundation](docs/SEO-FOUNDATION.md), [Production Change Protocol](docs/PRODUCTION-CHANGE-PROTOCOL.md) and [WordPress Change Log](docs/WORDPRESS-CHANGE-LOG.md).
 
 ## Content provenance
 

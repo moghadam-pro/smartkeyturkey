@@ -31,3 +31,23 @@
 - Created draft Elementor Theme Builder records for the petrochemical archive (template ID `337`) and single-product layout (template ID `339`).
 - The new Theme Builder records remain drafts and have no display conditions until their responsive layouts and dynamic fields are completed.
 - No existing plugin was updated or removed.
+
+## 2026-07-21 — Rank Math product SEO foundation
+
+- Changed the WordPress site title from `SmartKeyTurkey` to `SmartKey Turkey`.
+- Added the site tagline `Property and Petrochemical Solutions in Turkey`.
+- Configured dedicated single-product and product-archive title patterns and meta descriptions in Rank Math.
+- Set Product Families as the primary taxonomy for product breadcrumbs and primary-term selection.
+- Added grade, applications, availability and verification custom fields to Rank Math content analysis.
+- Kept the default product schema disabled until accurate product-specific structured data can be mapped and validated.
+- Confirmed `skt_product` is included in the XML and HTML sitemap settings.
+- Found and corrected a stale product sitemap registration by saving a controlled off/on cycle.
+- Verified `https://smartkeyturkey.com/skt_product-sitemap.xml` returns HTTP 200 XML and contains 100 URLs: 99 products plus the archive.
+- Kept Product Family archives out of the sitemap until they have unique descriptions and approved layouts.
+- Verified the archive title and meta description render correctly.
+- Verified a single product outputs one H1 and the configured product title pattern.
+- Kept the site-wide `noindex, nofollow` development state in place until launch QA and owner approval.
+- Site Icon remains pending because the previously supplied local favicon file is no longer available to the current workspace session.
+- Renamed Elementor template `337` to `SmartKey — Petrochemical Product Archive`.
+- Renamed Elementor template `339` to `SmartKey — Petrochemical Single Product`.
+- Added the responsive, accessibility, conversion and SEO acceptance specification for both templates.
