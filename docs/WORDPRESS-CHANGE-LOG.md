@@ -9,3 +9,15 @@
 - Did not embed the form on a public page.
 - Did not install, remove, activate, deactivate or update any plugin.
 - Required before public use: confirm recipient mailbox, run end-to-end email/attachment test, add anti-spam protection, approve privacy copy and configure conversion tracking.
+
+## 2026-07-21 — Controlled petrochemical catalog import
+
+- Recorded the owner's authorization to republish ChemPortal product information and images.
+- Recorded SmartKey Turkey's role as an authorized sales representative and sourcing coordinator, not the manufacturer.
+- Installed and activated the custom `SmartKey Core` plugin version `0.1.1`; no existing plugin was updated or removed.
+- Registered the `skt_product` post type, product-family taxonomy, structured product metadata and a controlled draft importer.
+- Validated a source-reviewed dataset containing 99 products.
+- Imported all 99 products as drafts with authorized featured images in controlled batches.
+- Import result: 99 created, 0 updated, 0 image errors; importer cursor reached 99/99.
+- Verified the WordPress product list reports 99 total items and 99 drafts.
+- Technical verification remains intentionally marked as pending, and products remain non-public until the Elementor archive/single templates and content QA are complete.

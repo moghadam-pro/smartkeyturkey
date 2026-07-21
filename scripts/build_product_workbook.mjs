@@ -52,7 +52,7 @@ overview.getRange("E4").values = [["Editorial and rights controls"]];
 overview.getRange("E4:H4").format = { fill: green, font: { bold: true, color: "#FFFFFF" } };
 overview.getRange("E5:H9").merge();
 overview.getRange("E5").values = [[
-  "Descriptions are original SmartKey summaries generated from product names, categories and applications. Technical values remain linked to their source page. Source images are not cleared for publication and are marked Pending written permission. Every product remains subject to supplier confirmation before publication or quotation."
+  "Descriptions are original SmartKey summaries generated from product names, categories and applications. Technical values remain linked to their source page. The owner confirmed authorization to republish the source catalog and images on 2026-07-21. SmartKey is an authorized sales representative, not the manufacturer; current specifications and commercial terms remain subject to inquiry confirmation."
 ]];
 overview.getRange("E5:H9").format = { fill: light, wrapText: true, verticalAlignment: "top", font: { color: dark } };
 overview.getRange("A25:H26").merge();
@@ -76,14 +76,14 @@ const catalogRows = products.map((p) => [
   p.short_description,
   (p.applications || []).join(" | "),
   p.source_image_url || "",
-  "Pending written permission",
+  "Authorized — owner confirmed 2026-07-21",
   p.source_url,
   (p.properties || []).length,
   "Source captured; technical review pending",
   "Confirm by RFQ",
   "Yes",
   new Date("2026-07-21T00:00:00Z"),
-  "SmartKey Turkey facilitates sourcing and coordination; specifications, availability, pricing and final terms are confirmed by the relevant supplier.",
+  "SmartKey Turkey acts as an authorized sales representative and sourcing coordinator; it is not the manufacturer. Current specifications, availability, pricing and final commercial terms are confirmed for each inquiry.",
 ]);
 catalog.getRange(`A1:O${catalogRows.length + 1}`).values = [catalogHeaders, ...catalogRows];
 catalog.getRange("A1:O1").format = { fill: dark, font: { bold: true, color: "#FFFFFF" }, wrapText: true };
@@ -154,10 +154,10 @@ const guideRows = [
   ["Field", "Meaning / publication rule"],
   ["SmartKey Description", "Original SmartKey wording generated from factual category/application data; human technical review required."],
   ["Technical Properties", "Values transcribed from the named source page. Confirm against current supplier TDS before use."],
-  ["Image Source URL", "Reference-only URL. Do not publish until written reuse permission or a replacement image is approved."],
+  ["Image Source URL", "Owner confirmed authorization for SmartKey to reuse the source catalog images on 2026-07-21."],
   ["Verification Status", "Current records are captured from the source but are not supplier-confirmed."],
   ["Availability", "No stock claim is made. Buyer must request current availability."],
-  ["Intermediary Disclosure", "SmartKey is a sourcing and coordination intermediary, not the manufacturer or stock owner."],
+  ["Representative Disclosure", "SmartKey is an authorized sales representative and sourcing coordinator, not the manufacturer."],
   ["Source URL", "Audit trail back to the Chemportal product page."],
   ["Last Reviewed", "Date of this extraction; update after supplier or technical review."],
 ];

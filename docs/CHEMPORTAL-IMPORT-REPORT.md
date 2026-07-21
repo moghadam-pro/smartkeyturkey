@@ -41,9 +41,9 @@ The total reconciles with the source catalog's four top-level counts: Chemicals 
 - Technical data is marked pending review and must be confirmed against current supplier TDS/SDS before publication or quotation.
 - Stock, availability, origin, MOQ, Incoterms and compliance are not inferred.
 
-## Image handling
+## Image and republication authorization
 
-All 99 source image URLs are recorded for identification. Their status is `Pending written permission`; no source image has been copied into the WordPress media library or published by SmartKey. Approved replacements may be supplied by the owner, licensed from the source, or generated as non-product-specific category artwork.
+On 2026-07-21, the owner confirmed that SmartKey has authorization to republish the Chemportal product information and images and acts as an authorized sales representative. All 99 source image URLs may therefore be used in the SmartKey catalog. SmartKey must still be identified as the sales representative rather than the manufacturer, and current specifications, availability, pricing and commercial terms remain inquiry-specific.
 
 ## Deliverables
 
@@ -60,5 +60,4 @@ Do not bulk-publish these records until:
 1. Manufacturer/supplier attribution is approved.
 2. Current TDS/SDS documents are matched to each grade.
 3. Technical values receive human review.
-4. Image reuse rights or replacement images are approved.
-5. RFQ email delivery and attachment handling pass testing.
+4. RFQ email delivery and attachment handling pass testing.

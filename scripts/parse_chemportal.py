@@ -14,8 +14,9 @@ from lxml import html
 
 
 INTERMEDIARY_DISCLOSURE = (
-    "SmartKey Turkey facilitates sourcing and coordination; specifications, "
-    "availability, pricing and final terms are confirmed by the relevant supplier."
+    "SmartKey Turkey acts as an authorized sales representative and sourcing coordinator; "
+    "it is not the manufacturer. Current specifications, availability, pricing and final "
+    "commercial terms are confirmed for each inquiry."
 )
 
 
@@ -169,7 +170,7 @@ def main() -> None:
     ]
     args.csv.parent.mkdir(parents=True, exist_ok=True)
     with args.csv.open("w", newline="", encoding="utf-8") as handle:
-        writer = csv.DictWriter(handle, fieldnames=fields)
+        writer = csv.DictWriter(handle, fieldnames=fields, lineterminator="\n")
         writer.writeheader()
         for row in ordered:
             writer.writerow(
@@ -185,7 +186,7 @@ def main() -> None:
                     "certificate_of_origin_available": "Confirm by RFQ",
                     "source_url": row["source_url"],
                     "source_image_url": row.get("source_image_url", ""),
-                    "image_rights_status": "Pending written permission",
+                    "image_rights_status": "Authorized for SmartKey publication — owner confirmed 2026-07-21",
                     "technical_properties_json": json.dumps(row.get("properties", []), ensure_ascii=False),
                     "last_reviewed_date": "2026-07-21",
                     "verification_status": "Source captured; technical review pending",

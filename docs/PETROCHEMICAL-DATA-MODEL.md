@@ -48,7 +48,7 @@ Commercial values should remain empty or marked **Confirm by RFQ** until support
 - Technical properties as repeatable rows: property, unit, test method and value
 - Source image URL and image-rights status
 
-Source images are reference-only until written reuse permission or a replacement image is approved.
+The owner confirmed authorization to republish the Chemportal catalog and its images on 2026-07-21. Image source and authorization provenance remain stored for audit.
 
 ## Taxonomies
 
