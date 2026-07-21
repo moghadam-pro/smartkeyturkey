@@ -45,6 +45,10 @@ Commercial values should remain empty or marked **Confirm by RFQ** until support
 - CoA availability
 - Certificate of Origin availability
 - Additional compliance document labels and URLs
+- Technical properties as repeatable rows: property, unit, test method and value
+- Source image URL and image-rights status
+
+Source images are reference-only until written reuse permission or a replacement image is approved.
 
 ## Taxonomies
 
@@ -68,3 +72,6 @@ Every product CTA passes product ID, product name and grade into the RFQ form. T
 
 The form is not yet embedded on a public page. Email delivery, attachment handling, spam controls, privacy copy and conversion tracking are launch gates.
 
+## Current source inventory
+
+The 2026-07-21 Chemportal extraction contains 99 products across 13 leaf categories and 987 technical-property rows. All records remain marked **technical review pending** and **availability: Confirm by RFQ**.

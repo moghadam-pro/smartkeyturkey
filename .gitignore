@@ -25,6 +25,8 @@ dist/
 build/
 coverage/
 *.log
+outputs/**/previews/
+outputs/**/*.inspect.ndjson
 
 # Large source renders; optimized web derivatives are versioned
 assets/blog/*.png
