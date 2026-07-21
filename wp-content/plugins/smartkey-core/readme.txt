@@ -2,7 +2,7 @@
 Contributors: smartkeyturkey
 Requires at least: 6.5
 Requires PHP: 8.1
-Stable tag: 0.3.1
+Stable tag: 0.4.0
 License: Proprietary
 
 Site-owned WordPress functionality for SmartKey Turkey.
@@ -17,6 +17,7 @@ Site-owned WordPress functionality for SmartKey Turkey.
 * Internal WordPress dashboard notes.
 * Responsive petrochemical archive and single-product Elementor templates.
 * Context-aware RFQ form with automatic product/grade prefill.
+* Branded responsive site header and footer with approved social links.
 
 == Privacy ==
 
@@ -25,6 +26,12 @@ View tracking stores aggregate counters and a first-party 24-hour de-duplication
 RFQ tracking stores aggregate counters only. It does not copy contact details, uploaded files or submission contents into SmartKey Core.
 
 == Changelog ==
+
+= 0.4.0 =
+
+* Added the global responsive SmartKey header and primary navigation.
+* Added the global footer, representative disclosure and social profiles.
+* Added the 2012–2026 copyright notice and linked Moghadam.pro development credit.
 
 = 0.3.1 =
 

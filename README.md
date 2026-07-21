@@ -28,7 +28,7 @@ Updated: 21 July 2026
 - [x] WordPress baseline audit and brand-asset inventory
 - [x] English-only phase-one information architecture
 - [x] Petrochemical data model and controlled source-import workflow
-- [x] Custom `SmartKey Core` plugin v0.3.1
+- [x] Custom `SmartKey Core` plugin v0.4.0
 - [x] Structured petrochemical product type, taxonomy and metadata
 - [x] WordPress dashboard overview, content-view tracking, per-product RFQ counters and internal notes
 - [x] 99-product catalog imported and published with authorized source images
@@ -38,7 +38,7 @@ Updated: 21 July 2026
 - [x] Responsive Elementor product archive and single-product templates
 - [x] Context-aware petrochemical RFQ with automatic product/grade prefill
 - [ ] Property content model and city/property templates
-- [ ] Header, footer and global responsive design system
+- [x] Global responsive header and footer foundation
 - [ ] RFQ integration, email delivery and conversion tracking QA
 - [ ] Accessibility, performance, security and launch QA
 - [ ] WPML implementation after phase-one English approval
@@ -86,6 +86,8 @@ Version `0.3.1` includes four site-administration widgets plus the public petroc
 View counts exclude logged-in editors, previews and common crawler user agents, and use a 24-hour browser/content de-duplication cookie. RFQ analytics store counters only; SmartKey Core does not copy submitted contact details or attachments.
 
 The product templates use native Elementor Theme Builder records backed by version-controlled SmartKey Core shortcodes. They provide semantic headings, family navigation, responsive product cards, technical data, representative disclosure and an embedded RFQ whose product field is filled from the current product.
+
+The global site chrome adds a branded header, primary navigation, RFQ call to action and a responsive footer. The footer includes the approved Instagram and LinkedIn profiles, the `2012–2026` copyright notice, representative disclosure and linked `Designed and developed by Moghadam.pro` credit.
 
 ## License
 

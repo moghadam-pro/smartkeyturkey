@@ -1,5 +1,15 @@
 # WordPress production change log
 
+## 2026-07-21 — Global header, footer and social links
+
+- Updated only the site-owned SmartKey Core plugin from version `0.3.1` to `0.4.0`; no third-party plugin was updated, removed, activated or deactivated.
+- Replaced the minimal Hello Elementor site header and footer presentation with branded, responsive SmartKey components while retaining the theme's page lifecycle.
+- Added primary navigation for Home, Petrochemicals and Insights plus a prominent RFQ call to action.
+- Added the approved Instagram and LinkedIn profile links with safe external-link attributes.
+- Added `© 2012–2026 SmartKey Turkey. All rights reserved.` and linked `Designed and developed by Moghadam.pro` credit.
+- Added a concise footer disclosure identifying SmartKey as an intermediary and authorized sales representative rather than a property owner or product manufacturer.
+- Verified the new header and footer render once on the product archive, the prior Hello header is visually suppressed, all requested URLs are exact and the archive retains one H1.
+
 ## 2026-07-21 — Elementor product experience and SmartKey Core 0.3.1
 
 - Updated only the site-owned SmartKey Core plugin from version `0.3.0` to `0.3.1`; no third-party plugin was updated, removed, activated or deactivated.
