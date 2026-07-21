@@ -1,5 +1,20 @@
 # WordPress production change log
 
+## 2026-07-21 — Property controls, publication and unified theming
+
+- Updated only the site-owned SmartKey Core plugin from version `0.8.1` to `0.9.0`; no third-party plugin was updated, removed, activated or deactivated.
+- Rebuilt the property model around sale/rent and available/sold/rented states; sold and rented badges now appear on cards and single pages.
+- Added the new-build/current-year rule, construction year and age, floor, parking, furnished state, amenities, developer, payment terms, delivery date and map coordinates.
+- Removed public prices and price filtering. Property and product commercial terms remain available only on request.
+- Replaced property intermediary language with direct-control language while retaining the authorized-sales-representative disclosure for petrochemicals.
+- Published four clearly labeled sample properties, one each for Istanbul, Ankara, Izmir and Antalya.
+- Added OpenStreetMap presentation, expanded property facts and a sale/rent-aware inquiry flow.
+- Centralized all managed frontend colors as design tokens and enabled automatic light/dark mode from the visitor's operating-system preference.
+- Improved number, label and helper-text spacing in the SmartKey Overview cards.
+- Updated Rank Math property-analysis fields, removed the obsolete price field and enabled XML/HTML sitemap inclusion for non-empty Property Cities.
+- Verified the city sitemap returns HTTP 200 and contains all four phase-one city URLs.
+- Kept global `noindex, nofollow` unchanged; it will be removed only after the homepage is complete and launch QA passes.
+
 ## 2026-07-21 — SmartKey administration hub and property samples
 
 - Updated only the site-owned SmartKey Core plugin from version `0.7.0` to `0.8.1`; no third-party plugin was updated or removed.

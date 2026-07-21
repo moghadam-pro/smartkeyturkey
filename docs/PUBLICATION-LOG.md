@@ -30,7 +30,7 @@
 
 ## Editorial controls
 
-- SmartKey's intermediary/non-owner role is disclosed where relevant.
+- SmartKeyTurkey's direct-control property model and authorized petrochemical sales-representative role are disclosed in their respective journeys.
 - Legal, tax and investment guarantees are prohibited.
 - Time-sensitive facts must include an official source and publication date.
 - AI-generated content remains subject to later human review.

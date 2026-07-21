@@ -22,7 +22,10 @@ Site-owned WordPress functionality for SmartKeyTurkey.
 * Responsive property archive, city and single-property Elementor templates.
 * Non-persistent property consultation form with validation and spam safeguards.
 * Branded SmartKey administration hub with property and product submenus.
-* Four clearly labeled draft sample properties for editorial review.
+* Four clearly labeled published sample properties for Istanbul, Ankara, Izmir and Antalya.
+* Sale/rent workflows with available, sold and rented presentation states.
+* Direct-control property disclosure, map coordinates and request-only commercial terms.
+* Centralized light/dark design tokens shared by all managed frontend templates.
 
 == Privacy ==
 
@@ -31,6 +34,15 @@ View tracking stores aggregate counters and a first-party 24-hour de-duplication
 RFQ tracking stores aggregate counters only. It does not copy contact details, uploaded files or submission contents into SmartKey Core.
 
 == Changelog ==
+
+= 0.9.0 =
+
+* Rebuilt the property data model around sale/rent and available/sold/rented states.
+* Added new-build logic, construction details, amenities, developer, payment, delivery and map fields.
+* Removed public property pricing and intermediary language; commercial terms are request-only.
+* Published the four phase-one city sample properties and added card/single status badges.
+* Centralized frontend colors and automatic system-aware light/dark themes.
+* Improved spacing and alignment in the SmartKey Overview cards.
 
 = 0.8.1 =
 

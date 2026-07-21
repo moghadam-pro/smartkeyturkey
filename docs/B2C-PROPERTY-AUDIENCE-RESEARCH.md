@@ -2,7 +2,7 @@
 
 Date: 2026-07-20  
 Market scope: Istanbul, Ankara, Izmir and Antalya  
-Business constraint: SmartKey is an intermediary/advisory brand and does not own the listed properties.
+Business model update: SmartKeyTurkey works directly with properties and projects under its control. Public pages do not disclose exact addresses or prices; current documents, availability and transaction terms are supplied on request.
 
 ## Evidence baseline
 
@@ -102,7 +102,7 @@ Every city page needs dated sources, neighborhood-level nuance and a “who this
 ## Proposed B2C journey
 
 1. Discover through a city, guide, article or listing.
-2. Understand SmartKey's intermediary role and verification policy.
+2. Understand SmartKeyTurkey's direct-control model and document-verification policy.
 3. Filter by city, purpose, property type, price and readiness/status.
 4. Compare standardized facts and risks.
 5. Request details, remote viewing or consultation.
@@ -118,7 +118,7 @@ Every city page needs dated sources, neighborhood-level nuance and a “who this
 - property type, gross/net area labels, rooms, completion/readiness and title status where verified;
 - media source and date;
 - amenities separated from nearby services;
-- intermediary/non-owner disclosure;
+- direct-control, document-availability and terms-on-request disclosure;
 - risk and due-diligence notice;
 - source-aware inquiry form;
 - no guaranteed return, residence or citizenship claims.

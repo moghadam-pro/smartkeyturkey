@@ -49,7 +49,7 @@ Default Rank Math schema remains `None` for `skt_product` during the current pha
 4. Preserve clean, stable URLs and avoid duplicate routes.
 5. Add contextual internal links to the relevant business journey, city, family or RFQ page.
 6. Keep unreviewed, duplicate, thin, filtered and utility pages out of the sitemap and index.
-7. Include visible ownership, intermediary or representative disclosures wherever business claims require them.
+7. Include visible direct-control or authorized-representative disclosures appropriate to the relevant property or petrochemical journey.
 8. Validate responsive layout, keyboard access, contrast and Core Web Vitals impact.
 9. Test canonical, robots, Open Graph and sitemap output after template or routing changes.
 10. Record the SEO impact and verification evidence in the WordPress change log and README milestone list.

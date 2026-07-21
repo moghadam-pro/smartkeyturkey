@@ -25,7 +25,7 @@ final class Product_Frontend {
 			wp_enqueue_style(
 				'smartkey-product-templates',
 				plugins_url( 'assets/css/product-templates.css', SKT_CORE_FILE ),
-				array(),
+				array( 'smartkey-design-tokens' ),
 				SKT_CORE_VERSION
 			);
 		}

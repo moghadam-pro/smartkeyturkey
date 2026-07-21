@@ -7,7 +7,7 @@ SmartKeyTurkey combines two commercial journeys:
 - B2C property discovery in Turkey, initially focused on Istanbul, Ankara, Izmir and Antalya.
 - B2B petrochemical product discovery and qualified RFQ workflows.
 
-The site also covers Turkish attractions and editorial content about relevant laws, market news and events. SmartKey acts as an intermediary and authorized sales representative; it does not present itself as the property owner or product manufacturer.
+The site also covers Turkish attractions and editorial content about relevant laws, market news and events. SmartKeyTurkey works directly with properties and projects under its control. In petrochemicals it acts as an authorized sales representative and does not present itself as the manufacturer.
 
 ## Technology
 
@@ -28,7 +28,7 @@ Updated: 21 July 2026
 - [x] WordPress baseline audit and brand-asset inventory
 - [x] English-only phase-one information architecture
 - [x] Petrochemical data model and controlled source-import workflow
-- [x] Custom `SmartKey Core` plugin v0.8.1
+- [x] Custom `SmartKey Core` plugin v0.9.0
 - [x] Structured petrochemical product type, taxonomy and metadata
 - [x] WordPress dashboard overview, content-view tracking, per-product RFQ counters and internal notes
 - [x] 99-product catalog imported and published with authorized source images
@@ -40,7 +40,9 @@ Updated: 21 July 2026
 - [x] Property content model and phase-one city taxonomy
 - [x] Property archive, city and single-property templates
 - [x] Secure property consultation form foundation
-- [x] SmartKey administration hub and four complete draft sample properties
+- [x] SmartKey administration hub and four published, clearly labeled sample properties
+- [x] Direct-control sale/rent property model, lifecycle badges, map fields and request-only terms
+- [x] Central design tokens with automatic system-aware light/dark mode
 - [x] Global responsive header and footer foundation
 - [x] Compact `SmartKeyTurkey` naming and approved SVG wordmark rollout
 - [x] Google Site Kit connection and measurement configuration audit
@@ -81,7 +83,7 @@ Petrochemical product information and images are used with authorization from th
 
 ## SmartKey Core dashboard
 
-Version `0.3.1` includes four site-administration widgets plus the public petrochemical archive and single-product experience:
+Version `0.9.0` includes four site-administration widgets plus the public property and petrochemical experiences:
 
 - Core overview: latest product update, published products, product families, recorded content views and RFQ totals
 - Product views and requests: per-product engagement with unassigned RFQ visibility

@@ -15,7 +15,7 @@ Rebuild SmartKeyTurkey as a credible multilingual corporate platform that genera
 - Fonts: Inter, Roboto, Vazir
 - Launch property cities: Istanbul, Ankara, Izmir, Antalya
 - Initial petrochemical catalog: approximately 100 products
-- SmartKey acts as an intermediary/advisor and does not own listed properties
+- SmartKeyTurkey works directly with properties and projects under its control; current documents, availability and transaction terms are supplied on request
 - Initial content and translations may be AI-assisted and will be flagged for later human review
 - Conversion priorities will be re-ranked using post-development testing data
 

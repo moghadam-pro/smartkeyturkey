@@ -11,14 +11,15 @@ final class Site_Chrome {
 
 	public static function init(): void {
 		add_action( 'init', array( self::class, 'migrate_brand_name' ), 40 );
-		add_action( 'wp_enqueue_scripts', array( self::class, 'enqueue_assets' ), 25 );
+		add_action( 'wp_enqueue_scripts', array( self::class, 'enqueue_assets' ), 5 );
 		add_action( 'wp_body_open', array( self::class, 'render_header' ), 5 );
 		add_action( 'wp_footer', array( self::class, 'render_footer' ), 5 );
 		add_filter( 'body_class', array( self::class, 'body_class' ) );
 	}
 
 	public static function enqueue_assets(): void {
-		wp_enqueue_style( 'smartkey-site-chrome', plugins_url( 'assets/css/site-chrome.css', SKT_CORE_FILE ), array(), SKT_CORE_VERSION );
+		wp_enqueue_style( 'smartkey-design-tokens', plugins_url( 'assets/css/design-tokens.css', SKT_CORE_FILE ), array(), SKT_CORE_VERSION );
+		wp_enqueue_style( 'smartkey-site-chrome', plugins_url( 'assets/css/site-chrome.css', SKT_CORE_FILE ), array( 'smartkey-design-tokens' ), SKT_CORE_VERSION );
 	}
 
 	public static function body_class( array $classes ): array {
@@ -57,7 +58,7 @@ final class Site_Chrome {
 				<div class="skt-footer-intro">
 					<a class="skt-footer-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>" aria-label="<?php esc_attr_e( 'SmartKeyTurkey home', 'smartkey-core' ); ?>"><?php if ( $icon ) : ?><img src="<?php echo esc_url( $icon ); ?>" width="38" height="38" alt=""><?php endif; ?><img class="skt-footer-wordmark" src="<?php echo esc_url( $wordmark ); ?>" width="210" height="22" alt="SmartKeyTurkey"></a>
 					<p><?php esc_html_e( 'Property discovery and petrochemical sourcing coordination across Turkey.', 'smartkey-core' ); ?></p>
-					<p class="skt-footer-disclosure"><?php esc_html_e( 'SmartKey acts as an intermediary and authorized sales representative; it is not the property owner or product manufacturer.', 'smartkey-core' ); ?></p>
+					<p class="skt-footer-disclosure"><?php esc_html_e( 'SmartKeyTurkey works directly with properties and projects under its control. For petrochemicals, it acts as an authorized sales representative and is not the manufacturer.', 'smartkey-core' ); ?></p>
 				</div>
 				<div><h2><?php esc_html_e( 'Explore', 'smartkey-core' ); ?></h2><ul><li><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( 'Home', 'smartkey-core' ); ?></a></li><li><a href="<?php echo esc_url( get_post_type_archive_link( 'skt_property' ) ); ?>"><?php esc_html_e( 'Properties', 'smartkey-core' ); ?></a></li><li><a href="<?php echo esc_url( get_post_type_archive_link( 'skt_product' ) ); ?>"><?php esc_html_e( 'Petrochemical Products', 'smartkey-core' ); ?></a></li><li><a href="<?php echo esc_url( home_url( '/blog/' ) ); ?>"><?php esc_html_e( 'News & Insights', 'smartkey-core' ); ?></a></li></ul></div>
 				<div><h2><?php esc_html_e( 'Follow SmartKey', 'smartkey-core' ); ?></h2><ul><li><a href="<?php echo esc_url( self::INSTAGRAM ); ?>" target="_blank" rel="noopener noreferrer">Instagram <span aria-hidden="true">↗</span></a></li><li><a href="<?php echo esc_url( self::LINKEDIN ); ?>" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a></li></ul></div>

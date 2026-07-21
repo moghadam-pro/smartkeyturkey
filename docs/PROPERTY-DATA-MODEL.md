@@ -1,6 +1,6 @@
 # SmartKey property data model
 
-Status: content model and templates implemented; pilot listings pending review
+Status: content model and templates implemented; four labeled sample listings published
 
 ## Content structure
 
@@ -15,15 +15,17 @@ Status: content model and templates implemented; pilot listings pending review
 | Group | Fields |
 | --- | --- |
 | Identity | Listing reference, title and editorial summary |
-| Location | City taxonomy and district |
-| Commercial | Price, currency and availability |
-| Configuration | Property type, rooms and bathrooms |
+| Location | City taxonomy, public district, latitude and longitude |
+| Commercial | Transaction type (sale/rent), listing status (available/sold/rented) and request-only terms |
+| Configuration | Property type, rooms, bathrooms, floor, parking and furnished status |
 | Area | Gross area and net area |
+| Construction | New-build flag, construction year, calculated building age and amenities |
+| Project | Developer, payment terms and delivery date |
 | Readiness | Completion status and title status |
 | Review | Verification status, last-reviewed date and source |
-| Compliance | Citizenship review status and representative disclosure |
+| Compliance | Citizenship review status and direct-control disclosure |
 
-## Draft sample set
+## Published sample set
 
 Four internal demonstration records now exercise the complete data model:
 
@@ -34,14 +36,15 @@ Four internal demonstration records now exercise the complete data model:
 | Izmir | Izmir Coastal Residence | Residence | 2+1, 2 bathrooms, 125/98 m² gross/net |
 | Antalya | Antalya Lifestyle Apartment | Apartment | 1+1, 1 bathroom, 82/67 m² gross/net |
 
-These are drafts containing invented demonstration values. They are not listings, offers, evidence of availability or claims about a real property. Each must be replaced with source-reviewed data before publication.
+These are published demonstration records containing invented sample values and are clearly labeled as samples. They are not offers or evidence about a real property and must be replaced with source-reviewed data before launch.
 
 ## Claims and publication rules
 
-- SmartKey must be described as an intermediary/advisor and never as the property owner.
-- Price, availability, title status and physical specifications require a recent source and review date.
+- SmartKeyTurkey works directly with properties and projects under its control. The exact legal capacity and supporting documents must be available for internal review.
+- No property price is published. Commercial terms are supplied only after a qualified request.
+- Availability, title status and physical specifications require a recent source and review date.
 - Citizenship suitability is never inferred from price alone and must remain a review status until confirmed by qualified professionals.
-- Draft or pending-review listings must not imply verified ownership, clean title, guaranteed return, residence eligibility or citizenship eligibility.
+- Sample or pending-review listings must not imply clean title, guaranteed return, residence eligibility or citizenship eligibility.
 - Published pages must state that transaction eligibility, restrictions, encumbrances and final terms require case-specific verification.
 
 ## Next implementation step
