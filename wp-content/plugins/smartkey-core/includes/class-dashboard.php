@@ -13,6 +13,7 @@ final class Dashboard {
 	public static function init(): void {
 		add_action( 'wp_dashboard_setup', array( self::class, 'register_widgets' ) );
 		add_action( 'admin_post_skt_add_dashboard_note', array( self::class, 'handle_add_note' ) );
+		add_action( 'admin_post_skt_toggle_dashboard_note', array( self::class, 'handle_toggle_note' ) );
 		add_action( 'template_redirect', array( self::class, 'track_content_view' ), 20 );
 		add_action( 'wpcf7_mail_sent', array( self::class, 'track_product_request' ) );
 	}
@@ -58,7 +59,7 @@ final class Dashboard {
 		$latest_update   = self::latest_product_update();
 		?>
 		<style>
-			.skt-dashboard-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:4px 0 12px}.skt-dashboard-stat{border:1px solid #dcdcde;border-radius:8px;padding:12px;background:#fff}.skt-dashboard-stat strong{display:block;font-size:22px;line-height:1.2;color:#2c3338}.skt-dashboard-stat span{color:#646970}.skt-dashboard-meta{margin:8px 0 0;color:#50575e}.skt-dashboard-table{width:100%;border-collapse:collapse}.skt-dashboard-table th,.skt-dashboard-table td{padding:8px 6px;border-bottom:1px solid #f0f0f1;text-align:left}.skt-dashboard-note{padding:10px 0;border-bottom:1px solid #f0f0f1}.skt-dashboard-note p{margin:0 0 4px;white-space:pre-wrap}.skt-dashboard-note small{color:#646970}@media(max-width:782px){.skt-dashboard-grid{grid-template-columns:1fr}}
+			.skt-dashboard-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:4px 0 12px}.skt-dashboard-stat{border:1px solid #dcdcde;border-radius:8px;padding:12px;background:#fff}.skt-dashboard-stat strong{display:block;font-size:22px;line-height:1.2;color:#2c3338}.skt-dashboard-stat span{color:#646970}.skt-dashboard-meta{margin:8px 0 0;color:#50575e}.skt-dashboard-table{width:100%;border-collapse:collapse}.skt-dashboard-table th,.skt-dashboard-table td{padding:8px 6px;border-bottom:1px solid #f0f0f1;text-align:left}.skt-dashboard-note{display:grid;grid-template-columns:auto 1fr;gap:10px;padding:10px 0;border-bottom:1px solid #f0f0f1}.skt-dashboard-note form{margin:2px 0 0}.skt-dashboard-note p{margin:0 0 4px;white-space:pre-wrap}.skt-dashboard-note.is-complete p{text-decoration:line-through;color:#787c82}.skt-dashboard-note small{color:#646970}@media(max-width:782px){.skt-dashboard-grid{grid-template-columns:1fr}}
 		</style>
 		<div class="skt-dashboard-grid">
 			<div class="skt-dashboard-stat"><strong><?php echo esc_html( number_format_i18n( $product_total ) ); ?></strong><span><?php esc_html_e( 'Published products', 'smartkey-core' ); ?></span></div>
@@ -146,9 +147,11 @@ final class Dashboard {
 				<p><?php esc_html_e( 'No dashboard notes yet.', 'smartkey-core' ); ?></p>
 			<?php else : ?>
 				<?php foreach ( $notes as $note ) : ?>
-					<div class="skt-dashboard-note">
-						<p><?php echo esc_html( $note['text'] ?? '' ); ?></p>
-						<small><?php echo esc_html( sprintf( '%1$s · %2$s', $note['author'] ?? '', $note['created'] ?? '' ) ); ?></small>
+					<?php $note_id = (string) ( $note['id'] ?? md5( (string) ( $note['text'] ?? '' ) . (string) ( $note['created'] ?? '' ) ) ); ?>
+					<div class="skt-dashboard-note<?php echo ! empty( $note['complete'] ) ? ' is-complete' : ''; ?>">
+						<form method="post" action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>"><input type="hidden" name="action" value="skt_toggle_dashboard_note"><input type="hidden" name="note_id" value="<?php echo esc_attr( $note_id ); ?>"><?php wp_nonce_field( 'skt_toggle_dashboard_note_' . $note_id ); ?><label><span class="screen-reader-text"><?php esc_html_e( 'Mark note complete', 'smartkey-core' ); ?></span><input type="checkbox" name="complete" value="1" <?php checked( ! empty( $note['complete'] ) ); ?> onchange="this.form.submit()"></label></form>
+						<div><p><?php echo esc_html( $note['text'] ?? '' ); ?></p>
+						<small><?php echo esc_html( sprintf( '%1$s · %2$s', $note['author'] ?? '', $note['created'] ?? '' ) ); ?></small></div>
 					</div>
 				<?php endforeach; ?>
 			<?php endif; ?>
@@ -204,9 +207,11 @@ final class Dashboard {
 			array_unshift(
 				$notes,
 				array(
-				'text'    => wp_html_excerpt( $text, 1000, '' ),
+					'id'      => wp_generate_uuid4(),
+					'text'    => wp_html_excerpt( $text, 1000, '' ),
 					'author'  => $user->display_name,
 					'created' => current_time( 'M j, Y H:i' ),
+					'complete' => false,
 				)
 			);
 			update_option( self::NOTES_OPTION, array_slice( $notes, 0, 50 ), false );
@@ -214,6 +219,21 @@ final class Dashboard {
 
 		wp_safe_redirect( admin_url( 'index.php#skt_dashboard_notes' ) );
 		exit;
+	}
+
+	public static function handle_toggle_note(): void {
+		if ( ! current_user_can( 'edit_posts' ) ) { wp_die( esc_html__( 'You are not allowed to update dashboard notes.', 'smartkey-core' ) ); }
+		$note_id = sanitize_text_field( wp_unslash( $_POST['note_id'] ?? '' ) );
+		check_admin_referer( 'skt_toggle_dashboard_note_' . $note_id );
+		$notes = get_option( self::NOTES_OPTION, array() );
+		$notes = is_array( $notes ) ? $notes : array();
+		foreach ( $notes as &$note ) {
+			$current_id = (string) ( $note['id'] ?? md5( (string) ( $note['text'] ?? '' ) . (string) ( $note['created'] ?? '' ) ) );
+			if ( hash_equals( $current_id, $note_id ) ) { $note['id'] = $current_id; $note['complete'] = ! empty( $_POST['complete'] ); break; }
+		}
+		unset( $note );
+		update_option( self::NOTES_OPTION, $notes, false );
+		wp_safe_redirect( admin_url( 'index.php#skt_dashboard_notes' ) ); exit;
 	}
 
 	public static function track_content_view(): void {

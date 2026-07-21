@@ -1,5 +1,20 @@
 # WordPress production change log
 
+## 2026-07-21 — Request center, company pages and UI refinement (SmartKey Core 1.1.0)
+
+- Updated only the site-owned SmartKey Core plugin from `1.0.3` to `1.1.0`; no third-party plugin was updated, removed, activated or deactivated.
+- Added the administrator-only `SmartKey → Requests` area. Property inquiries and petrochemical RFQs are stored in WordPress and email delivery is disabled for these two managed forms.
+- Verified one clearly labeled property QA request and one petrochemical QA request were stored in the production Requests list.
+- Added note completion checkboxes with persistent strikethrough state to the dashboard widget.
+- Added `#FD8B00`, `#000009`, `#648381`, `#ebebeb` and `#84c341` as centralized palette tokens, an orange/white text-selection treatment and corrected orange link-hover states.
+- Separated header and footer brand treatments; the footer remains monochrome, while the dark header renders the S mark white and K green.
+- Added a sticky left product-family sidebar that remains present at mobile widths without horizontal page overflow.
+- Normalized petrochemical and property request inputs, 8 px radii and compact, borderless right-aligned submit actions.
+- Published an SEO-configured About Us page and linked it from the header and footer.
+- Added verified Google Maps address, phone and a subtle vector map pattern to the footer.
+- Added a custom responsive 404 page and redesigned homepage hero geometry.
+- Verified the product archive at desktop and 390 px widths, both forms, About Us, homepage and 404 behavior on production.
+
 ## 2026-07-21 — Accessibility, performance and form QA
 
 - Updated only the site-owned SmartKey Core plugin from version `1.0.0` to `1.0.3`; no third-party plugin was changed.

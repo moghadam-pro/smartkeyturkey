@@ -8,6 +8,8 @@ final class Site_Chrome {
 	private const INSTAGRAM = 'https://www.instagram.com/smartkeyturkey/';
 	private const LINKEDIN  = 'https://www.linkedin.com/company/smartkeyturkey/';
 	private const DEVELOPER = 'https://moghadam.pro/';
+	private const MAPS      = 'https://maps.app.goo.gl/zkBfCS655RkLEPd7A';
+	private const PHONE     = '+905050887188';
 
 	public static function init(): void {
 		add_action( 'init', array( self::class, 'migrate_brand_name' ), 40 );
@@ -39,13 +41,13 @@ final class Site_Chrome {
 	}
 
 	public static function render_header(): void {
-		$icon = get_site_icon_url( 128 );
+		$icon = plugins_url( 'assets/images/skt-mark.svg', SKT_CORE_FILE );
 		$wordmark = plugins_url( 'assets/images/skt-wordmark.svg', SKT_CORE_FILE );
 		?>
 		<header class="skt-site-header" aria-label="<?php esc_attr_e( 'Site header', 'smartkey-core' ); ?>">
 			<div class="skt-chrome-shell">
 				<a class="skt-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>" aria-label="<?php esc_attr_e( 'SmartKeyTurkey home', 'smartkey-core' ); ?>">
-					<?php if ( $icon ) : ?><img src="<?php echo esc_url( $icon ); ?>" width="42" height="42" alt=""><?php endif; ?>
+					<img src="<?php echo esc_url( $icon ); ?>" width="48" height="38" alt="">
 					<img class="skt-wordmark" src="<?php echo esc_url( $wordmark ); ?>" width="210" height="22" alt="SmartKeyTurkey">
 				</a>
 				<nav class="skt-primary-nav" aria-label="<?php esc_attr_e( 'Primary navigation', 'smartkey-core' ); ?>">
@@ -53,6 +55,7 @@ final class Site_Chrome {
 					<a href="<?php echo esc_url( get_post_type_archive_link( 'skt_property' ) ); ?>"><?php esc_html_e( 'Properties', 'smartkey-core' ); ?></a>
 					<a href="<?php echo esc_url( get_post_type_archive_link( 'skt_product' ) ); ?>"><?php esc_html_e( 'Petrochemicals', 'smartkey-core' ); ?></a>
 					<a href="<?php echo esc_url( home_url( '/blog/' ) ); ?>"><?php esc_html_e( 'Insights', 'smartkey-core' ); ?></a>
+					<a href="<?php echo esc_url( home_url( '/about-us/' ) ); ?>"><?php esc_html_e( 'About Us', 'smartkey-core' ); ?></a>
 				</nav>
 				<a class="skt-header-cta" href="<?php echo esc_url( get_post_type_archive_link( 'skt_product' ) . '#request-quote' ); ?>"><?php esc_html_e( 'Request a Quote', 'smartkey-core' ); ?></a>
 			</div>
@@ -61,17 +64,18 @@ final class Site_Chrome {
 	}
 
 	public static function render_footer(): void {
-		$icon = get_site_icon_url( 128 );
+		$icon = plugins_url( 'assets/images/skt-mark.svg', SKT_CORE_FILE );
 		$wordmark = plugins_url( 'assets/images/skt-wordmark.svg', SKT_CORE_FILE );
 		?>
 		<footer class="skt-site-footer" aria-label="<?php esc_attr_e( 'Site footer', 'smartkey-core' ); ?>">
 			<div class="skt-chrome-shell skt-footer-grid">
 				<div class="skt-footer-intro">
-					<a class="skt-footer-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>" aria-label="<?php esc_attr_e( 'SmartKeyTurkey home', 'smartkey-core' ); ?>"><?php if ( $icon ) : ?><img src="<?php echo esc_url( $icon ); ?>" width="38" height="38" alt=""><?php endif; ?><img class="skt-footer-wordmark" src="<?php echo esc_url( $wordmark ); ?>" width="210" height="22" alt="SmartKeyTurkey"></a>
+					<a class="skt-footer-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>" aria-label="<?php esc_attr_e( 'SmartKeyTurkey home', 'smartkey-core' ); ?>"><img src="<?php echo esc_url( $icon ); ?>" width="48" height="38" alt=""><img class="skt-footer-wordmark" src="<?php echo esc_url( $wordmark ); ?>" width="210" height="22" alt="SmartKeyTurkey"></a>
 					<p><?php esc_html_e( 'Property discovery and petrochemical sourcing coordination across Turkey.', 'smartkey-core' ); ?></p>
 					<p class="skt-footer-disclosure"><?php esc_html_e( 'SmartKeyTurkey works directly with properties and projects under its control. For petrochemicals, it acts as an authorized sales representative and is not the manufacturer.', 'smartkey-core' ); ?></p>
 				</div>
-				<div><h2><?php esc_html_e( 'Explore', 'smartkey-core' ); ?></h2><ul><li><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( 'Home', 'smartkey-core' ); ?></a></li><li><a href="<?php echo esc_url( get_post_type_archive_link( 'skt_property' ) ); ?>"><?php esc_html_e( 'Properties', 'smartkey-core' ); ?></a></li><li><a href="<?php echo esc_url( get_post_type_archive_link( 'skt_product' ) ); ?>"><?php esc_html_e( 'Petrochemical Products', 'smartkey-core' ); ?></a></li><li><a href="<?php echo esc_url( home_url( '/blog/' ) ); ?>"><?php esc_html_e( 'News & Insights', 'smartkey-core' ); ?></a></li></ul></div>
+				<div><h2><?php esc_html_e( 'Explore', 'smartkey-core' ); ?></h2><ul><li><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( 'Home', 'smartkey-core' ); ?></a></li><li><a href="<?php echo esc_url( get_post_type_archive_link( 'skt_property' ) ); ?>"><?php esc_html_e( 'Properties', 'smartkey-core' ); ?></a></li><li><a href="<?php echo esc_url( get_post_type_archive_link( 'skt_product' ) ); ?>"><?php esc_html_e( 'Petrochemical Products', 'smartkey-core' ); ?></a></li><li><a href="<?php echo esc_url( home_url( '/blog/' ) ); ?>"><?php esc_html_e( 'News & Insights', 'smartkey-core' ); ?></a></li><li><a href="<?php echo esc_url( home_url( '/about-us/' ) ); ?>"><?php esc_html_e( 'About Us', 'smartkey-core' ); ?></a></li></ul></div>
+				<div class="skt-footer-contact"><h2><?php esc_html_e( 'Contact', 'smartkey-core' ); ?></h2><address>Cumhuriyet, 34520<br>Beylikdüzü / Istanbul, Türkiye</address><p><a href="tel:<?php echo esc_attr( self::PHONE ); ?>">+90 505 088 71 88</a></p><a class="skt-footer-map-link" href="<?php echo esc_url( self::MAPS ); ?>" target="_blank" rel="noopener noreferrer"><?php esc_html_e( 'Open in Google Maps', 'smartkey-core' ); ?> ↗</a></div>
 				<div><h2><?php esc_html_e( 'Follow SmartKey', 'smartkey-core' ); ?></h2><ul><li><a href="<?php echo esc_url( self::INSTAGRAM ); ?>" target="_blank" rel="noopener noreferrer">Instagram <span aria-hidden="true">↗</span></a></li><li><a href="<?php echo esc_url( self::LINKEDIN ); ?>" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a></li></ul></div>
 			</div>
 			<div class="skt-chrome-shell skt-footer-bottom">

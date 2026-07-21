@@ -2,7 +2,7 @@
 Contributors: smartkeyturkey
 Requires at least: 6.5
 Requires PHP: 8.1
-Stable tag: 0.8.1
+Stable tag: 1.1.0
 License: Proprietary
 
 Site-owned WordPress functionality for SmartKeyTurkey.
@@ -20,21 +20,33 @@ Site-owned WordPress functionality for SmartKeyTurkey.
 * Branded responsive site header and footer with approved social links.
 * Structured property post type, city/type taxonomies and review fields.
 * Responsive property archive, city and single-property Elementor templates.
-* Non-persistent property consultation form with validation and spam safeguards.
+* Private database-only property and petrochemical request center with validation and spam safeguards.
 * Branded SmartKey administration hub with property and product submenus.
 * Four clearly labeled published sample properties for Istanbul, Ankara, Izmir and Antalya.
 * Sale/rent workflows with available, sold and rented presentation states.
 * Direct-control property disclosure, map coordinates and request-only commercial terms.
 * Centralized light/dark design tokens shared by all managed frontend templates.
 * Responsive Elementor homepage with dynamic properties, product families and insights.
+* About Us page, contact-rich footer and responsive 404 experience.
+* Sticky product-family sidebar and refined request forms.
+* Expanded brand palette and system-aware header/footer logo treatments.
 
 == Privacy ==
 
 View tracking stores aggregate counters and a first-party 24-hour de-duplication cookie. Logged-in editors, previews and common crawler user agents are excluded.
 
-RFQ tracking stores aggregate counters only. It does not copy contact details, uploaded files or submission contents into SmartKey Core.
+Property and petrochemical requests are stored privately in WordPress for administrators. SmartKey-managed request forms do not send email. Uploaded files are not copied into the request record.
 
 == Changelog ==
+
+= 1.1.0 =
+
+* Added an administrator-only Requests center for property inquiries and petrochemical RFQs and disabled email delivery for both SmartKey-managed flows.
+* Added completion checkboxes and strikethrough states to dashboard notes.
+* Added the approved five-color palette, orange selection and link-hover states, and separate dark/light logo treatments.
+* Added a sticky responsive product-family sidebar and normalized product/property request forms.
+* Added the About Us page, business contact details, subtle map-pattern footer and responsive custom 404 page.
+* Redesigned the homepage hero geometry for large and small screens.
 
 = 1.0.3 =
 

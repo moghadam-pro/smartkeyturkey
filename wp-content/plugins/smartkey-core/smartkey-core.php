@@ -2,7 +2,7 @@
 /**
  * Plugin Name: SmartKey Core
  * Description: Structured product catalog and controlled product importer for SmartKeyTurkey.
- * Version: 1.0.3
+ * Version: 1.1.0
  * Author: SmartKeyTurkey
  * Requires at least: 6.5
  * Requires PHP: 8.1
@@ -11,7 +11,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'SKT_CORE_VERSION', '1.0.3' );
+define( 'SKT_CORE_VERSION', '1.1.0' );
 define( 'SKT_CORE_FILE', __FILE__ );
 define( 'SKT_CORE_DIR', plugin_dir_path( __FILE__ ) );
 
@@ -24,6 +24,8 @@ require_once SKT_CORE_DIR . 'includes/class-property-catalog.php';
 require_once SKT_CORE_DIR . 'includes/class-property-frontend.php';
 require_once SKT_CORE_DIR . 'includes/class-admin-menu.php';
 require_once SKT_CORE_DIR . 'includes/class-homepage.php';
+require_once SKT_CORE_DIR . 'includes/class-request-manager.php';
+require_once SKT_CORE_DIR . 'includes/class-company-pages.php';
 
 SmartKeyTurkey\Core\Product_Catalog::init();
 SmartKeyTurkey\Core\Product_Importer::init();
@@ -34,6 +36,8 @@ SmartKeyTurkey\Core\Property_Catalog::init();
 SmartKeyTurkey\Core\Property_Frontend::init();
 SmartKeyTurkey\Core\Admin_Menu::init();
 SmartKeyTurkey\Core\Homepage::init();
+SmartKeyTurkey\Core\Request_Manager::init();
+SmartKeyTurkey\Core\Company_Pages::init();
 
 register_activation_hook(
 	__FILE__,

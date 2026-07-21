@@ -79,8 +79,10 @@ final class Product_Frontend {
 				</div>
 			</section>
 
+			<div class="skt-shell skt-catalog-layout">
 			<?php if ( ! is_wp_error( $families ) && $families ) : ?>
-				<nav class="skt-family-nav skt-shell" aria-label="<?php esc_attr_e( 'Product families', 'smartkey-core' ); ?>">
+				<nav class="skt-family-nav" aria-label="<?php esc_attr_e( 'Product families', 'smartkey-core' ); ?>">
+					<strong class="skt-family-nav-title"><?php esc_html_e( 'Categories', 'smartkey-core' ); ?></strong>
 					<a href="<?php echo esc_url( get_post_type_archive_link( 'skt_product' ) ); ?>"<?php echo $is_family ? '' : ' aria-current="page"'; ?>><?php esc_html_e( 'All products', 'smartkey-core' ); ?></a>
 					<?php foreach ( $families as $family ) : ?>
 						<a href="<?php echo esc_url( get_term_link( $family ) ); ?>"<?php echo $is_family && get_queried_object_id() === $family->term_id ? ' aria-current="page"' : ''; ?>><?php echo esc_html( $family->name ); ?></a>
@@ -88,7 +90,7 @@ final class Product_Frontend {
 				</nav>
 			<?php endif; ?>
 
-			<section class="skt-shell skt-results" id="product-results" aria-labelledby="product-results-title">
+			<section class="skt-results" id="product-results" aria-labelledby="product-results-title">
 				<div class="skt-section-heading"><div><p class="skt-eyebrow"><?php esc_html_e( 'Available catalogue', 'smartkey-core' ); ?></p><h2 id="product-results-title"><?php esc_html_e( 'Products and grades', 'smartkey-core' ); ?></h2></div><p><?php echo esc_html( sprintf( _n( '%s result', '%s results', (int) $wp_query->found_posts, 'smartkey-core' ), number_format_i18n( (int) $wp_query->found_posts ) ) ); ?></p></div>
 				<?php if ( have_posts() ) : ?>
 					<div class="skt-product-grid">
@@ -112,6 +114,7 @@ final class Product_Frontend {
 					<p><?php esc_html_e( 'No products were found in this selection.', 'smartkey-core' ); ?></p>
 				<?php endif; ?>
 			</section>
+			</div>
 
 			<section class="skt-rfq-banner"><div class="skt-shell"><div><p class="skt-eyebrow"><?php esc_html_e( 'Qualified B2B inquiries', 'smartkey-core' ); ?></p><h2><?php esc_html_e( 'Need a current specification or commercial offer?', 'smartkey-core' ); ?></h2><p><?php esc_html_e( 'Tell us the product, quantity and destination. SmartKey coordinates the inquiry with the relevant supplier.', 'smartkey-core' ); ?></p></div><a class="skt-button" href="<?php echo esc_url( home_url( '/contact/?inquiry=petrochemical' ) ); ?>"><?php esc_html_e( 'Start an RFQ', 'smartkey-core' ); ?></a></div></section>
 		</main>

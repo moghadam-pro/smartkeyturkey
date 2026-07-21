@@ -28,7 +28,7 @@ Updated: 21 July 2026
 - [x] WordPress baseline audit and brand-asset inventory
 - [x] English-only phase-one information architecture
 - [x] Petrochemical data model and controlled source-import workflow
-- [x] Custom `SmartKey Core` plugin v1.0.3
+- [x] Custom `SmartKey Core` plugin v1.1.0
 - [x] Structured petrochemical product type, taxonomy and metadata
 - [x] WordPress dashboard overview, content-view tracking, per-product RFQ counters and internal notes
 - [x] 99-product catalog imported and published with authorized source images
@@ -49,8 +49,12 @@ Updated: 21 July 2026
 - [x] Global responsive header and footer foundation
 - [x] Compact `SmartKeyTurkey` naming and approved SVG wordmark rollout
 - [x] Google Site Kit connection and measurement configuration audit
-- [x] RFQ integration and application-level email handoff QA
-- [ ] Mailbox receipt confirmation and analytics conversion-event QA
+- [x] RFQ integration and application-level database-storage QA
+- [x] Database-only property and petrochemical request center (email disabled)
+- [x] About Us, contact-rich footer and custom responsive 404 experience
+- [x] Sticky product-family sidebar, refined inquiry forms and expanded brand palette
+- [x] Dashboard note completion checkboxes with strikethrough state
+- [ ] Analytics conversion-event QA
 - [ ] Accessibility, performance, security and launch QA
 - [ ] WPML implementation after phase-one English approval
 
@@ -87,14 +91,14 @@ Petrochemical product information and images are used with authorization from th
 
 ## SmartKey Core dashboard
 
-Version `0.9.0` includes four site-administration widgets plus the public property and petrochemical experiences:
+Version `1.1.0` includes four site-administration widgets plus the public property and petrochemical experiences:
 
 - Core overview: latest product update, published products, product families, recorded content views and RFQ totals
 - Product views and requests: per-product engagement with unassigned RFQ visibility
 - Most viewed content: public pages, posts and petrochemical products
-- Dashboard notes: short internal notes stored only for dashboard display
+- Dashboard notes: short internal notes with a completion checkbox and strikethrough state, stored only for dashboard display
 
-View counts exclude logged-in editors, previews and common crawler user agents, and use a 24-hour browser/content de-duplication cookie. RFQ analytics store counters only; SmartKey Core does not copy submitted contact details or attachments.
+View counts exclude logged-in editors, previews and common crawler user agents, and use a 24-hour browser/content de-duplication cookie. Property inquiries and petrochemical RFQs are stored privately in WordPress under `SmartKey → Requests`; SmartKey-managed forms do not send email.
 
 The product templates use native Elementor Theme Builder records backed by version-controlled SmartKey Core shortcodes. They provide semantic headings, family navigation, responsive product cards, technical data, representative disclosure and an embedded RFQ whose product field is filled from the current product.
 
