@@ -36,6 +36,20 @@ RFQ tracking stores aggregate counters only. It does not copy contact details, u
 
 == Changelog ==
 
+= 1.0.3 =
+
+* Protected the property inquiry button colors from theme overrides to pass dark-mode contrast checks.
+
+= 1.0.2 =
+
+* Included visible sold/rented card states in the corresponding accessible link names.
+
+= 1.0.1 =
+
+* Fixed homepage property-placeholder contrast and accessible-name audit failures.
+* Replaced Elementor's broad font request with the approved, limited Inter and Roboto weights.
+* Removed Contact Form 7 assets from the homepage where no form is rendered.
+
 = 1.0.0 =
 
 * Added the complete English homepage and two-path B2C/B2B acquisition journey.

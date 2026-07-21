@@ -15,11 +15,22 @@ final class Site_Chrome {
 		add_action( 'wp_body_open', array( self::class, 'render_header' ), 5 );
 		add_action( 'wp_footer', array( self::class, 'render_footer' ), 5 );
 		add_filter( 'body_class', array( self::class, 'body_class' ) );
+		add_filter( 'elementor/frontend/print_google_fonts', '__return_false' );
+		add_filter( 'wp_resource_hints', array( self::class, 'resource_hints' ), 10, 2 );
 	}
 
 	public static function enqueue_assets(): void {
-		wp_enqueue_style( 'smartkey-design-tokens', plugins_url( 'assets/css/design-tokens.css', SKT_CORE_FILE ), array(), SKT_CORE_VERSION );
+		wp_enqueue_style( 'smartkey-fonts', 'https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Roboto:wght@400;500;700&display=swap', array(), null );
+		wp_enqueue_style( 'smartkey-design-tokens', plugins_url( 'assets/css/design-tokens.css', SKT_CORE_FILE ), array( 'smartkey-fonts' ), SKT_CORE_VERSION );
 		wp_enqueue_style( 'smartkey-site-chrome', plugins_url( 'assets/css/site-chrome.css', SKT_CORE_FILE ), array( 'smartkey-design-tokens' ), SKT_CORE_VERSION );
+	}
+
+	public static function resource_hints( array $urls, string $relation_type ): array {
+		if ( 'preconnect' === $relation_type ) {
+			$urls[] = array( 'href' => 'https://fonts.googleapis.com', 'crossorigin' => 'anonymous' );
+			$urls[] = array( 'href' => 'https://fonts.gstatic.com', 'crossorigin' => 'anonymous' );
+		}
+		return $urls;
 	}
 
 	public static function body_class( array $classes ): array {

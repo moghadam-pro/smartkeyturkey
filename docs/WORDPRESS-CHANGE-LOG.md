@@ -1,5 +1,17 @@
 # WordPress production change log
 
+## 2026-07-21 — Accessibility, performance and form QA
+
+- Updated only the site-owned SmartKey Core plugin from version `1.0.0` to `1.0.3`; no third-party plugin was changed.
+- Resolved homepage placeholder contrast and accessible-name issues and protected the property submit-button colors from Hello Elementor overrides.
+- Replaced Elementor's broad Google Fonts request with approved limited Inter and Roboto weights and removed Contact Form 7 assets from the form-free homepage.
+- Lighthouse mobile results for the homepage: Performance 81, Accessibility 100, Best Practices 100 and SEO 100; total blocking time improved from 230 ms to 160 ms.
+- Lighthouse Accessibility and SEO reached 100/100 on the tested single product; the tested property page reached 100 Accessibility after the button fix.
+- Submitted one clearly labeled QA RFQ for `Ultra Snow White petroleum jelly`; Contact Form 7 reported successful sending and the SmartKey request counter increased from 0 to 1.
+- Submitted one clearly labeled QA property inquiry for the Istanbul sample; WordPress redirected to the successful `inquiry=sent` state.
+- Application-level email handoff is confirmed. Final delivery into the configured mailbox remains an owner-side mailbox check.
+- Remaining performance constraint: the uncached root document measured about 810 ms in the test and the approved webfont request remains render-blocking.
+
 ## 2026-07-21 — Conversion-focused homepage
 
 - Updated only the site-owned SmartKey Core plugin from version `0.9.0` to `1.0.0`; no third-party plugin was changed.
