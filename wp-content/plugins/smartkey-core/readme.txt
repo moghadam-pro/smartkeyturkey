@@ -2,7 +2,7 @@
 Contributors: smartkeyturkey
 Requires at least: 6.5
 Requires PHP: 8.1
-Stable tag: 1.4.0
+Stable tag: 1.5.0
 License: Proprietary
 
 Site-owned WordPress functionality for SmartKeyTurkey.
@@ -41,6 +41,20 @@ View tracking stores aggregate counters and a first-party 24-hour de-duplication
 Property and petrochemical requests are stored privately in WordPress for administrators. SmartKey-managed request forms do not send email. Uploaded files are not copied into the request record.
 
 == Changelog ==
+
+= 1.5.0 =
+
+* Added the private Telegram operations bot for website requests and guided property creation.
+* Added multi-photo property intake, featured-image assignment and frontend property galleries.
+* Added controlled Draft/Published status changes and CloudPanel-safe systemd deployment files.
+
+= 1.4.2 =
+
+* Prevented the technical-properties table from expanding the mobile product grid beyond the viewport.
+
+= 1.4.1 =
+
+* Applied the two-column RFQ grid to Contact Form 7's actual inner form wrapper and retained a one-column mobile fallback.
 
 = 1.4.0 =
 
