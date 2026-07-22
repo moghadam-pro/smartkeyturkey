@@ -2,7 +2,7 @@
 Contributors: smartkeyturkey
 Requires at least: 6.5
 Requires PHP: 8.1
-Stable tag: 1.5.0
+Stable tag: 1.6.0
 License: Proprietary
 
 Site-owned WordPress functionality for SmartKeyTurkey.
@@ -41,6 +41,14 @@ View tracking stores aggregate counters and a first-party 24-hour de-duplication
 Property and petrochemical requests are stored privately in WordPress for administrators. SmartKey-managed request forms do not send email. Uploaded files are not copied into the request record.
 
 == Changelog ==
+
+= 1.6.0 =
+
+* Replaced request lists with concise, illustrated real-time notifications and on-demand full details.
+* Added start-based notification subscriptions for authorized Telegram users.
+* Added draft-only property listing, property-ID search and controlled status actions.
+* Reworked property creation into a compact single-message form with dynamic taxonomy choices.
+* Added validated video intake and frontend property video playback.
 
 = 1.5.0 =
 

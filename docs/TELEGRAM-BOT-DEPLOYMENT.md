@@ -46,9 +46,11 @@ Only Telegram numeric IDs `55906253`, `499185195`, and `85074725` receive respon
 
 The English menu supports:
 
-- viewing the 10 newest website requests and receiving new-request notifications;
-- guided draft property creation with all structured property fields;
-- batch/multi-select photo intake followed by **Finish Photos**;
-- setting a property to Published or Draft.
+- concise illustrated notifications for new website requests, with full details on demand;
+- guided single-message draft property creation with dynamic city and property-type choices;
+- batch/multi-select photo and video intake followed by **Finish Media**;
+- listing draft properties, publishing a draft and finding a property by ID to return it to Draft.
+
+Authorized users receive notifications only after sending `/start`. With Telegram's hosted Bot API, downloadable media is limited to 20 MB; accepted videos must also be no longer than five minutes. Supporting larger videos requires a separately operated local Bot API server.
 
 New properties start as Draft. The first received image is the featured image and every image ID is stored in `skt_property_gallery_ids`.

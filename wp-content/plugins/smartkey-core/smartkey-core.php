@@ -2,7 +2,7 @@
 /**
  * Plugin Name: SmartKey Core
  * Description: Structured product catalog and controlled product importer for SmartKeyTurkey.
- * Version: 1.5.0
+ * Version: 1.6.0
  * Author: SmartKeyTurkey
  * Requires at least: 6.5
  * Requires PHP: 8.1
@@ -11,7 +11,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'SKT_CORE_VERSION', '1.5.0' );
+define( 'SKT_CORE_VERSION', '1.6.0' );
 define( 'SKT_CORE_FILE', __FILE__ );
 define( 'SKT_CORE_DIR', plugin_dir_path( __FILE__ ) );
 
