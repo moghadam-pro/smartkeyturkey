@@ -10,14 +10,13 @@ The original token was disclosed and must be revoked in BotFather. Generate a re
 
 Deploy the repository plugin to the existing site at:
 
-`/home/cloudpanel/htdocs/smartkeyturkey.com/wp-content/plugins/smartkey-core/`
+`/home/smartamin/htdocs/smartkeyturkey.com/wp-content/plugins/smartkey-core/`
 
-If the CloudPanel site user or document root differs, replace both paths and the `User`/`Group` values in the service file. Find the real site user with `stat -c '%U:%G' /home/cloudpanel/htdocs/smartkeyturkey.com/wp-load.php`.
-Also confirm the PHP CLI path with `command -v php`; update `ExecStart` if CloudPanel uses a versioned path such as `/usr/bin/php8.3`.
+The production CloudPanel site user is `smartamin`, the WordPress root is `/home/smartamin/htdocs/smartkeyturkey.com`, and the confirmed PHP 8.2 CLI executable is `/usr/bin/php`.
 
 ## Installation commands
 
-Run as root after deploying the updated plugin:
+Run as root after deploying the updated plugin. The commands below use the confirmed production paths:
 
 ```bash
 install -d -m 750 /etc/smartkey

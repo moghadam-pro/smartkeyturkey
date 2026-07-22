@@ -5,16 +5,16 @@ Wants=network-online.target
 
 [Service]
 Type=simple
-User=cloudpanel
-Group=cloudpanel
+User=smartamin
+Group=smartamin
 EnvironmentFile=/etc/smartkey/telegram.env
-ExecStart=/usr/bin/php /home/cloudpanel/htdocs/smartkeyturkey.com/wp-content/plugins/smartkey-core/bin/telegram-worker.php
+ExecStart=/usr/bin/php /home/smartamin/htdocs/smartkeyturkey.com/wp-content/plugins/smartkey-core/bin/telegram-worker.php
 Restart=always
 RestartSec=5
 NoNewPrivileges=true
 PrivateTmp=true
 ProtectSystem=full
-ReadWritePaths=/home/cloudpanel/htdocs/smartkeyturkey.com/wp-content/uploads
+ReadWritePaths=/home/smartamin/htdocs/smartkeyturkey.com/wp-content/uploads
 StandardOutput=journal
 StandardError=journal
 
