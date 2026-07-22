@@ -51,6 +51,6 @@ The English menu supports:
 - batch/multi-select photo and video intake followed by **Finish Media**;
 - listing draft properties, publishing a draft and finding a property by ID to return it to Draft.
 
-Authorized users receive notifications only after sending `/start`. With Telegram's hosted Bot API, downloadable media is limited to 20 MB; accepted videos must also be no longer than five minutes. Supporting larger videos requires a separately operated local Bot API server.
+Authorized users receive notifications only after sending `/start`. With Telegram's hosted Bot API, downloadable media is limited to 20 MB; accepted videos must also be no longer than 59 seconds. Supporting larger videos requires a separately operated local Bot API server.
 
 New properties start as Draft. The first received image is the featured image and every image ID is stored in `skt_property_gallery_ids`.
