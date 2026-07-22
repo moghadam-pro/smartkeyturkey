@@ -2,7 +2,7 @@
 /**
  * Plugin Name: SmartKey Core
  * Description: Structured product catalog and controlled product importer for SmartKeyTurkey.
- * Version: 1.4.0
+ * Version: 1.5.0
  * Author: SmartKeyTurkey
  * Requires at least: 6.5
  * Requires PHP: 8.1
@@ -11,7 +11,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'SKT_CORE_VERSION', '1.4.0' );
+define( 'SKT_CORE_VERSION', '1.5.0' );
 define( 'SKT_CORE_FILE', __FILE__ );
 define( 'SKT_CORE_DIR', plugin_dir_path( __FILE__ ) );
 
@@ -30,6 +30,7 @@ require_once SKT_CORE_DIR . 'includes/class-analytics.php';
 require_once SKT_CORE_DIR . 'includes/class-attraction-catalog.php';
 require_once SKT_CORE_DIR . 'includes/class-attraction-frontend.php';
 require_once SKT_CORE_DIR . 'includes/class-editorial.php';
+require_once SKT_CORE_DIR . 'includes/class-telegram-bot.php';
 
 SmartKeyTurkey\Core\Product_Catalog::init();
 SmartKeyTurkey\Core\Product_Importer::init();
@@ -46,6 +47,7 @@ SmartKeyTurkey\Core\Analytics::init();
 SmartKeyTurkey\Core\Attraction_Catalog::init();
 SmartKeyTurkey\Core\Attraction_Frontend::init();
 SmartKeyTurkey\Core\Editorial::init();
+SmartKeyTurkey\Core\Telegram_Bot::init();
 
 register_activation_hook(
 	__FILE__,

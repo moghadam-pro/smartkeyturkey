@@ -55,6 +55,7 @@ final class Request_Manager {
 		update_post_meta( $request_id, 'skt_request_data', $data );
 		update_post_meta( $request_id, 'skt_request_related_id', absint( $related_id ) );
 		update_post_meta( $request_id, 'skt_request_status', 'new' );
+		do_action( 'skt_request_created', (int) $request_id );
 		return (int) $request_id;
 	}
 

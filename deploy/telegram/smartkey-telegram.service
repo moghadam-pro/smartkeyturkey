@@ -1,0 +1,22 @@
+[Unit]
+Description=SmartKeyTurkey private Telegram bot
+After=network-online.target mariadb.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=cloudpanel
+Group=cloudpanel
+EnvironmentFile=/etc/smartkey/telegram.env
+ExecStart=/usr/bin/php /home/cloudpanel/htdocs/smartkeyturkey.com/wp-content/plugins/smartkey-core/bin/telegram-worker.php
+Restart=always
+RestartSec=5
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=full
+ReadWritePaths=/home/cloudpanel/htdocs/smartkeyturkey.com/wp-content/uploads
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
