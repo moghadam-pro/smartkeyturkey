@@ -2,6 +2,32 @@
 
 Dates are calendar days starting on 2026-07-19. Each day ends with a meaningful commit when source-controlled work changed, plus a Slack update containing completed work, evidence, blockers, and the next task.
 
+## Status update — 2026-07-24
+
+Implementation moved ahead of the original calendar because the owner approved production-first delivery. Foundations planned for days 1–14 and the principal WordPress experiences planned for days 17–22 are substantially complete. SmartKey Core `1.5.0` is active and now also contains a private Telegram operations bot.
+
+Completed early:
+
+- project charter, repository, Slack reporting, security policy and baseline audits;
+- B2C/B2B audience research, English information architecture and structured content models;
+- centralized light/dark design tokens, responsive components, global chrome and primary acquisition pages;
+- property, petrochemical, attractions and editorial archives/single experiences;
+- request-only commercial flows, private WordPress request storage and first-party conversion events;
+- product import and publication, pilot property records, sourced editorial content and SEO/sitemap foundations;
+- private Telegram request alerts, guided property creation, multi-photo intake and draft/publish controls.
+
+Remaining or requiring a formal completion pass:
+
+1. Day 6–7: finish the competitor benchmark, positioning matrix, formal KPI definitions and claims policy.
+2. Day 15–16: document the production visual prototype as the approved reference; decide whether the planned custom theme remains necessary or whether Hello Elementor + SmartKey Core is the permanent architecture.
+3. Day 23: run the localization-ready audit. WPML implementation itself remains deferred until English approval.
+4. Day 24–25: formalize the AI content system and reversible import workflow for verified property inventory; replace demonstration properties with owner-approved records.
+5. Day 26: complete schema validation, taxonomy descriptions, internal-link review, redirect audit and Search Console submission checks.
+6. Day 27: complete caching/Core Web Vitals work, security hardening, secret scanning, backup-restore evidence and Telegram service recovery testing.
+7. Day 28: full browser/device, keyboard, screen-reader, light/dark, form, 404 and regression QA.
+8. Day 29: verify GA4 events in DebugView, mark key events, finalize consent/privacy behavior and complete launch rollback/smoke-test documentation.
+9. Day 30: publish the monitoring cadence and 30/60/90-day acquisition, content and conversion optimization backlog.
+
 | Day | Date | Focus | Required output |
 |---:|---|---|---|
 | 1 | 2026-07-19 | Foundation | Charter, Slack channel, roadmap, credential policy, repository setup |

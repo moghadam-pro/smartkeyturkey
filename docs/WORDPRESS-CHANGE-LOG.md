@@ -1,5 +1,17 @@
 # WordPress production change log
 
+## 2026-07-24 — Private Telegram operations bot (SmartKey Core 1.5.0)
+
+- Added a private long-polling Telegram worker that loads WordPress and uses WordPress APIs rather than opening a public server port or connecting directly to MariaDB.
+- Added notifications for newly stored property and petrochemical requests plus retrieval of the ten newest requests.
+- Added guided property creation covering title, summaries, city/type relationships and the complete structured property metadata set.
+- Added multi-photo intake; the first successfully imported image becomes the featured image and all imported IDs are retained as the property gallery.
+- New Telegram-created properties start as Draft and approved operators can switch property records between Draft and Published.
+- Restricted bot responses to configured numeric Telegram user IDs; usernames are not used for authorization.
+- Kept the real bot token outside WordPress and Git in `/etc/smartkey/telegram.env`; the deployment guide requires rotation of any previously disclosed token.
+- Added a systemd deployment/runbook for the confirmed CloudPanel site user, WordPress root and PHP CLI path.
+- Preserved the production responsive navigation, RFQ layout, address, footer and editorial fixes introduced in the 1.4.x releases.
+
 ## 2026-07-21 — News, laws and events experience (SmartKey Core 1.3.0)
 
 - Added Market News, Laws & Guidance and Events categories plus SmartKey administration links.
