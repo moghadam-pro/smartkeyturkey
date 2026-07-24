@@ -4,7 +4,7 @@ Dates are calendar days starting on 2026-07-19. Each day ends with a meaningful 
 
 ## Status update — 2026-07-24
 
-Implementation moved ahead of the original calendar because the owner approved production-first delivery. Foundations planned for days 1–14 and the principal WordPress experiences planned for days 17–22 are substantially complete. SmartKey Core `1.5.0` is active and now also contains a private Telegram operations bot.
+Implementation moved ahead of the original calendar because the owner approved production-first delivery. Foundations planned for days 1–14 and the principal WordPress experiences planned for days 17–22 are substantially complete. SmartKey Core `1.6.2` is active and now also contains a private Telegram operations bot with hardened request delivery and richer property operations.
 
 Completed early:
 
@@ -14,7 +14,7 @@ Completed early:
 - property, petrochemical, attractions and editorial archives/single experiences;
 - request-only commercial flows, private WordPress request storage and first-party conversion events;
 - product import and publication, pilot property records, sourced editorial content and SEO/sitemap foundations;
-- private Telegram request alerts, guided property creation, multi-photo intake and draft/publish controls.
+- private Telegram subscriptions and real-time request alerts, guided property creation, photo/video/location intake, draft lookup and controlled status actions.
 
 Remaining or requiring a formal completion pass:
 

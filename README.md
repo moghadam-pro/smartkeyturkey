@@ -29,7 +29,7 @@ Updated: 24 July 2026
 - [x] WordPress baseline audit and brand-asset inventory
 - [x] English-only phase-one information architecture
 - [x] Petrochemical data model and controlled source-import workflow
-- [x] Custom `SmartKey Core` plugin v1.5.0
+- [x] Custom `SmartKey Core` plugin v1.6.2
 - [x] Structured petrochemical product type, taxonomy and metadata
 - [x] WordPress dashboard overview, content-view tracking, per-product RFQ counters and internal notes
 - [x] 99-product catalog imported and published with authorized source images
@@ -61,7 +61,7 @@ Updated: 24 July 2026
 - [x] Accessible mobile navigation, corrected contact address and consistent responsive footer
 - [x] Update-safe global hover colors and compact two-column petrochemical RFQ layout
 - [x] Second sourced editorial batch covering the Ceyhan polypropylene project and COP31 Türkiye
-- [x] Private Telegram operations bot for request alerts, guided property creation, photo intake and publication status
+- [x] Private Telegram operations bot with real-time request alerts, guided property creation, photo/video/location intake and publication controls
 - [x] Telegram worker deployment runbook with server-only secrets and numeric-user authorization
 - [ ] Analytics conversion-event QA
 - [ ] Accessibility, performance, security and launch QA
@@ -100,7 +100,7 @@ Petrochemical product information and images are used with authorization from th
 
 ## SmartKey Core dashboard
 
-Version `1.5.0` includes four site-administration widgets, the public property and petrochemical experiences, and the private Telegram operations workflow:
+Version `1.6.2` includes four site-administration widgets, the public property and petrochemical experiences, and the private Telegram operations workflow:
 
 - Core overview: latest product update, published products, product families, recorded content views and RFQ totals
 - Product views and requests: per-product engagement with unassigned RFQ visibility
@@ -113,7 +113,7 @@ The product templates use native Elementor Theme Builder records backed by versi
 
 The global site chrome adds a branded header, primary navigation, RFQ call to action and a responsive footer. The footer includes the approved Instagram and LinkedIn profiles, the `2012–2026` copyright notice, representative disclosure and linked `Designed and developed by Moghadam.pro` credit.
 
-The Telegram worker uses WordPress APIs and server-side environment variables. It can notify approved operators about stored website requests, guide them through draft property creation with multiple photos, and change property publication status. Real bot tokens and production environment files are never committed.
+The Telegram worker uses WordPress APIs and server-side environment variables. It provides subscribed real-time request notifications with on-demand details, guided draft-property creation, taxonomy choices, photo/video/location intake, draft lookup and controlled publication actions. Version `1.6.2` also adds bounded notification retries, safe API error logging, cached cover-image delivery and a text fallback when photo delivery fails. Real bot tokens and production environment files are never committed.
 
 ## License
 

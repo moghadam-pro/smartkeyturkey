@@ -1,5 +1,18 @@
 # WordPress production change log
 
+## 2026-07-24 — Telegram workflow refinement and delivery hardening (SmartKey Core 1.6.0–1.6.2)
+
+- Replaced long request lists with concise illustrated notifications, subscription-based real-time delivery and on-demand full request details.
+- Added draft-property listing and ID search plus controlled status actions for authorized operators.
+- Reworked Telegram property creation into a compact single-message flow with dynamic WordPress taxonomy choices.
+- Added validated property video intake and frontend video playback.
+- Added focused property-entry guidance, required a featured photo before completing media intake and retained uploaded media messages with receipt replies.
+- Added richer draft cards, complete property-detail views and Telegram location capture.
+- Corrected whole-number area formatting and limited accepted property videos to 59 seconds.
+- Added safe Telegram API error logging without exposing the bot token.
+- Cached the Telegram request-cover file ID after its first successful delivery.
+- Added bounded notification retries and text fallback when illustrated photo delivery fails.
+
 ## 2026-07-24 — Private Telegram operations bot (SmartKey Core 1.5.0)
 
 - Added a private long-polling Telegram worker that loads WordPress and uses WordPress APIs rather than opening a public server port or connecting directly to MariaDB.
