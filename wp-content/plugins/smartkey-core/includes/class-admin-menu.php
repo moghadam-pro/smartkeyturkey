@@ -13,7 +13,6 @@ final class Admin_Menu {
 	public static function register_menu(): void {
 		add_menu_page( 'SmartKeyTurkey', 'SmartKey', 'edit_posts', 'smartkey', array( self::class, 'render_dashboard' ), get_site_icon_url( 32 ), 4 );
 		add_submenu_page( 'smartkey', 'SmartKey Overview', 'Overview', 'edit_posts', 'smartkey', array( self::class, 'render_dashboard' ) );
-		add_submenu_page( 'smartkey', 'Website Requests', 'Requests', 'manage_options', 'edit.php?post_type=skt_request' );
 		add_submenu_page( 'smartkey', 'Add Petrochemical Product', 'Add Product', 'edit_posts', 'post-new.php?post_type=skt_product' );
 		add_submenu_page( 'smartkey', 'Product Families', 'Product Families', 'manage_categories', 'edit-tags.php?taxonomy=skt_product_family&post_type=skt_product' );
 		add_submenu_page( 'smartkey', 'Add Property', 'Add Property', 'edit_posts', 'post-new.php?post_type=skt_property' );

@@ -2,7 +2,7 @@
 Contributors: smartkeyturkey
 Requires at least: 6.5
 Requires PHP: 8.1
-Stable tag: 1.6.2
+Stable tag: 1.7.0
 License: Proprietary
 
 Site-owned WordPress functionality for SmartKeyTurkey.
@@ -41,6 +41,12 @@ View tracking stores aggregate counters and a first-party 24-hour de-duplication
 Property and petrochemical requests are stored privately in WordPress for administrators. SmartKey-managed request forms do not send email. Uploaded files are not copied into the request record.
 
 == Changelog ==
+
+= 1.7.0 =
+
+* Moved form building and private request storage to the independent SmartKey Forms plugin.
+* Added native WordPress primary and footer menu locations with a safe one-time migration from the existing hard-coded navigation.
+* Kept Telegram notifications connected through submission events without coupling the forms plugin to the bot.
 
 = 1.6.2 =
 

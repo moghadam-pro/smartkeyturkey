@@ -1,5 +1,16 @@
 # WordPress production change log
 
+## 2026-07-24 — Architecture separation (SmartKey Core 1.7.0 / SmartKey Forms 0.1.0)
+
+- Installed and activated the independent SmartKey Forms plugin before upgrading SmartKey Core.
+- Moved form definitions, private submission storage and Contact Form 7 RFQ capture out of SmartKey Core.
+- Preserved all existing `skt_request` records and the Telegram `skt_request_created` compatibility event.
+- Added provider-neutral submission events for future notification integrations.
+- Added native WordPress primary and footer menu locations, created both menus and connected the transitional site chrome to them.
+- Verified seven existing submission rows remained visible after migration.
+- Verified the public homepage, six-item primary navigation and footer loaded after deployment.
+- No third-party plugin was updated or removed.
+
 ## 2026-07-24 — Telegram workflow refinement and delivery hardening (SmartKey Core 1.6.0–1.6.2)
 
 - Replaced long request lists with concise illustrated notifications, subscription-based real-time delivery and on-demand full request details.

@@ -1,10 +1,11 @@
 # Telegram release baseline — 24 July 2026
 
-This document is the single source of truth for continuing SmartKeyTurkey Telegram-bot work. It reconciles the repository, the four manually deployed release archives, the Persian handoff report, and the deployment log in `#smartkey-website`.
+This document is the reconciled source of truth for the SmartKey Core 1.6.2 Telegram baseline. SmartKey Core 1.7.0 subsequently retained this Telegram implementation while moving form and submission ownership to SmartKey Forms 0.1.0.
 
 ## Authoritative state
 
-- Current and only deployable SmartKey Core release: **1.6.2**
+- Reconciled Telegram implementation baseline: **1.6.2**
+- Current production architecture release: **SmartKey Core 1.7.0 + SmartKey Forms 0.1.0**
 - Authoritative source: `main` at or after commit `6fb24d5`
 - Current documentation baseline: commit `0f43473`
 - Production status reported by the completed deployment workflow: **1.6.2 active**
@@ -66,7 +67,7 @@ These are operational paths, not credentials. Before the next deployment, verify
 
 For every future Telegram change:
 
-1. Start from the current `main` and SmartKey Core 1.6.2.
+1. Start from the current `main`, SmartKey Core 1.7.0 and SmartKey Forms 0.1.0 while preserving the reconciled 1.6.2 Telegram behavior.
 2. Increase the plugin version and changelog deliberately.
 3. Run PHP syntax, whitespace and secret checks.
 4. Build one new release artifact and record its SHA-256.
@@ -85,4 +86,3 @@ For every future Telegram change:
 - Remove older server rollback copies only after a fresh inventory and explicit approval.
 - Add the third authorized user as a subscriber only if requested and after that user sends `/start`.
 - Treat larger-than-20-MB Telegram video support and property edit/delete as separate, security-reviewed scopes.
-

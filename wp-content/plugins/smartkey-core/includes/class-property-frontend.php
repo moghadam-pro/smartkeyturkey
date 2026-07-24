@@ -119,7 +119,9 @@ final class Property_Frontend {
 		$email = isset( $_POST['email'] ) ? sanitize_email( wp_unslash( $_POST['email'] ) ) : '';
 		if ( ! $name || ! is_email( $email ) ) { wp_safe_redirect( add_query_arg( 'inquiry', 'error', $return ) . '#property-consultation' ); exit; }
 		$data = array( 'Property' => $property_id ? get_the_title( $property_id ) : 'General inquiry', 'Name' => $name, 'Email' => $email, 'Phone' => sanitize_text_field( wp_unslash( $_POST['phone'] ?? '' ) ), 'City' => sanitize_text_field( wp_unslash( $_POST['city'] ?? '' ) ), 'Transaction' => sanitize_text_field( wp_unslash( $_POST['transaction'] ?? '' ) ), 'Purpose' => sanitize_text_field( wp_unslash( $_POST['purpose'] ?? '' ) ), 'Requirements' => sanitize_textarea_field( wp_unslash( $_POST['requirements'] ?? '' ) ) );
-		$stored = Request_Manager::store_property( $property_id, $data );
+		$stored = function_exists( 'smartkey_forms_store_submission' )
+			? smartkey_forms_store_submission( 'property', 'Property inquiry — ' . get_the_title( $property_id ), $data, $property_id )
+			: 0;
 		if ( $stored && $property_id ) { update_post_meta( $property_id, 'skt_property_inquiry_count', (int) get_post_meta( $property_id, 'skt_property_inquiry_count', true ) + 1 ); }
 		wp_safe_redirect( add_query_arg( 'inquiry', $stored ? 'sent' : 'error', $return ) . '#property-consultation' ); exit;
 	}

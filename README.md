@@ -29,7 +29,8 @@ Updated: 24 July 2026
 - [x] WordPress baseline audit and brand-asset inventory
 - [x] English-only phase-one information architecture
 - [x] Petrochemical data model and controlled source-import workflow
-- [x] Custom `SmartKey Core` plugin v1.6.2
+- [x] Custom `SmartKey Core` plugin v1.7.0
+- [x] Independent `SmartKey Forms` plugin v0.1.0 for forms, private submissions and notification integrations
 - [x] Structured petrochemical product type, taxonomy and metadata
 - [x] WordPress dashboard overview, content-view tracking, per-product RFQ counters and internal notes
 - [x] 99-product catalog imported and published with authorized source images
@@ -71,7 +72,8 @@ Updated: 24 July 2026
 
 | Path | Purpose |
 | --- | --- |
-| `wp-content/plugins/smartkey-core/` | Site-owned WordPress functionality |
+| `wp-content/plugins/smartkey-core/` | Property/product structures, catalog behavior and Telegram property operations |
+| `wp-content/plugins/smartkey-forms/` | Form definitions, private submissions and notification integration events |
 | `data/` | Reviewed product source data and safe import artifacts |
 | `docs/` | Research, decisions, runbooks, audit notes and change logs |
 | `scripts/` | Reproducible data preparation and workbook generation |
@@ -100,7 +102,7 @@ Petrochemical product information and images are used with authorization from th
 
 ## SmartKey Core dashboard
 
-Version `1.6.2` includes four site-administration widgets, the public property and petrochemical experiences, and the private Telegram operations workflow:
+Version `1.7.0` includes four site-administration widgets, the public property and petrochemical experiences, native WordPress navigation integration, and the private Telegram operations workflow:
 
 - Core overview: latest product update, published products, product families, recorded content views and RFQ totals
 - Product views and requests: per-product engagement with unassigned RFQ visibility
@@ -115,7 +117,7 @@ The global site chrome adds a branded header, primary navigation, RFQ call to ac
 
 The Telegram worker uses WordPress APIs and server-side environment variables. It provides subscribed real-time request notifications with on-demand details, guided draft-property creation, taxonomy choices, photo/video/location intake, draft lookup and controlled publication actions. Version `1.6.2` also adds bounded notification retries, safe API error logging, cached cover-image delivery and a text fallback when photo delivery fails. Real bot tokens and production environment files are never committed.
 
-SmartKey Core `1.6.2` is the authoritative Telegram release baseline. Packages `1.5.0`, `1.6.0` and `1.6.1` are historical rollback artifacts and must not replace it.
+SmartKey Core `1.6.2` remains the last reconciled production Telegram baseline. Version `1.7.0` begins the architecture separation by moving forms and submissions into SmartKey Forms and adding native WordPress navigation.
 
 ## License
 

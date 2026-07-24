@@ -2,7 +2,7 @@
 /**
  * Plugin Name: SmartKey Core
  * Description: Structured product catalog and controlled product importer for SmartKeyTurkey.
- * Version: 1.6.2
+ * Version: 1.7.0
  * Author: SmartKeyTurkey
  * Requires at least: 6.5
  * Requires PHP: 8.1
@@ -11,7 +11,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'SKT_CORE_VERSION', '1.6.2' );
+define( 'SKT_CORE_VERSION', '1.7.0' );
 define( 'SKT_CORE_FILE', __FILE__ );
 define( 'SKT_CORE_DIR', plugin_dir_path( __FILE__ ) );
 
@@ -24,7 +24,6 @@ require_once SKT_CORE_DIR . 'includes/class-property-catalog.php';
 require_once SKT_CORE_DIR . 'includes/class-property-frontend.php';
 require_once SKT_CORE_DIR . 'includes/class-admin-menu.php';
 require_once SKT_CORE_DIR . 'includes/class-homepage.php';
-require_once SKT_CORE_DIR . 'includes/class-request-manager.php';
 require_once SKT_CORE_DIR . 'includes/class-company-pages.php';
 require_once SKT_CORE_DIR . 'includes/class-analytics.php';
 require_once SKT_CORE_DIR . 'includes/class-attraction-catalog.php';
@@ -41,13 +40,21 @@ SmartKeyTurkey\Core\Property_Catalog::init();
 SmartKeyTurkey\Core\Property_Frontend::init();
 SmartKeyTurkey\Core\Admin_Menu::init();
 SmartKeyTurkey\Core\Homepage::init();
-SmartKeyTurkey\Core\Request_Manager::init();
 SmartKeyTurkey\Core\Company_Pages::init();
 SmartKeyTurkey\Core\Analytics::init();
 SmartKeyTurkey\Core\Attraction_Catalog::init();
 SmartKeyTurkey\Core\Attraction_Frontend::init();
 SmartKeyTurkey\Core\Editorial::init();
 SmartKeyTurkey\Core\Telegram_Bot::init();
+
+add_action(
+	'admin_notices',
+	static function (): void {
+		if ( current_user_can( 'activate_plugins' ) && ! function_exists( 'smartkey_forms_store_submission' ) ) {
+			echo '<div class="notice notice-error"><p><strong>SmartKey Core:</strong> SmartKey Forms must be installed and active before website inquiries can be recorded.</p></div>';
+		}
+	}
+);
 
 register_activation_hook(
 	__FILE__,

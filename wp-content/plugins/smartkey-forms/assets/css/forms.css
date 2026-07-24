@@ -1,0 +1,12 @@
+.skf-form-wrap{color:var(--skt-text,#1d251b)}
+.skf-form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.skf-form label{display:grid;gap:8px;font-size:.9rem;font-weight:700}
+.skf-form input,.skf-form select,.skf-form textarea{width:100%;min-height:48px;padding:11px 13px;border:1px solid var(--skt-border,#dfe6dc);border-radius:8px;background:var(--skt-surface,#fff);color:var(--skt-text,#1d251b);font:inherit}
+.skf-form textarea{min-height:128px;resize:vertical}
+.skf-form input:focus,.skf-form select:focus,.skf-form textarea:focus{border-color:var(--skt-primary,#84c341);outline:3px solid color-mix(in srgb,var(--skt-primary,#84c341) 24%,transparent)}
+.skf-form button{justify-self:end;min-height:44px;padding:0 22px;border:0;border-radius:8px;background:var(--skt-primary,#84c341);color:var(--skt-on-primary,#13200f);font:700 .95rem/1 inherit;cursor:pointer}
+.skf-form button:hover,.skf-form button:focus-visible{background:var(--skt-accent,#fd8b00);color:#fff}
+.skf-notice{margin:0 0 20px;padding:14px 16px;border-radius:8px;background:var(--skt-success-bg,#d8edc5)}
+.skf-notice.is-error{background:var(--skt-error-bg,#f5d6d3)}
+.skf-honeypot{position:absolute!important;left:-9999px!important}
+@media(max-width:700px){.skf-form{grid-template-columns:1fr}.skf-form button{justify-self:stretch}}

@@ -12,6 +12,8 @@ final class Site_Chrome {
 	private const PHONE     = '+905050887188';
 
 	public static function init(): void {
+		add_action( 'after_setup_theme', array( self::class, 'register_menus' ) );
+		add_action( 'init', array( self::class, 'maybe_seed_menus' ), 42 );
 		add_action( 'init', array( self::class, 'migrate_brand_name' ), 40 );
 		add_action( 'wp_enqueue_scripts', array( self::class, 'enqueue_assets' ), 100 );
 		add_action( 'wp_body_open', array( self::class, 'render_header' ), 5 );
@@ -19,6 +21,48 @@ final class Site_Chrome {
 		add_filter( 'body_class', array( self::class, 'body_class' ) );
 		add_filter( 'elementor/frontend/print_google_fonts', '__return_false' );
 		add_filter( 'wp_resource_hints', array( self::class, 'resource_hints' ), 10, 2 );
+	}
+
+	public static function register_menus(): void {
+		register_nav_menus(
+			array(
+				'skt-primary' => __( 'SmartKey Primary Navigation', 'smartkey-core' ),
+				'skt-footer'  => __( 'SmartKey Footer Navigation', 'smartkey-core' ),
+			)
+		);
+	}
+
+	public static function maybe_seed_menus(): void {
+		if ( '1' === get_option( 'skt_native_navigation_version' ) ) {
+			return;
+		}
+		$items = array(
+			'Home'            => home_url( '/' ),
+			'Properties'      => get_post_type_archive_link( 'skt_property' ),
+			'Petrochemicals'  => get_post_type_archive_link( 'skt_product' ),
+			'Attractions'     => get_post_type_archive_link( 'skt_attraction' ),
+			'News & Insights' => home_url( '/blog/' ),
+			'About Us'        => home_url( '/about-us/' ),
+		);
+		$locations = (array) get_theme_mod( 'nav_menu_locations', array() );
+		foreach ( array( 'skt-primary' => 'SmartKey Primary', 'skt-footer' => 'SmartKey Footer' ) as $location => $name ) {
+			$menu = wp_get_nav_menu_object( $name );
+			$id   = $menu ? (int) $menu->term_id : wp_create_nav_menu( $name );
+			if ( is_wp_error( $id ) || ! $id ) {
+				continue;
+			}
+			$id = (int) $id;
+			if ( ! wp_get_nav_menu_items( $id ) ) {
+				foreach ( $items as $label => $url ) {
+					if ( $url ) {
+						wp_update_nav_menu_item( $id, 0, array( 'menu-item-title' => $label, 'menu-item-url' => $url, 'menu-item-status' => 'publish' ) );
+					}
+				}
+			}
+			$locations[ $location ] = $id;
+		}
+		set_theme_mod( 'nav_menu_locations', $locations );
+		update_option( 'skt_native_navigation_version', '1', false );
 	}
 
 	public static function enqueue_assets(): void {
@@ -52,14 +96,7 @@ final class Site_Chrome {
 					<img class="skt-wordmark" src="<?php echo esc_url( $wordmark ); ?>" width="210" height="22" alt="SmartKeyTurkey">
 				</a>
 				<button class="skt-menu-toggle" type="button" aria-expanded="false" aria-controls="skt-primary-nav"><span class="skt-menu-toggle-label"><?php esc_html_e( 'Menu', 'smartkey-core' ); ?></span><span class="skt-menu-toggle-icon" aria-hidden="true"><i></i><i></i><i></i></span></button>
-				<nav class="skt-primary-nav" id="skt-primary-nav" aria-label="<?php esc_attr_e( 'Primary navigation', 'smartkey-core' ); ?>">
-					<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( 'Home', 'smartkey-core' ); ?></a>
-					<a href="<?php echo esc_url( get_post_type_archive_link( 'skt_property' ) ); ?>"><?php esc_html_e( 'Properties', 'smartkey-core' ); ?></a>
-					<a href="<?php echo esc_url( get_post_type_archive_link( 'skt_product' ) ); ?>"><?php esc_html_e( 'Petrochemicals', 'smartkey-core' ); ?></a>
-					<a href="<?php echo esc_url( get_post_type_archive_link( 'skt_attraction' ) ); ?>"><?php esc_html_e( 'Attractions', 'smartkey-core' ); ?></a>
-					<a href="<?php echo esc_url( home_url( '/blog/' ) ); ?>"><?php esc_html_e( 'Insights', 'smartkey-core' ); ?></a>
-					<a href="<?php echo esc_url( home_url( '/about-us/' ) ); ?>"><?php esc_html_e( 'About Us', 'smartkey-core' ); ?></a>
-				</nav>
+				<?php wp_nav_menu( array( 'theme_location' => 'skt-primary', 'container' => 'nav', 'container_id' => 'skt-primary-nav', 'container_class' => 'skt-primary-nav', 'menu_class' => 'skt-primary-menu', 'fallback_cb' => false, 'depth' => 2 ) ); ?>
 				<a class="skt-header-cta" href="<?php echo esc_url( get_post_type_archive_link( 'skt_product' ) . '#request-quote' ); ?>"><?php esc_html_e( 'Request a Quote', 'smartkey-core' ); ?></a>
 			</div>
 		</header>
@@ -77,7 +114,7 @@ final class Site_Chrome {
 					<p><?php esc_html_e( 'Property discovery and petrochemical sourcing coordination across Turkey.', 'smartkey-core' ); ?></p>
 					<p class="skt-footer-disclosure"><?php esc_html_e( 'SmartKeyTurkey works directly with properties and projects under its control. For petrochemicals, it acts as an authorized sales representative and is not the manufacturer.', 'smartkey-core' ); ?></p>
 				</div>
-				<div><h2><?php esc_html_e( 'Explore', 'smartkey-core' ); ?></h2><ul><li><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( 'Home', 'smartkey-core' ); ?></a></li><li><a href="<?php echo esc_url( get_post_type_archive_link( 'skt_property' ) ); ?>"><?php esc_html_e( 'Properties', 'smartkey-core' ); ?></a></li><li><a href="<?php echo esc_url( get_post_type_archive_link( 'skt_product' ) ); ?>"><?php esc_html_e( 'Petrochemical Products', 'smartkey-core' ); ?></a></li><li><a href="<?php echo esc_url( get_post_type_archive_link( 'skt_attraction' ) ); ?>"><?php esc_html_e( 'Turkey Attractions', 'smartkey-core' ); ?></a></li><li><a href="<?php echo esc_url( home_url( '/blog/' ) ); ?>"><?php esc_html_e( 'News & Insights', 'smartkey-core' ); ?></a></li><li><a href="<?php echo esc_url( home_url( '/about-us/' ) ); ?>"><?php esc_html_e( 'About Us', 'smartkey-core' ); ?></a></li></ul></div>
+				<div><h2><?php esc_html_e( 'Explore', 'smartkey-core' ); ?></h2><?php wp_nav_menu( array( 'theme_location' => 'skt-footer', 'container' => false, 'menu_class' => 'skt-footer-menu', 'fallback_cb' => false, 'depth' => 1 ) ); ?></div>
 				<div class="skt-footer-contact"><h2><?php esc_html_e( 'Contact', 'smartkey-core' ); ?></h2><address>Cumhuriyet Mah. Gurpinar Yolu Street - Beykent - B. Cekmece<br>ERESIN YASAM MERKEZi No:10 A Block, 6th floor, office 112</address><p><a href="tel:<?php echo esc_attr( self::PHONE ); ?>">+90 505 088 71 88</a></p><a class="skt-footer-map-link" href="<?php echo esc_url( self::MAPS ); ?>" target="_blank" rel="noopener noreferrer"><?php esc_html_e( 'Open in Google Maps', 'smartkey-core' ); ?> ↗</a></div>
 				<div><h2><?php esc_html_e( 'Follow SmartKey', 'smartkey-core' ); ?></h2><ul><li><a href="<?php echo esc_url( self::INSTAGRAM ); ?>" target="_blank" rel="noopener noreferrer">Instagram <span aria-hidden="true">↗</span></a></li><li><a href="<?php echo esc_url( self::LINKEDIN ); ?>" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a></li></ul></div>
 			</div>
