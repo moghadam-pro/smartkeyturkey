@@ -163,7 +163,7 @@ final class Form_Manager {
 	private static function parse_fields( string $definition ): array {
 		$allowed = array( 'section', 'text', 'email', 'tel', 'number', 'textarea', 'select', 'radio', 'scale', 'checkbox' );
 		$fields  = array();
-		foreach ( preg_split( '/\R/', $definition ) as $line ) {
+		foreach ( preg_split( '/\R/u', $definition ) as $line ) {
 			$line = trim( $line );
 			if ( ! $line ) {
 				continue;

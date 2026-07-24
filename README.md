@@ -30,7 +30,7 @@ Updated: 24 July 2026
 - [x] English-only phase-one information architecture
 - [x] Petrochemical data model and controlled source-import workflow
 - [x] Custom `SmartKey Core` plugin v1.7.2
-- [x] Independent `SmartKey Forms` plugin v0.2.2 with bilingual English/Persian stakeholder UX research
+- [x] Independent `SmartKey Forms` plugin v0.2.3 with bilingual English/Persian stakeholder UX research
 - [x] Reversible `SmartKey Elementor` bridge v0.2.0 with editable Header/Footer templates and a protected migration switch
 - [x] Structured petrochemical product type, taxonomy and metadata
 - [x] WordPress dashboard overview, content-view tracking, per-product RFQ counters and internal notes

@@ -2,7 +2,7 @@
 /**
  * Plugin Name: SmartKey Forms
  * Description: Form building, submission storage and notification integrations for SmartKeyTurkey.
- * Version: 0.2.2
+ * Version: 0.2.3
  * Author: SmartKeyTurkey
  * Requires at least: 6.5
  * Requires PHP: 8.1
@@ -11,7 +11,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'SKF_VERSION', '0.2.2' );
+define( 'SKF_VERSION', '0.2.3' );
 define( 'SKF_FILE', __FILE__ );
 define( 'SKF_DIR', plugin_dir_path( __FILE__ ) );
 
