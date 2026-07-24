@@ -19,5 +19,5 @@
 .skf-scale label{justify-content:center}
 .skf-notice{margin:0 0 20px;padding:14px 16px;border-radius:8px;background:var(--skt-success-bg,#d8edc5)}
 .skf-notice.is-error{background:var(--skt-error-bg,#f5d6d3)}
-.skf-honeypot{position:absolute!important;left:-9999px!important}
+.skf-honeypot{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;clip-path:inset(50%)!important;white-space:nowrap!important;border:0!important}
 @media(max-width:700px){.skf-form{grid-template-columns:1fr}.skf-form button{justify-self:stretch}.skf-scale{grid-template-columns:repeat(5,minmax(36px,1fr))}.skf-scale label{padding:9px 5px}}

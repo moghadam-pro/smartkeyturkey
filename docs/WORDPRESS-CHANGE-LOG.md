@@ -1,12 +1,14 @@
 # WordPress production change log
 
-## 2026-07-24 — Persian UX survey (SmartKey Forms 0.2.3)
+## 2026-07-24 — Persian UX survey (SmartKey Forms 0.2.4)
 
 - Added an English/Persian language switcher to the existing standalone survey URL.
 - Added a complete Persian RTL version of all instructions, tasks, questions, options, validation messages and privacy text.
 - Loaded the official Vazirmatn webfont for Persian survey typography.
 - Kept both languages under the same private `ux_research` submission type.
 - Corrected Unicode line parsing after live-browser QA found Persian letters being mistaken for line separators.
+- Added device identification and an explicit mobile readability/navigation/tap-target/form question.
+- Removed RTL horizontal overflow from the hidden anti-spam field and made the mobile Persian submit button full width.
 
 ## 2026-07-24 — Stakeholder UX survey (SmartKey Forms 0.2.0)
 

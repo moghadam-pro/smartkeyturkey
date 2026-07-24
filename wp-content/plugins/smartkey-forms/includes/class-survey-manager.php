@@ -5,7 +5,7 @@ namespace SmartKeyTurkey\Forms;
 defined( 'ABSPATH' ) || exit;
 
 final class Survey_Manager {
-	private const VERSION = '3';
+	private const VERSION = '4';
 	private const SLUG    = 'experience-survey';
 	private const MARKER  = '_skf_standalone_landing';
 
@@ -130,6 +130,7 @@ final class Survey_Manager {
 				'text|participant_name|Name (optional)|||',
 				'select|role|Your primary role|required|Executive or manager,Property or real estate specialist,Petrochemical or procurement specialist,Marketing UX or digital specialist,Operations or customer service,Other|',
 				'scale|industry_familiarity|How familiar are you with property or petrochemical websites?|required|1,2,3,4,5|1 = Not familiar · 5 = Very familiar',
+				'select|device_used|Which device did you mainly use for this review?|required|Mobile phone,Desktop or laptop,Tablet,More than one device|',
 				'section||First impression|||Think about what you understood in the first minute.',
 				'scale|home_clarity|The Home page clearly explains what SmartKeyTurkey offers.|required|1,2,3,4,5|1 = Strongly disagree · 5 = Strongly agree',
 				'scale|business_clarity|I could quickly distinguish the property and petrochemical services.|required|1,2,3,4,5|1 = Strongly disagree · 5 = Strongly agree',
@@ -143,7 +144,7 @@ final class Survey_Manager {
 				'section||Interface, content and trust|||Evaluate the pages you visited as a connected experience.',
 				'scale|hierarchy|Information was well organised and easy to scan.|required|1,2,3,4,5|1 = Strongly disagree · 5 = Strongly agree',
 				'scale|visual_consistency|The visual design felt consistent across pages.|required|1,2,3,4,5|1 = Strongly disagree · 5 = Strongly agree',
-				'scale|mobile_confidence|The experience felt comfortable on the device I used.|required|1,2,3,4,5|1 = Strongly disagree · 5 = Strongly agree',
+				'radio|mobile_experience|How would you rate the mobile experience, including readability, navigation, tap targets and forms?|required|Very difficult,Difficult,Acceptable,Easy,Very easy,I only used desktop|',
 				'scale|trust|The content and presentation made SmartKeyTurkey feel credible.|required|1,2,3,4,5|1 = Strongly disagree · 5 = Strongly agree',
 				'scale|role_clarity|SmartKeyTurkey’s role in property and petrochemical services was clear.|required|1,2,3,4,5|1 = Strongly disagree · 5 = Strongly agree',
 				'radio|request_pricing|Was it clear that prices and commercial terms are provided on request?|required|Yes,Partly,No|',
@@ -164,6 +165,7 @@ final class Survey_Manager {
 				'text|participant_name|نام (اختیاری)|||',
 				'select|role|نقش اصلی شما|required|مدیر یا مدیر ارشد,متخصص املاک,متخصص پتروشیمی یا تأمین,متخصص بازاریابی تجربه کاربری یا دیجیتال,عملیات یا خدمات مشتریان,سایر|',
 				'scale|industry_familiarity|تا چه اندازه با وب‌سایت‌های املاک یا پتروشیمی آشنا هستید؟|required|۱,۲,۳,۴,۵|۱ = آشنایی ندارم · ۵ = کاملاً آشنا هستم',
+				'select|device_used|برای این بررسی بیشتر از چه دستگاهی استفاده کردید؟|required|گوشی موبایل,دسکتاپ یا لپ‌تاپ,تبلت,بیش از یک دستگاه|',
 				'section||برداشت اولیه|||به چیزی فکر کنید که در یک دقیقه نخست متوجه شدید.',
 				'scale|home_clarity|صفحه نخست خدمات SmartKeyTurkey را به‌وضوح معرفی می‌کند.|required|۱,۲,۳,۴,۵|۱ = کاملاً مخالفم · ۵ = کاملاً موافقم',
 				'scale|business_clarity|توانستم خدمات املاک و پتروشیمی را به‌سرعت از هم تشخیص دهم.|required|۱,۲,۳,۴,۵|۱ = کاملاً مخالفم · ۵ = کاملاً موافقم',
@@ -177,7 +179,7 @@ final class Survey_Manager {
 				'section||رابط کاربری، محتوا و اعتماد|||صفحاتی را که دیدید به‌عنوان یک تجربه یکپارچه ارزیابی کنید.',
 				'scale|hierarchy|اطلاعات منظم و قابل مرور سریع بود.|required|۱,۲,۳,۴,۵|۱ = کاملاً مخالفم · ۵ = کاملاً موافقم',
 				'scale|visual_consistency|طراحی بصری در صفحات مختلف هماهنگ بود.|required|۱,۲,۳,۴,۵|۱ = کاملاً مخالفم · ۵ = کاملاً موافقم',
-				'scale|mobile_confidence|کار با سایت روی دستگاهی که استفاده کردم راحت بود.|required|۱,۲,۳,۴,۵|۱ = کاملاً مخالفم · ۵ = کاملاً موافقم',
+				'radio|mobile_experience|تجربه موبایل از نظر خوانایی، پیمایش، لمس دکمه‌ها و تکمیل فرم‌ها چگونه بود؟|required|بسیار دشوار,دشوار,قابل قبول,آسان,بسیار آسان,فقط از دسکتاپ استفاده کردم|',
 				'scale|trust|محتوا و شیوه ارائه، حس اعتبار SmartKeyTurkey را منتقل می‌کرد.|required|۱,۲,۳,۴,۵|۱ = کاملاً مخالفم · ۵ = کاملاً موافقم',
 				'scale|role_clarity|نقش SmartKeyTurkey در خدمات املاک و پتروشیمی روشن بود.|required|۱,۲,۳,۴,۵|۱ = کاملاً مخالفم · ۵ = کاملاً موافقم',
 				'radio|request_pricing|آیا مشخص بود که قیمت‌ها و شرایط تجاری پس از درخواست ارائه می‌شوند؟|required|بله,تاحدی,خیر|',

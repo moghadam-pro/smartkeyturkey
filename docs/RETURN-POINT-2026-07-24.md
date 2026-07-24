@@ -24,7 +24,7 @@ Before any future import, seed, migration or content automation, inspect current
 ## Production baseline
 
 - SmartKey Core: 1.7.2
-- SmartKey Forms: 0.2.3 after the bilingual survey deployment
+- SmartKey Forms: 0.2.4 after the bilingual survey deployment
 - SmartKey Elementor: 0.2.0
 - Elementor migration switch: OFF
 - Stable SmartKey Core PHP header/footer: active

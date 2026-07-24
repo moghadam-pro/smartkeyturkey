@@ -2,7 +2,7 @@
 Contributors: smartkeyturkey
 Requires at least: 6.5
 Requires PHP: 8.1
-Stable tag: 0.2.3
+Stable tag: 0.2.4
 
 Independent form building, private submission storage and notification integration for SmartKeyTurkey.
 
@@ -20,6 +20,12 @@ SmartKey Forms separates forms and submissions from SmartKey Core. It provides:
 No email is sent for managed SmartKeyTurkey forms.
 
 == Changelog ==
+
+= 0.2.4 =
+
+* Added explicit device and mobile-experience research questions.
+* Removed RTL horizontal overflow from the hidden anti-spam field.
+* Made the Persian mobile submit action full width.
 
 = 0.2.3 =
 
