@@ -10,6 +10,7 @@
 - Search visibility: `noindex`, `nofollow`, `noarchive` through Rank Math metadata and WordPress robots controls
 - Layout: standalone; no global site header or footer
 - Response storage: private WordPress submissions; email disabled
+- Languages: English and Persian (`?lang=fa`) with an on-page language switcher
 
 ## 2026-07-21 — Homepage and indexing
 

@@ -85,7 +85,16 @@ final class Form_Manager {
 
 	public static function shortcode( array $atts ): string {
 		wp_enqueue_style( 'smartkey-forms' );
-		$atts    = shortcode_atts( array( 'id' => 0, 'button' => __( 'Send request', 'smartkey-forms' ) ), $atts, 'smartkey_form' );
+		$atts    = shortcode_atts(
+			array(
+				'id'     => 0,
+				'button' => __( 'Send request', 'smartkey-forms' ),
+				'sent'   => __( 'Thank you. Your request has been recorded.', 'smartkey-forms' ),
+				'error'  => __( 'Please review the required fields and try again.', 'smartkey-forms' ),
+			),
+			$atts,
+			'smartkey_form'
+		);
 		$form_id = absint( $atts['id'] );
 		if ( ! $form_id || 'skf_form' !== get_post_type( $form_id ) || 'publish' !== get_post_status( $form_id ) ) {
 			return current_user_can( 'edit_posts' ) ? '<p>' . esc_html__( 'Select a published SmartKey form.', 'smartkey-forms' ) . '</p>' : '';
@@ -98,8 +107,8 @@ final class Form_Manager {
 		ob_start();
 		?>
 		<div class="skf-form-wrap">
-			<?php if ( 'sent' === $status ) : ?><p class="skf-notice" role="status"><?php esc_html_e( 'Thank you. Your request has been recorded.', 'smartkey-forms' ); ?></p><?php endif; ?>
-			<?php if ( 'error' === $status ) : ?><p class="skf-notice is-error" role="alert"><?php esc_html_e( 'Please review the required fields and try again.', 'smartkey-forms' ); ?></p><?php endif; ?>
+			<?php if ( 'sent' === $status ) : ?><p class="skf-notice" role="status"><?php echo esc_html( (string) $atts['sent'] ); ?></p><?php endif; ?>
+			<?php if ( 'error' === $status ) : ?><p class="skf-notice is-error" role="alert"><?php echo esc_html( (string) $atts['error'] ); ?></p><?php endif; ?>
 			<form class="skf-form" method="post" action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>">
 				<input type="hidden" name="action" value="skf_submit">
 				<input type="hidden" name="form_id" value="<?php echo esc_attr( (string) $form_id ); ?>">
@@ -178,6 +187,7 @@ final class Form_Manager {
 	}
 
 	private static function render_field( array $field ): void {
+		$is_persian = isset( $_GET['lang'] ) && 'fa' === sanitize_key( wp_unslash( $_GET['lang'] ) );
 		if ( 'section' === $field['type'] ) {
 			echo '<section class="skf-section"><h2>' . esc_html( $field['label'] ) . '</h2>';
 			if ( $field['help'] ) {
@@ -193,7 +203,7 @@ final class Form_Manager {
 		if ( 'textarea' === $field['type'] ) {
 			echo '<textarea name="' . esc_attr( $field['name'] ) . '" rows="5"' . $required . '></textarea>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		} elseif ( 'select' === $field['type'] ) {
-			echo '<select name="' . esc_attr( $field['name'] ) . '"' . $required . '><option value="">' . esc_html__( 'Select', 'smartkey-forms' ) . '</option>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			echo '<select name="' . esc_attr( $field['name'] ) . '"' . $required . '><option value="">' . esc_html( $is_persian ? 'انتخاب کنید' : __( 'Select', 'smartkey-forms' ) ) . '</option>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			foreach ( $field['options'] as $option ) {
 				echo '<option value="' . esc_attr( $option ) . '">' . esc_html( $option ) . '</option>';
 			}
@@ -205,7 +215,7 @@ final class Form_Manager {
 			}
 			echo '</div>';
 		} elseif ( 'checkbox' === $field['type'] ) {
-			echo '<label class="skf-checkbox"><input type="checkbox" name="' . esc_attr( $field['name'] ) . '" value="1"' . $required . '><span>' . esc_html__( 'Yes', 'smartkey-forms' ) . '</span></label>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			echo '<label class="skf-checkbox"><input type="checkbox" name="' . esc_attr( $field['name'] ) . '" value="1"' . $required . '><span>' . esc_html( $is_persian ? 'بله' : __( 'Yes', 'smartkey-forms' ) ) . '</span></label>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		} else {
 			echo '<input type="' . esc_attr( $field['type'] ) . '" name="' . esc_attr( $field['name'] ) . '"' . $required . '>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		}

@@ -2,7 +2,7 @@
 Contributors: smartkeyturkey
 Requires at least: 6.5
 Requires PHP: 8.1
-Stable tag: 0.2.0
+Stable tag: 0.2.2
 
 Independent form building, private submission storage and notification integration for SmartKeyTurkey.
 
@@ -20,6 +20,15 @@ SmartKey Forms separates forms and submissions from SmartKey Core. It provides:
 No email is sent for managed SmartKeyTurkey forms.
 
 == Changelog ==
+
+= 0.2.2 =
+
+* Ensured the Persian survey typography overrides the base Latin font stack.
+
+= 0.2.1 =
+
+* Added an English/Persian language switcher to the stakeholder survey.
+* Added a complete RTL Persian questionnaire and Vazir typography stack.
 
 = 0.2.0 =
 
