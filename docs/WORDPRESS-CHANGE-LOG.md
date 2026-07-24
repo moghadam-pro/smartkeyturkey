@@ -1,5 +1,15 @@
 # WordPress production change log
 
+## 2026-07-24 — Reversible Elementor migration foundation
+
+- Updated SmartKey Core to 1.7.2 with automatic fallback protection.
+- Installed SmartKey Elementor 0.2.0 and generated editable native Header and Footer templates.
+- Assigned `Entire site` conditions and verified both templates render in their Elementor previews.
+- Disabled Hello Elementor's built-in header/footer to remove duplicate theme markup.
+- Added a protected admin switch under `SmartKey → Elementor Migration`.
+- Kept the migration switch off because Elementor Pro did not yet inject the generated site parts into live theme locations.
+- Verified the stable SmartKey Core header/footer remained live; no incomplete Elementor output was exposed.
+
 ## 2026-07-24 — Architecture separation (SmartKey Core 1.7.0 / SmartKey Forms 0.1.0)
 
 - Installed and activated the independent SmartKey Forms plugin before upgrading SmartKey Core.

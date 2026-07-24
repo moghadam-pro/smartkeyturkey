@@ -29,8 +29,9 @@ Updated: 24 July 2026
 - [x] WordPress baseline audit and brand-asset inventory
 - [x] English-only phase-one information architecture
 - [x] Petrochemical data model and controlled source-import workflow
-- [x] Custom `SmartKey Core` plugin v1.7.0
+- [x] Custom `SmartKey Core` plugin v1.7.2
 - [x] Independent `SmartKey Forms` plugin v0.1.0 for forms, private submissions and notification integrations
+- [x] Reversible `SmartKey Elementor` bridge v0.2.0 with editable Header/Footer templates and a protected migration switch
 - [x] Structured petrochemical product type, taxonomy and metadata
 - [x] WordPress dashboard overview, content-view tracking, per-product RFQ counters and internal notes
 - [x] 99-product catalog imported and published with authorized source images
@@ -74,6 +75,7 @@ Updated: 24 July 2026
 | --- | --- |
 | `wp-content/plugins/smartkey-core/` | Property/product structures, catalog behavior and Telegram property operations |
 | `wp-content/plugins/smartkey-forms/` | Form definitions, private submissions and notification integration events |
+| `wp-content/plugins/smartkey-elementor/` | Editable Elementor templates and reversible presentation migration controls |
 | `data/` | Reviewed product source data and safe import artifacts |
 | `docs/` | Research, decisions, runbooks, audit notes and change logs |
 | `scripts/` | Reproducible data preparation and workbook generation |

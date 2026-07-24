@@ -86,6 +86,9 @@ final class Site_Chrome {
 	}
 
 	public static function render_header(): void {
+		if ( defined( 'SKE_VERSION' ) && '1' === get_option( 'skt_elementor_chrome_enabled' ) ) {
+			return;
+		}
 		$icon = plugins_url( 'assets/images/skt-mark.svg', SKT_CORE_FILE );
 		$wordmark = plugins_url( 'assets/images/skt-wordmark.svg', SKT_CORE_FILE );
 		?>
@@ -104,6 +107,9 @@ final class Site_Chrome {
 	}
 
 	public static function render_footer(): void {
+		if ( defined( 'SKE_VERSION' ) && '1' === get_option( 'skt_elementor_chrome_enabled' ) ) {
+			return;
+		}
 		$icon = plugins_url( 'assets/images/skt-mark.svg', SKT_CORE_FILE );
 		$wordmark = plugins_url( 'assets/images/skt-wordmark.svg', SKT_CORE_FILE );
 		?>

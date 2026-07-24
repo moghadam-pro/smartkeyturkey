@@ -2,7 +2,7 @@
 Contributors: smartkeyturkey
 Requires at least: 6.5
 Requires PHP: 8.1
-Stable tag: 1.7.0
+Stable tag: 1.7.2
 License: Proprietary
 
 Site-owned WordPress functionality for SmartKeyTurkey.
@@ -41,6 +41,14 @@ View tracking stores aggregate counters and a first-party 24-hour de-duplication
 Property and petrochemical requests are stored privately in WordPress for administrators. SmartKey-managed request forms do not send email. Uploaded files are not copied into the request record.
 
 == Changelog ==
+
+= 1.7.2 =
+
+* Restored the transitional PHP header/footer automatically whenever the Elementor bridge is inactive or unavailable.
+
+= 1.7.1 =
+
+* Added a reversible handoff from the transitional PHP header/footer to verified Elementor Theme Builder templates.
 
 = 1.7.0 =
 
