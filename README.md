@@ -92,7 +92,7 @@ This public repository contains only custom source code, documentation, configur
 - Database dumps, private uploads or personal data
 - Server access details or backup credentials
 
-See [Project Charter](docs/PROJECT-CHARTER.md), [Roadmap](docs/ROADMAP.md), [Experience Benchmark](docs/BENCHMARK-2026-07-24.md), [SEO Foundation](docs/SEO-FOUNDATION.md), [Production Change Protocol](docs/PRODUCTION-CHANGE-PROTOCOL.md) and [WordPress Change Log](docs/WORDPRESS-CHANGE-LOG.md).
+See [Project Charter](docs/PROJECT-CHARTER.md), [Roadmap](docs/ROADMAP.md), [Experience Benchmark](docs/BENCHMARK-2026-07-24.md), [Telegram Release Baseline](docs/TELEGRAM-RELEASE-BASELINE-2026-07-24.md), [SEO Foundation](docs/SEO-FOUNDATION.md), [Production Change Protocol](docs/PRODUCTION-CHANGE-PROTOCOL.md) and [WordPress Change Log](docs/WORDPRESS-CHANGE-LOG.md).
 
 ## Content provenance
 
@@ -114,6 +114,8 @@ The product templates use native Elementor Theme Builder records backed by versi
 The global site chrome adds a branded header, primary navigation, RFQ call to action and a responsive footer. The footer includes the approved Instagram and LinkedIn profiles, the `2012–2026` copyright notice, representative disclosure and linked `Designed and developed by Moghadam.pro` credit.
 
 The Telegram worker uses WordPress APIs and server-side environment variables. It provides subscribed real-time request notifications with on-demand details, guided draft-property creation, taxonomy choices, photo/video/location intake, draft lookup and controlled publication actions. Version `1.6.2` also adds bounded notification retries, safe API error logging, cached cover-image delivery and a text fallback when photo delivery fails. Real bot tokens and production environment files are never committed.
+
+SmartKey Core `1.6.2` is the authoritative Telegram release baseline. Packages `1.5.0`, `1.6.0` and `1.6.1` are historical rollback artifacts and must not replace it.
 
 ## License
 

@@ -6,6 +6,8 @@ Dates are calendar days starting on 2026-07-19. Each day ends with a meaningful 
 
 Implementation moved ahead of the original calendar because the owner approved production-first delivery. Foundations planned for days 1–14 and the principal WordPress experiences planned for days 17–22 are substantially complete. SmartKey Core `1.6.2` is active and now also contains a private Telegram operations bot with hardened request delivery and richer property operations.
 
+The repository, supplied deployment archives, Persian handoff report and Slack deployment thread were reconciled on 2026-07-24. `docs/TELEGRAM-RELEASE-BASELINE-2026-07-24.md` is the continuation point; older Telegram packages are historical only.
+
 Completed early:
 
 - project charter, repository, Slack reporting, security policy and baseline audits;
