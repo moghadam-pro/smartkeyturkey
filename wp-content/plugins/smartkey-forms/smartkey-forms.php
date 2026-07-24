@@ -2,7 +2,7 @@
 /**
  * Plugin Name: SmartKey Forms
  * Description: Form building, submission storage and notification integrations for SmartKeyTurkey.
- * Version: 0.1.0
+ * Version: 0.2.0
  * Author: SmartKeyTurkey
  * Requires at least: 6.5
  * Requires PHP: 8.1
@@ -11,15 +11,17 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'SKF_VERSION', '0.1.0' );
+define( 'SKF_VERSION', '0.2.0' );
 define( 'SKF_FILE', __FILE__ );
 define( 'SKF_DIR', plugin_dir_path( __FILE__ ) );
 
 require_once SKF_DIR . 'includes/class-form-manager.php';
 require_once SKF_DIR . 'includes/class-submission-manager.php';
+require_once SKF_DIR . 'includes/class-survey-manager.php';
 
 SmartKeyTurkey\Forms\Form_Manager::init();
 SmartKeyTurkey\Forms\Submission_Manager::init();
+SmartKeyTurkey\Forms\Survey_Manager::init();
 
 /**
  * Public integration API for site-owned plugins and themes.

@@ -1,5 +1,16 @@
 # Publication log
 
+## 2026-07-24 — Stakeholder UX research landing
+
+- Status: Published, private-by-link
+- URL: https://smartkeyturkey.com/experience-survey/
+- Audience: approximately 20 SmartKeyTurkey managers and domain specialists
+- Estimated completion time: 15–20 minutes
+- Scope: first impression, service clarity, navigation, property inquiry, petrochemical RFQ, editorial discovery, interface consistency, trust and improvement priorities
+- Search visibility: `noindex`, `nofollow`, `noarchive` through Rank Math metadata and WordPress robots controls
+- Layout: standalone; no global site header or footer
+- Response storage: private WordPress submissions; email disabled
+
 ## 2026-07-21 — Homepage and indexing
 
 - Published the complete English SmartKeyTurkey homepage with distinct property and petrochemical acquisition paths.

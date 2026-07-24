@@ -2,7 +2,7 @@
 Contributors: smartkeyturkey
 Requires at least: 6.5
 Requires PHP: 8.1
-Stable tag: 0.1.0
+Stable tag: 0.2.0
 
 Independent form building, private submission storage and notification integration for SmartKeyTurkey.
 
@@ -20,6 +20,12 @@ SmartKey Forms separates forms and submissions from SmartKey Core. It provides:
 No email is sent for managed SmartKeyTurkey forms.
 
 == Changelog ==
+
+= 0.2.0 =
+
+* Added section, radio and five-point scale fields.
+* Added a private, standalone stakeholder UX survey landing page.
+* Added Rank Math and WordPress noindex, nofollow and noarchive controls.
 
 = 0.1.0 =
 

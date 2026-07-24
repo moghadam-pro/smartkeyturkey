@@ -1,0 +1,22 @@
+:root{--skt-primary:#84c341;--skt-accent:#fd8b00;--skt-ink:#000009;--skt-text:#242725;--skt-muted:#667064;--skt-surface:#fff;--skt-border:#dfe6dc;--skt-canvas:#f4f7f1}
+*{box-sizing:border-box}
+html{background:var(--skt-canvas)}
+body.skf-standalone-survey{margin:0;background:linear-gradient(145deg,#f4f7f1,#fff 46%,#f1f7e9);color:var(--skt-text);font-family:Inter,Roboto,Arial,sans-serif;line-height:1.6}
+.skf-survey-shell{width:min(920px,calc(100% - 32px));margin:0 auto;padding:40px 0 64px}
+.skf-survey-brand{display:inline-flex;align-items:center;gap:10px;margin-bottom:30px;color:var(--skt-ink);font-weight:800;text-decoration:none}
+.skf-brand-mark{display:grid;place-items:center;width:42px;height:42px;border-radius:12px;background:var(--skt-ink);color:var(--skt-primary)}
+.skf-survey-intro,.skf-form-wrap{padding:clamp(24px,5vw,48px);border:1px solid var(--skt-border);border-radius:20px;background:rgba(255,255,255,.94);box-shadow:0 20px 55px rgba(0,9,9,.08)}
+.skf-survey-intro{margin-bottom:24px}
+.skf-survey-intro h1{margin:.2em 0;font-size:clamp(2rem,5vw,3.4rem);line-height:1.08}
+.skf-eyebrow{margin:0;color:#4c781f;font-size:.78rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+.skf-task-list{margin-top:28px;padding:20px 24px;border-left:4px solid var(--skt-primary);border-radius:0 12px 12px 0;background:#f5faef}
+.skf-task-list h2{margin:0 0 8px;font-size:1.15rem}
+.skf-task-list ol{margin:0;padding-left:20px}
+.skf-task-list li+li{margin-top:8px}
+.skf-task-list a{color:#385d19;font-weight:700;text-decoration-thickness:2px;text-underline-offset:3px}
+.skf-task-list a:hover{color:var(--skt-accent)}
+.skf-form button{grid-column:1/-1;margin-top:16px;font-size:1rem}
+.skf-privacy-note{text-align:center;color:var(--skt-muted);font-size:.82rem}
+::selection{background:var(--skt-accent);color:#fff}
+@media(prefers-color-scheme:dark){:root{--skt-text:#ebebeb;--skt-muted:#abb3a7;--skt-surface:#151816;--skt-border:#333b31;--skt-canvas:#090b09}.skf-survey-brand{color:#fff}html,body.skf-standalone-survey{background:#090b09}.skf-survey-intro,.skf-form-wrap{background:#151816;box-shadow:none}.skf-task-list{background:#1b2417}.skf-task-list a{color:#9ad559}}
+@media(max-width:600px){.skf-survey-shell{width:min(100% - 20px,920px);padding:22px 0 40px}.skf-survey-intro,.skf-form-wrap{padding:22px;border-radius:14px}.skf-task-list{padding:16px}}

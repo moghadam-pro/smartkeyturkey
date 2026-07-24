@@ -30,7 +30,7 @@ Updated: 24 July 2026
 - [x] English-only phase-one information architecture
 - [x] Petrochemical data model and controlled source-import workflow
 - [x] Custom `SmartKey Core` plugin v1.7.2
-- [x] Independent `SmartKey Forms` plugin v0.1.0 for forms, private submissions and notification integrations
+- [x] Independent `SmartKey Forms` plugin v0.2.0 for forms, private submissions, notification integrations and stakeholder UX research
 - [x] Reversible `SmartKey Elementor` bridge v0.2.0 with editable Header/Footer templates and a protected migration switch
 - [x] Structured petrochemical product type, taxonomy and metadata
 - [x] WordPress dashboard overview, content-view tracking, per-product RFQ counters and internal notes
@@ -65,6 +65,7 @@ Updated: 24 July 2026
 - [x] Second sourced editorial batch covering the Ceyhan polypropylene project and COP31 Türkiye
 - [x] Private Telegram operations bot with real-time request alerts, guided property creation, photo/video/location intake and publication controls
 - [x] Telegram worker deployment runbook with server-only secrets and numeric-user authorization
+- [x] Private standalone UX research survey with 18 questions, real-site tasks and Rank Math noindex controls
 - [ ] Analytics conversion-event QA
 - [ ] Accessibility, performance, security and launch QA
 - [ ] WPML implementation after phase-one English approval
@@ -96,7 +97,7 @@ This public repository contains only custom source code, documentation, configur
 - Database dumps, private uploads or personal data
 - Server access details or backup credentials
 
-See [Project Charter](docs/PROJECT-CHARTER.md), [Roadmap](docs/ROADMAP.md), [Experience Benchmark](docs/BENCHMARK-2026-07-24.md), [Telegram Release Baseline](docs/TELEGRAM-RELEASE-BASELINE-2026-07-24.md), [SEO Foundation](docs/SEO-FOUNDATION.md), [Production Change Protocol](docs/PRODUCTION-CHANGE-PROTOCOL.md) and [WordPress Change Log](docs/WORDPRESS-CHANGE-LOG.md).
+See [Project Charter](docs/PROJECT-CHARTER.md), [Roadmap](docs/ROADMAP.md), [Return Point](docs/RETURN-POINT-2026-07-24.md), [Experience Benchmark](docs/BENCHMARK-2026-07-24.md), [Telegram Release Baseline](docs/TELEGRAM-RELEASE-BASELINE-2026-07-24.md), [SEO Foundation](docs/SEO-FOUNDATION.md), [Production Change Protocol](docs/PRODUCTION-CHANGE-PROTOCOL.md) and [WordPress Change Log](docs/WORDPRESS-CHANGE-LOG.md).
 
 ## Content provenance
 
@@ -119,7 +120,7 @@ The global site chrome adds a branded header, primary navigation, RFQ call to ac
 
 The Telegram worker uses WordPress APIs and server-side environment variables. It provides subscribed real-time request notifications with on-demand details, guided draft-property creation, taxonomy choices, photo/video/location intake, draft lookup and controlled publication actions. Version `1.6.2` also adds bounded notification retries, safe API error logging, cached cover-image delivery and a text fallback when photo delivery fails. Real bot tokens and production environment files are never committed.
 
-SmartKey Core `1.6.2` remains the last reconciled production Telegram baseline. Version `1.7.0` begins the architecture separation by moving forms and submissions into SmartKey Forms and adding native WordPress navigation.
+SmartKey Core `1.6.2` remains the last reconciled production Telegram baseline. Version `1.7.0` begins the architecture separation by moving forms and submissions into SmartKey Forms and adding native WordPress navigation. SmartKey Forms `0.2.0` adds research-oriented sections, radio groups and rating scales plus the private stakeholder survey landing.
 
 ## License
 

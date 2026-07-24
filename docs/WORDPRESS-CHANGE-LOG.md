@@ -1,5 +1,16 @@
 # WordPress production change log
 
+## 2026-07-24 — Stakeholder UX survey (SmartKey Forms 0.2.0)
+
+- Added section, radio and five-point scale fields to the independent form builder.
+- Published an English 18-question stakeholder survey designed for approximately 15–20 minutes.
+- Added three real-site research tasks covering Home/Properties, Petrochemical Products/RFQ and Attractions/Insights/About Us.
+- Published the survey on a standalone landing without global header or footer.
+- Stored survey feedback privately as `ux_research` submissions; no email delivery was introduced.
+- Added Rank Math metadata plus WordPress robots controls for `noindex`, `nofollow` and `noarchive`.
+- Verified one survey form, five sections, zero global headers/footers and the expected robots directive on production.
+- Recorded the exact post-research continuation and protected owner-edit boundaries in the Return Point document.
+
 ## 2026-07-24 — Reversible Elementor migration foundation
 
 - Updated SmartKey Core to 1.7.2 with automatic fallback protection.

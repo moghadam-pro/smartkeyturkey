@@ -4,7 +4,9 @@ Dates are calendar days starting on 2026-07-19. Each day ends with a meaningful 
 
 ## Status update — 2026-07-24
 
-Implementation moved ahead of the original calendar because the owner approved production-first delivery. Foundations planned for days 1–14 and the principal WordPress experiences planned for days 17–22 are substantially complete. SmartKey Core `1.7.0` and SmartKey Forms `0.1.0` are active. The private Telegram operations bot retains the hardened 1.6.2 delivery behavior while forms and submissions now have independent ownership.
+Implementation moved ahead of the original calendar because the owner approved production-first delivery. Foundations planned for days 1–14 and the principal WordPress experiences planned for days 17–22 are substantially complete. SmartKey Core `1.7.2`, SmartKey Forms `0.2.0` and SmartKey Elementor `0.2.0` are active. The private Telegram operations bot retains the hardened 1.6.2 delivery behavior while forms and submissions now have independent ownership.
+
+The main roadmap is paused after publishing the stakeholder UX survey. During the pause, the owner will update imagery and replace sample properties with real records. Resume from the exact architecture continuation recorded in `docs/RETURN-POINT-2026-07-24.md`; preserve all owner-created content.
 
 The repository, supplied deployment archives, Persian handoff report and Slack deployment thread were reconciled on 2026-07-24. `docs/TELEGRAM-RELEASE-BASELINE-2026-07-24.md` is the Telegram continuation point; older Telegram packages are historical only. The subsequent 1.7.0 architecture pass separates forms/submissions and introduces native WordPress menus ahead of the staged Elementor Theme Builder migration.
 

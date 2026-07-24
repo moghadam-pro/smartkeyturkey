@@ -62,7 +62,7 @@ final class Form_Manager {
 		<p><label for="skf-submission-type"><strong><?php esc_html_e( 'Submission type', 'smartkey-forms' ); ?></strong></label></p>
 		<input id="skf-submission-type" name="skf_submission_type" class="regular-text" value="<?php echo esc_attr( $type ); ?>" pattern="[a-z0-9_-]+">
 		<p><label for="skf-fields"><strong><?php esc_html_e( 'Fields — one per line', 'smartkey-forms' ); ?></strong></label></p>
-		<p class="description"><?php esc_html_e( 'Format: type|name|label|required|options. Supported types: text, email, tel, number, textarea, select, checkbox. Separate select options with commas.', 'smartkey-forms' ); ?></p>
+		<p class="description"><?php esc_html_e( 'Format: type|name|label|required|options|help. Supported types: section, text, email, tel, number, textarea, select, radio, scale, checkbox. Separate options with commas.', 'smartkey-forms' ); ?></p>
 		<textarea id="skf-fields" name="skf_fields" class="large-text code" rows="14" spellcheck="false"><?php echo esc_textarea( (string) $fields ); ?></textarea>
 		<p class="description"><?php esc_html_e( 'Example: email|email|Business email|required', 'smartkey-forms' ); ?></p>
 		<?php
@@ -122,6 +122,9 @@ final class Form_Manager {
 		$fields = self::parse_fields( (string) get_post_meta( $form_id, self::META_FIELDS, true ) );
 		$data   = array();
 		foreach ( $fields as $field ) {
+			if ( 'section' === $field['type'] ) {
+				continue;
+			}
 			$value = $_POST[ $field['name'] ] ?? '';
 			$value = is_array( $value ) ? array_map( 'sanitize_text_field', wp_unslash( $value ) ) : sanitize_textarea_field( wp_unslash( $value ) );
 			if ( $field['required'] && '' === $value ) {
@@ -149,17 +152,17 @@ final class Form_Manager {
 	}
 
 	private static function parse_fields( string $definition ): array {
-		$allowed = array( 'text', 'email', 'tel', 'number', 'textarea', 'select', 'checkbox' );
+		$allowed = array( 'section', 'text', 'email', 'tel', 'number', 'textarea', 'select', 'radio', 'scale', 'checkbox' );
 		$fields  = array();
 		foreach ( preg_split( '/\R/', $definition ) as $line ) {
 			$line = trim( $line );
 			if ( ! $line ) {
 				continue;
 			}
-			$parts = array_map( 'trim', explode( '|', $line, 5 ) );
+			$parts = array_map( 'trim', explode( '|', $line, 6 ) );
 			$type  = in_array( $parts[0] ?? '', $allowed, true ) ? $parts[0] : 'text';
 			$name  = sanitize_key( $parts[1] ?? '' );
-			if ( ! $name ) {
+			if ( ! $name && 'section' !== $type ) {
 				continue;
 			}
 			$fields[] = array(
@@ -168,15 +171,25 @@ final class Form_Manager {
 				'label'    => sanitize_text_field( $parts[2] ?? $name ),
 				'required' => 'required' === strtolower( $parts[3] ?? '' ),
 				'options'  => array_filter( array_map( 'sanitize_text_field', explode( ',', $parts[4] ?? '' ) ) ),
+				'help'     => sanitize_text_field( $parts[5] ?? '' ),
 			);
 		}
 		return $fields;
 	}
 
 	private static function render_field( array $field ): void {
+		if ( 'section' === $field['type'] ) {
+			echo '<section class="skf-section"><h2>' . esc_html( $field['label'] ) . '</h2>';
+			if ( $field['help'] ) {
+				echo '<p>' . esc_html( $field['help'] ) . '</p>';
+			}
+			echo '</section>';
+			return;
+		}
 		$required = $field['required'] ? ' required' : '';
 		$label    = $field['label'] . ( $field['required'] ? ' *' : '' );
-		echo '<label>' . esc_html( $label );
+		$class    = in_array( $field['type'], array( 'textarea', 'radio', 'scale', 'checkbox' ), true ) ? ' class="skf-field skf-field--wide"' : ' class="skf-field"';
+		echo '<div' . $class . '><span class="skf-label">' . esc_html( $label ) . '</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		if ( 'textarea' === $field['type'] ) {
 			echo '<textarea name="' . esc_attr( $field['name'] ) . '" rows="5"' . $required . '></textarea>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		} elseif ( 'select' === $field['type'] ) {
@@ -185,12 +198,21 @@ final class Form_Manager {
 				echo '<option value="' . esc_attr( $option ) . '">' . esc_html( $option ) . '</option>';
 			}
 			echo '</select>';
+		} elseif ( in_array( $field['type'], array( 'radio', 'scale' ), true ) ) {
+			echo '<div class="skf-choice-group' . ( 'scale' === $field['type'] ? ' skf-scale' : '' ) . '">';
+			foreach ( $field['options'] as $option ) {
+				echo '<label><input type="radio" name="' . esc_attr( $field['name'] ) . '" value="' . esc_attr( $option ) . '"' . $required . '><span>' . esc_html( $option ) . '</span></label>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			}
+			echo '</div>';
 		} elseif ( 'checkbox' === $field['type'] ) {
-			echo '<input type="checkbox" name="' . esc_attr( $field['name'] ) . '" value="1"' . $required . '>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			echo '<label class="skf-checkbox"><input type="checkbox" name="' . esc_attr( $field['name'] ) . '" value="1"' . $required . '><span>' . esc_html__( 'Yes', 'smartkey-forms' ) . '</span></label>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		} else {
 			echo '<input type="' . esc_attr( $field['type'] ) . '" name="' . esc_attr( $field['name'] ) . '"' . $required . '>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		}
-		echo '</label>';
+		if ( $field['help'] ) {
+			echo '<small class="skf-help">' . esc_html( $field['help'] ) . '</small>';
+		}
+		echo '</div>';
 	}
 
 	private static function redirect( string $url, string $status ): void {
