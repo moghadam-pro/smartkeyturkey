@@ -10,6 +10,8 @@ final class Telegram_Bot {
 	private const QUEUE_OPTION = 'skt_tg_request_queue';
 	private const OFFSET_OPTION = 'skt_tg_update_offset';
 	private const SUBSCRIBERS_OPTION = 'skt_tg_subscribers';
+	private const COVER_FILE_ID_OPTION = 'skt_tg_request_cover_file_id';
+	private const MAX_DELIVERY_ATTEMPTS = 5;
 	private const VIDEO_MAX_BYTES = 20 * 1024 * 1024;
 	private const VIDEO_MAX_SECONDS = 59;
 
@@ -20,7 +22,7 @@ final class Telegram_Bot {
 		if ( ! $subscribers ) { return; }
 		$queue = get_option( self::QUEUE_OPTION, array() );
 		$queue = is_array( $queue ) ? $queue : array();
-		$queue[] = array( 'request_id' => $request_id, 'pending' => array_values( $subscribers ) );
+		$queue[] = array( 'request_id' => $request_id, 'pending' => array_values( $subscribers ), 'attempts' => array() );
 		update_option( self::QUEUE_OPTION, $queue, false );
 	}
 
@@ -262,9 +264,16 @@ final class Telegram_Bot {
 	private static function deliver_request_queue(): void {
 		$queue = get_option( self::QUEUE_OPTION, array() ); if ( ! is_array( $queue ) || ! $queue ) { return; } $remaining = array();
 		foreach ( $queue as $entry ) {
-			if ( is_numeric( $entry ) ) { continue; } $id = absint( $entry['request_id'] ?? 0 ); $pending = array();
-			foreach ( (array) ( $entry['pending'] ?? array() ) as $chat_id ) { $result = self::send_request_card( (int) $chat_id, $id ); if ( empty( $result['ok'] ) ) { $pending[] = (int) $chat_id; } }
-			if ( $pending ) { $remaining[] = array( 'request_id' => $id, 'pending' => $pending ); }
+			if ( is_numeric( $entry ) ) { continue; } $id = absint( $entry['request_id'] ?? 0 ); $pending = array(); $attempts = is_array( $entry['attempts'] ?? null ) ? $entry['attempts'] : array();
+			foreach ( (array) ( $entry['pending'] ?? array() ) as $chat_id ) {
+				$chat_id = (int) $chat_id; $result = self::send_request_card( $chat_id, $id );
+				if ( empty( $result['ok'] ) ) {
+					$count = absint( $attempts[ (string) $chat_id ] ?? 0 ) + 1;
+					if ( $count < self::MAX_DELIVERY_ATTEMPTS ) { $pending[] = $chat_id; $attempts[ (string) $chat_id ] = $count; }
+					else { error_log( sprintf( '[SmartKey Telegram] Dropped request #%d notification for chat %d after %d failed attempts.', $id, $chat_id, $count ) ); }
+				}
+			}
+			if ( $pending ) { $remaining[] = array( 'request_id' => $id, 'pending' => $pending, 'attempts' => $attempts ); }
 		}
 		update_option( self::QUEUE_OPTION, $remaining, false );
 	}
@@ -272,7 +281,15 @@ final class Telegram_Bot {
 	private static function send_request_card( int $chat_id, int $id ): array {
 		$post = get_post( $id ); if ( ! $post ) { return array( 'ok' => true ); } $data = self::request_data( $id );
 		$caption = sprintf( "🔔 New request for %s\n🆔 Request #%d\n✉️ Email: %s\n📅 Received: %s", self::request_subject( $id ), $id, $data['email'], get_the_date( 'Y-m-d H:i', $id ) );
-		return self::api( 'sendPhoto', array( 'chat_id' => $chat_id, 'photo' => plugins_url( 'assets/images/request-cover.jpg', SKT_CORE_FILE ), 'caption' => $caption, 'reply_markup' => wp_json_encode( array( 'inline_keyboard' => array( array( array( 'text' => 'Show Full Request', 'callback_data' => 'request:' . $id ) ) ) ) ) ) );
+		$markup = array( 'inline_keyboard' => array( array( array( 'text' => 'Show Full Request', 'callback_data' => 'request:' . $id ) ) ) );
+		$cover = (string) get_option( self::COVER_FILE_ID_OPTION, '' ); if ( ! $cover ) { $cover = plugins_url( 'assets/images/request-cover.jpg', SKT_CORE_FILE ); }
+		$result = self::api( 'sendPhoto', array( 'chat_id' => $chat_id, 'photo' => $cover, 'caption' => $caption, 'reply_markup' => wp_json_encode( $markup ) ) );
+		if ( ! empty( $result['ok'] ) ) {
+			$photos = $result['result']['photo'] ?? array(); if ( $photos ) { $largest = end( $photos ); if ( ! empty( $largest['file_id'] ) ) { update_option( self::COVER_FILE_ID_OPTION, sanitize_text_field( (string) $largest['file_id'] ), false ); } }
+			return $result;
+		}
+		error_log( sprintf( '[SmartKey Telegram] Request #%d photo card failed for chat %d; attempting text fallback.', $id, $chat_id ) );
+		return self::send( $chat_id, $caption . "\n\n⚠️ Cover image unavailable for this notification.", $markup );
 	}
 
 	private static function request_data( int $id ): array {
@@ -293,7 +310,13 @@ final class Telegram_Bot {
 		return mb_substr( implode( "\n", $lines ), 0, 4090 );
 	}
 
-	private static function api( string $method, array $body = array() ): array { $response = wp_remote_post( 'https://api.telegram.org/bot' . self::token() . '/' . $method, array( 'timeout' => 35, 'body' => $body ) ); if ( is_wp_error( $response ) ) { return array( 'ok' => false ); } $decoded = json_decode( wp_remote_retrieve_body( $response ), true ); return is_array( $decoded ) ? $decoded : array( 'ok' => false ); }
+	private static function api( string $method, array $body = array() ): array {
+		$response = wp_remote_post( 'https://api.telegram.org/bot' . self::token() . '/' . $method, array( 'timeout' => 35, 'body' => $body ) );
+		if ( is_wp_error( $response ) ) { error_log( sprintf( '[SmartKey Telegram] %s transport error: %s', sanitize_key( $method ), $response->get_error_message() ) ); return array( 'ok' => false, 'description' => $response->get_error_message() ); }
+		$decoded = json_decode( wp_remote_retrieve_body( $response ), true ); $decoded = is_array( $decoded ) ? $decoded : array( 'ok' => false, 'description' => 'Invalid JSON response' );
+		if ( empty( $decoded['ok'] ) ) { error_log( sprintf( '[SmartKey Telegram] %s failed: HTTP %d, error_code %d, description: %s', sanitize_key( $method ), wp_remote_retrieve_response_code( $response ), absint( $decoded['error_code'] ?? 0 ), sanitize_text_field( (string) ( $decoded['description'] ?? 'Unknown error' ) ) ) ); }
+		return $decoded;
+	}
 	private static function send( int $chat_id, string $text, ?array $markup = null ): array { $body = array( 'chat_id' => $chat_id, 'text' => $text ); if ( $markup ) { $body['reply_markup'] = wp_json_encode( $markup ); } return self::api( 'sendMessage', $body ); }
 	private static function send_reply( int $chat_id, int $message_id, string $text ): array { return self::api( 'sendMessage', array( 'chat_id' => $chat_id, 'text' => $text, 'reply_parameters' => wp_json_encode( array( 'message_id' => $message_id ) ) ) ); }
 	private static function has_photo( array $media ): bool { foreach ( $media as $item ) { if ( 'photo' === ( $item['type'] ?? '' ) ) { return true; } } return false; }
