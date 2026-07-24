@@ -18,7 +18,7 @@ Completed early:
 
 Remaining or requiring a formal completion pass:
 
-1. Day 6–7: finish the competitor benchmark, positioning matrix, formal KPI definitions and claims policy.
+1. Day 7: convert the completed competitor benchmark into the positioning matrix, formal KPI definitions and claims policy.
 2. Day 15–16: document the production visual prototype as the approved reference; decide whether the planned custom theme remains necessary or whether Hello Elementor + SmartKey Core is the permanent architecture.
 3. Day 23: run the localization-ready audit. WPML implementation itself remains deferred until English approval.
 4. Day 24–25: formalize the AI content system and reversible import workflow for verified property inventory; replace demonstration properties with owner-approved records.

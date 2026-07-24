@@ -25,6 +25,7 @@ Updated: 24 July 2026
 
 - [x] Project charter, 30-day roadmap and production-change protocol
 - [x] Initial B2C property and B2B petrochemical audience research
+- [x] Property and B2B sourcing competitor benchmark with reusable patterns, risks and implementation priorities
 - [x] WordPress baseline audit and brand-asset inventory
 - [x] English-only phase-one information architecture
 - [x] Petrochemical data model and controlled source-import workflow
@@ -91,7 +92,7 @@ This public repository contains only custom source code, documentation, configur
 - Database dumps, private uploads or personal data
 - Server access details or backup credentials
 
-See [Project Charter](docs/PROJECT-CHARTER.md), [Roadmap](docs/ROADMAP.md), [SEO Foundation](docs/SEO-FOUNDATION.md), [Production Change Protocol](docs/PRODUCTION-CHANGE-PROTOCOL.md) and [WordPress Change Log](docs/WORDPRESS-CHANGE-LOG.md).
+See [Project Charter](docs/PROJECT-CHARTER.md), [Roadmap](docs/ROADMAP.md), [Experience Benchmark](docs/BENCHMARK-2026-07-24.md), [SEO Foundation](docs/SEO-FOUNDATION.md), [Production Change Protocol](docs/PRODUCTION-CHANGE-PROTOCOL.md) and [WordPress Change Log](docs/WORDPRESS-CHANGE-LOG.md).
 
 ## Content provenance
 
