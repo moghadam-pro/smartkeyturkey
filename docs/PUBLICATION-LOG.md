@@ -54,3 +54,31 @@
 - Time-sensitive facts must include an official source and publication date.
 - AI-generated content remains subject to later human review.
 - Image source and licensing/provenance must be recorded for every publication.
+
+## 2026-07-27 — Investment and residence guidance
+
+### Türkiye’s 2026 Investment Reform Package: What International Investors Should Review
+
+- Status: Published
+- URL: https://smartkeyturkey.com/turkiye-2026-investment-reform-package-international-investors/
+- Category: Market News
+- Official source: Investment and Finance Office of the Presidency of the Republic of Türkiye, 4 June 2026
+- Featured image: `assets/optimized/turkiye-investment-reform-2026.jpg`
+- Image source: AI-generated exclusively for SmartKeyTurkey using OpenAI
+- Editorial status: AI-assisted draft pending human review
+
+### Türkiye Residence Permits in 2026: What the Istanbul One-Stop Office Changes
+
+- Status: Published
+- URL: https://smartkeyturkey.com/turkiye-residence-permits-2026-istanbul-one-stop-office/
+- Category: Laws & Guidance
+- Official sources: Presidency of Migration Management and Invest in Türkiye
+- Featured image: `assets/optimized/turkiye-investor-residence-one-stop-office-2026.jpg`
+- Image source: AI-generated exclusively for SmartKeyTurkey using OpenAI
+- Editorial status: AI-assisted draft pending human review
+
+### Attraction featured images
+
+- Added dedicated featured images for Hagia Sophia, Anıtkabir, Ephesus Ancient City and Kaleiçi Old Town.
+- All four images were AI-generated exclusively for SmartKeyTurkey and include descriptive alternative text.
+- Verified that all four public attraction cards render their featured images.

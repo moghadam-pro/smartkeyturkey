@@ -287,3 +287,12 @@
 - Applied the orange hover token after theme styles, without editing Hello Elementor files, so theme updates cannot remove the correction.
 - Normalized the petrochemical RFQ into a compact two-column desktop layout with uniform spacing, 8 px controls and a one-column mobile fallback.
 - Added and published two AI-assisted, pending-human-review articles grounded in official Ministry of Trade and Invest in Türkiye sources.
+
+## 2026-07-27 — SmartKey Core 1.7.3 and editorial images
+
+- Updated only the site-owned SmartKey Core plugin from `1.7.2` to `1.7.3`; no third-party plugin was updated or removed.
+- Added update-safe featured-image rendering to the Blog archive cards, homepage Latest Insights cards and Turkey Attractions cards.
+- Kept a branded accessible fallback for records without an assigned featured image.
+- Assigned dedicated featured images and alt text to all four published attraction guides.
+- Published two sourced English articles with categories, excerpts, clean slugs, featured images and Rank Math descriptions.
+- Verified the homepage shows images for both latest articles and the attraction archive shows images for all four cards.
