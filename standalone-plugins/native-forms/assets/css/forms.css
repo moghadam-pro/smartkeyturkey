@@ -1,0 +1,25 @@
+.nf-form-wrap{--nf-primary:#2563eb;--nf-accent:#1d4ed8;--nf-text:#1f2937;--nf-muted:#6b7280;--nf-surface:#fff;--nf-border:#d1d5db;color:var(--nf-text);font-family:inherit}
+.nf-form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.nf-field{display:grid;gap:8px;font-size:.9rem;font-weight:700}
+.nf-field--wide,.nf-section{grid-column:1/-1}
+.nf-label{display:block}
+.nf-form input,.nf-form select,.nf-form textarea{box-sizing:border-box;width:100%;min-height:48px;padding:11px 13px;border:1px solid var(--nf-border);border-radius:8px;background:var(--nf-surface);color:var(--nf-text);font:inherit}
+.nf-form textarea{min-height:128px;resize:vertical}
+.nf-form input:focus,.nf-form select:focus,.nf-form textarea:focus{border-color:var(--nf-primary);outline:3px solid color-mix(in srgb,var(--nf-primary) 22%,transparent)}
+.nf-form button{grid-column:1/-1;justify-self:end;min-height:44px;padding:0 22px;border:0;border-radius:8px;background:var(--nf-primary);color:#fff;font:700 .95rem/1 inherit;cursor:pointer}
+.nf-form button:hover,.nf-form button:focus-visible{background:var(--nf-accent)}
+.nf-section{margin-top:18px;padding-top:24px;border-top:1px solid var(--nf-border)}
+.nf-section:first-child{margin-top:0;padding-top:0;border-top:0}
+.nf-section h2{margin:0 0 6px;font-size:1.35rem}
+.nf-section p,.nf-help{margin:0;color:var(--nf-muted);font-weight:400}
+.nf-choice-group{display:flex;flex-wrap:wrap;gap:10px}
+.nf-choice-group label,.nf-checkbox{display:flex;align-items:center;gap:8px;padding:10px 13px;border:1px solid var(--nf-border);border-radius:8px;background:var(--nf-surface);font-weight:500;cursor:pointer}
+.nf-choice-group input,.nf-checkbox input{width:18px;min-height:18px;margin:0;padding:0;accent-color:var(--nf-primary)}
+.nf-scale{display:grid;grid-template-columns:repeat(5,minmax(44px,1fr))}
+.nf-scale label{justify-content:center}
+.nf-notice{margin:0 0 20px;padding:14px 16px;border-radius:8px;background:#dcfce7;color:#14532d}
+.nf-notice.is-error{background:#fee2e2;color:#7f1d1d}
+.nf-honeypot{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;clip-path:inset(50%)!important;white-space:nowrap!important;border:0!important}
+[dir=rtl].nf-form-wrap{font-family:Vazir,Vazirmatn,Tahoma,Arial,sans-serif}
+[dir=rtl].nf-form-wrap .nf-form button{justify-self:start}
+@media(max-width:700px){.nf-form{grid-template-columns:1fr}.nf-form button,[dir=rtl].nf-form-wrap .nf-form button{justify-self:stretch;width:100%}.nf-scale{grid-template-columns:repeat(5,minmax(36px,1fr))}.nf-scale label{padding:9px 5px}}

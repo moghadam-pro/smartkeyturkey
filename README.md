@@ -77,6 +77,7 @@ Updated: 24 July 2026
 | `wp-content/plugins/smartkey-core/` | Property/product structures, catalog behavior and Telegram property operations |
 | `wp-content/plugins/smartkey-forms/` | Form definitions, private submissions and notification integration events |
 | `wp-content/plugins/smartkey-elementor/` | Editable Elementor templates and reversible presentation migration controls |
+| `standalone-plugins/native-forms/` | Brand-neutral reusable form and private-submission plugin for other WordPress sites |
 | `data/` | Reviewed product source data and safe import artifacts |
 | `docs/` | Research, decisions, runbooks, audit notes and change logs |
 | `scripts/` | Reproducible data preparation and workbook generation |
