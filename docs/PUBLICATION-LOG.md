@@ -1,5 +1,33 @@
 # Publication log
 
+## 2026-07-28 — AI investment and Istanbul creative economy
+
+### Türkiye’s AI Action Plan 2026–2030: What Investors Should Watch
+
+- Status: Published
+- URL: https://smartkeyturkey.com/turkiye-ai-action-plan-2026-2030-investors/
+- Category: Market News
+- Official source: Investment and Finance Office of the Presidency of the Republic of Türkiye, 26 June 2026
+- Scope: AI infrastructure, talent, public data, investment funding, growth zones and market-entry due diligence
+- Featured image: `assets/blog/turkiye-ai-action-plan-2026-2030.jpg`
+- Image source: AI-generated exclusively for SmartKeyTurkey using OpenAI
+- SEO: clean slug, manual excerpt, focus keyword and Rank Math description added
+- Public verification: Blog card and homepage Latest Insights image, title and link passed
+- Editorial status: AI-assisted draft pending human review
+
+### Spotify’s New Istanbul Office: A Signal for Türkiye’s Creative Economy
+
+- Status: Published
+- URL: https://smartkeyturkey.com/spotify-new-istanbul-office-turkiye-creative-economy-2026/
+- Category: Market News
+- Official source: Investment and Finance Office of the Presidency of the Republic of Türkiye, 29 June 2026
+- Scope: creative-economy growth, local-office strategy and practical location planning
+- Featured image: `assets/blog/istanbul-creative-economy-office-2026.jpg`
+- Image source: AI-generated exclusively for SmartKeyTurkey using OpenAI; no Spotify logo, interface or third-party photograph reproduced
+- SEO: clean slug, manual excerpt, focus keyword and Rank Math description added
+- Public verification: Blog card and homepage Latest Insights image, title and link passed
+- Editorial status: AI-assisted draft pending human review
+
 ## 2026-07-24 — Stakeholder UX research landing
 
 - Status: Published, private-by-link

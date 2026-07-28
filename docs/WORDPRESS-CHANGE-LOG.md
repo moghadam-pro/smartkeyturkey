@@ -296,3 +296,11 @@
 - Assigned dedicated featured images and alt text to all four published attraction guides.
 - Published two sourced English articles with categories, excerpts, clean slugs, featured images and Rank Math descriptions.
 - Verified the homepage shows images for both latest articles and the attraction archive shows images for all four cards.
+
+## 2026-07-28 — Editorial cycle
+
+- Published two new English Market News articles from official Investment and Finance Office announcements.
+- Added original AI-generated 1600 px featured images with descriptive media alt text and no third-party logos or reproduced photography.
+- Configured manual excerpts, clean slugs, focus keywords and Rank Math meta descriptions.
+- Verified both articles appear first on the Blog archive with images and replace the homepage Latest Insights pair correctly.
+- No plugin, theme or WordPress core update was performed.
